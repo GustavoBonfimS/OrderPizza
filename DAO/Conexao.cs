@@ -18,10 +18,10 @@ namespace OrderPizza.DAO
             //Luis - con.ConnectionString = @"Data Source=LAPTOP-3H8K5NM5;Initial Catalog=EasyCall;Persist Security Info=True;User ID=sa;Password=toledo";
             //con.ConnectionString = @"Data Source=LAPTOP-3H8K5NM5;Initial Catalog=EasyCall;Persist Security Info=True;User ID=sa;Password=toledo";
             con.ConnectionString = @"Data Source=LAPTOP-OGHHCABF\SQLEXPRESS;Initial Catalog=EasyCall;Persist Security Info=True;User ID=sa;Password=toledo";
-            con = this.conectar();
+            Conexao.con = this.conectar();
         }
 
-        private SqlConnection conectar()
+        public SqlConnection conectar()
         {
             try
             {
@@ -39,9 +39,9 @@ namespace OrderPizza.DAO
 
         public void desconectar()
         {
-            if (con.State == System.Data.ConnectionState.Open)
+            if (Conexao.con.State == System.Data.ConnectionState.Open)
             {
-                con.Close();
+                Conexao.con.Close();
             }
         }
     }

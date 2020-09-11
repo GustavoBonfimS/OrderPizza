@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\Conexao.cs" />
+    <Compile Include="DAO\FuncionarioDAO.cs" />
     <Compile Include="frmCardapio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -58,6 +60,11 @@
     <Compile Include="frmLogin.designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\Cliente.cs" />
+    <Compile Include="Model\Funcionario.cs" />
+    <Compile Include="Model\Pedido.cs" />
+    <Compile Include="Model\Produto.cs" />
+    <Compile Include="Model\Venda.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmCardapio.resx">
