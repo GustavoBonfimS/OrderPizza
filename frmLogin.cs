@@ -10,6 +10,12 @@ namespace OrderPizza
             InitializeComponent();
         }
 
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            txbLogin.LostFocus += TxbLogin_LostFocus;
+            txbSenha.LostFocus += TxbSenha_LostFocus;
+        }
+
         private void txbLogin_MouseClick(object sender, MouseEventArgs e)
         {
             if (txbLogin.Text == "usuario")
@@ -18,16 +24,27 @@ namespace OrderPizza
             }
         }
 
-        private void frmLogin_Load(object sender, EventArgs e)
-        {
-            txbLogin.LostFocus += TxbLogin_LostFocus;
-        }
-
         private void TxbLogin_LostFocus(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(txbLogin.Text))
             {
                 txbLogin.Text = "usuario";
+            }
+        }
+
+        private void txbSenha_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (txbSenha.Text == "senha")
+            {
+                txbSenha.Text = null;
+            }
+        }
+
+        private void TxbSenha_LostFocus(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(txbSenha.Text))
+            {
+                txbSenha.Text = "senha";
             }
         }
 
@@ -66,6 +83,5 @@ namespace OrderPizza
             }
             return true;
         }
-
     }
 }

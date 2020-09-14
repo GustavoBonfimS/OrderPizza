@@ -175,6 +175,7 @@
             this.txbSenha.Text = "senha";
             this.txbSenha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txbSenha.UseSystemPasswordChar = true;
+            this.txbSenha.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txbSenha_MouseClick);
             // 
             // frmLogin
             // 
