@@ -101,7 +101,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="assets\icons8-pizza-48.ico" />
-    <Content Include="Icon1.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

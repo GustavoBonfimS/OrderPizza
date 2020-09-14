@@ -33,6 +33,7 @@ namespace OrderPizza
         private void frmCardapio_Load(object sender, EventArgs e)
         {
             cbPesquisar.DataSource = arrProdutos;
+            cbPesquisar.SelectedItem = null;
         }
     }
 }

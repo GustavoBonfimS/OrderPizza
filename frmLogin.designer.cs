@@ -158,6 +158,9 @@
             this.txbLogin.Name = "txbLogin";
             this.txbLogin.Size = new System.Drawing.Size(168, 13);
             this.txbLogin.TabIndex = 11;
+            this.txbLogin.Text = "usuario";
+            this.txbLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txbLogin.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txbLogin_MouseClick);
             // 
             // txbSenha
             // 
@@ -169,6 +172,8 @@
             this.txbSenha.PasswordChar = '*';
             this.txbSenha.Size = new System.Drawing.Size(168, 13);
             this.txbSenha.TabIndex = 12;
+            this.txbSenha.Text = "senha";
+            this.txbSenha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txbSenha.UseSystemPasswordChar = true;
             // 
             // frmLogin
