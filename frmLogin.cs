@@ -1,12 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OrderPizza
@@ -35,7 +27,28 @@ namespace OrderPizza
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            
+            if (ValidaCampos())
+            {
+                // seta o funcionario
+                new frmCardapio().Show();
+            }
+        }
+
+        private bool ValidaCampos()
+        {
+            if (String.IsNullOrEmpty(txbLogin.Text))
+            {
+                MessageBox.Show("Campo *login orbigatório");
+                txbLogin.Focus();
+                return false;
+            }
+            if (String.IsNullOrEmpty(txbSenha.Text))
+            {
+                MessageBox.Show("Campo *senha obrigatório");
+                txbSenha.Focus();
+                return false;
+            }
+            return true;
         }
     }
 }

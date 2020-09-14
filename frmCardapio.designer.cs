@@ -29,11 +29,10 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
-            this.buttonMinimizarC = new System.Windows.Forms.Button();
+            this.btnMinimizar = new System.Windows.Forms.Button();
             this.labelPedido = new System.Windows.Forms.Label();
-            this.buttonMaximizarC = new System.Windows.Forms.Button();
-            this.buttonFecharC = new System.Windows.Forms.Button();
-            this.textBoxPesquisar = new System.Windows.Forms.TextBox();
+            this.btnMaximizar = new System.Windows.Forms.Button();
+            this.btnFechar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.checkedPizzas = new System.Windows.Forms.CheckedListBox();
             this.pizzaSabor = new System.Windows.Forms.Label();
@@ -42,39 +41,40 @@
             this.checkedDoces = new System.Windows.Forms.CheckedListBox();
             this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
             this.buttonProxCardapio = new System.Windows.Forms.Button();
+            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.cbPesquisar = new System.Windows.Forms.ComboBox();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.buttonMinimizarC);
+            this.panel3.Controls.Add(this.btnMinimizar);
             this.panel3.Controls.Add(this.labelPedido);
-            this.panel3.Controls.Add(this.buttonMaximizarC);
-            this.panel3.Controls.Add(this.buttonFecharC);
+            this.panel3.Controls.Add(this.btnMaximizar);
+            this.panel3.Controls.Add(this.btnFechar);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(3);
             this.panel3.Size = new System.Drawing.Size(1266, 60);
             this.panel3.TabIndex = 11;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // buttonMinimizarC
+            // btnMinimizar
             // 
-            this.buttonMinimizarC.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonMinimizarC.FlatAppearance.BorderSize = 0;
-            this.buttonMinimizarC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMinimizarC.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World);
-            this.buttonMinimizarC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.buttonMinimizarC.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonMinimizarC.Location = new System.Drawing.Point(1182, 3);
-            this.buttonMinimizarC.Name = "buttonMinimizarC";
-            this.buttonMinimizarC.Size = new System.Drawing.Size(27, 54);
-            this.buttonMinimizarC.TabIndex = 4;
-            this.buttonMinimizarC.Text = "─";
-            this.buttonMinimizarC.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonMinimizarC.UseVisualStyleBackColor = true;
-            this.buttonMinimizarC.Click += new System.EventHandler(this.buttonMinimizarC_Click);
+            this.btnMinimizar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMinimizar.FlatAppearance.BorderSize = 0;
+            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World);
+            this.btnMinimizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnMinimizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnMinimizar.Location = new System.Drawing.Point(1182, 3);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(27, 54);
+            this.btnMinimizar.TabIndex = 4;
+            this.btnMinimizar.Text = "─";
+            this.btnMinimizar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnMinimizar.UseVisualStyleBackColor = true;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
             // labelPedido
             // 
@@ -88,51 +88,38 @@
             this.labelPedido.TabIndex = 3;
             this.labelPedido.Text = "Pedido do cliente";
             this.labelPedido.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.labelPedido.Click += new System.EventHandler(this.labelPedido_Click);
             // 
-            // buttonMaximizarC
+            // btnMaximizar
             // 
-            this.buttonMaximizarC.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonMaximizarC.FlatAppearance.BorderSize = 0;
-            this.buttonMaximizarC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonMaximizarC.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World);
-            this.buttonMaximizarC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.buttonMaximizarC.Location = new System.Drawing.Point(1209, 3);
-            this.buttonMaximizarC.Name = "buttonMaximizarC";
-            this.buttonMaximizarC.Size = new System.Drawing.Size(27, 54);
-            this.buttonMaximizarC.TabIndex = 0;
-            this.buttonMaximizarC.Text = "❐";
-            this.buttonMaximizarC.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonMaximizarC.UseVisualStyleBackColor = true;
-            this.buttonMaximizarC.Click += new System.EventHandler(this.button1_Click);
+            this.btnMaximizar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnMaximizar.FlatAppearance.BorderSize = 0;
+            this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMaximizar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World);
+            this.btnMaximizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnMaximizar.Location = new System.Drawing.Point(1209, 3);
+            this.btnMaximizar.Name = "btnMaximizar";
+            this.btnMaximizar.Size = new System.Drawing.Size(27, 54);
+            this.btnMaximizar.TabIndex = 0;
+            this.btnMaximizar.Text = "❐";
+            this.btnMaximizar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnMaximizar.UseVisualStyleBackColor = true;
+            this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
             // 
-            // buttonFecharC
+            // btnFechar
             // 
-            this.buttonFecharC.Dock = System.Windows.Forms.DockStyle.Right;
-            this.buttonFecharC.FlatAppearance.BorderSize = 0;
-            this.buttonFecharC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonFecharC.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World);
-            this.buttonFecharC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.buttonFecharC.Location = new System.Drawing.Point(1236, 3);
-            this.buttonFecharC.Name = "buttonFecharC";
-            this.buttonFecharC.Size = new System.Drawing.Size(27, 54);
-            this.buttonFecharC.TabIndex = 0;
-            this.buttonFecharC.Text = "x";
-            this.buttonFecharC.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.buttonFecharC.UseVisualStyleBackColor = true;
-            this.buttonFecharC.Click += new System.EventHandler(this.buttonFecharC_Click);
-            // 
-            // textBoxPesquisar
-            // 
-            this.textBoxPesquisar.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
-            this.textBoxPesquisar.BackColor = System.Drawing.Color.Silver;
-            this.textBoxPesquisar.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBoxPesquisar.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPesquisar.Location = new System.Drawing.Point(185, 94);
-            this.textBoxPesquisar.Name = "textBoxPesquisar";
-            this.textBoxPesquisar.Size = new System.Drawing.Size(259, 22);
-            this.textBoxPesquisar.TabIndex = 12;
-            this.textBoxPesquisar.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.btnFechar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnFechar.FlatAppearance.BorderSize = 0;
+            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFechar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World);
+            this.btnFechar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnFechar.Location = new System.Drawing.Point(1236, 3);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(27, 54);
+            this.btnFechar.TabIndex = 0;
+            this.btnFechar.Text = "x";
+            this.btnFechar.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // label1
             // 
@@ -147,8 +134,8 @@
             // 
             // checkedPizzas
             // 
-            this.checkedPizzas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.checkedPizzas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.checkedPizzas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.checkedPizzas.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -171,7 +158,6 @@
             this.checkedPizzas.Name = "checkedPizzas";
             this.checkedPizzas.Size = new System.Drawing.Size(229, 270);
             this.checkedPizzas.TabIndex = 24;
-            this.checkedPizzas.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged_1);
             // 
             // pizzaSabor
             // 
@@ -183,7 +169,6 @@
             this.pizzaSabor.Size = new System.Drawing.Size(123, 32);
             this.pizzaSabor.TabIndex = 25;
             this.pizzaSabor.Text = "Sabores";
-            this.pizzaSabor.Click += new System.EventHandler(this.label2_Click);
             // 
             // pizzaDoce
             // 
@@ -196,7 +181,6 @@
             this.pizzaDoce.Size = new System.Drawing.Size(97, 32);
             this.pizzaDoce.TabIndex = 27;
             this.pizzaDoce.Text = "Doces";
-            this.pizzaDoce.Click += new System.EventHandler(this.pizzaDoce_Click);
             // 
             // label2
             // 
@@ -209,12 +193,11 @@
             this.label2.Size = new System.Drawing.Size(122, 32);
             this.label2.TabIndex = 28;
             this.label2.Text = "Bebidas";
-            this.label2.Click += new System.EventHandler(this.label2_Click_1);
             // 
             // checkedDoces
             // 
-            this.checkedDoces.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.checkedDoces.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.checkedDoces.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.checkedDoces.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -233,12 +216,11 @@
             this.checkedDoces.Name = "checkedDoces";
             this.checkedDoces.Size = new System.Drawing.Size(229, 216);
             this.checkedDoces.TabIndex = 29;
-            this.checkedDoces.SelectedIndexChanged += new System.EventHandler(this.checkedDoces_SelectedIndexChanged);
             // 
             // checkedListBox1
             // 
-            this.checkedListBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
+            this.checkedListBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.checkedListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.checkedListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -259,7 +241,6 @@
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(324, 216);
             this.checkedListBox1.TabIndex = 30;
-            this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged_2);
             // 
             // buttonProxCardapio
             // 
@@ -273,12 +254,37 @@
             this.buttonProxCardapio.Text = "Próximo";
             this.buttonProxCardapio.UseVisualStyleBackColor = false;
             // 
-            // telaCardapio
+            // btnPesquisar
+            // 
+            this.btnPesquisar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnPesquisar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPesquisar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.btnPesquisar.Location = new System.Drawing.Point(450, 92);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(89, 26);
+            this.btnPesquisar.TabIndex = 32;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = false;
+            // 
+            // cbPesquisar
+            // 
+            this.cbPesquisar.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.cbPesquisar.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cbPesquisar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.cbPesquisar.FormattingEnabled = true;
+            this.cbPesquisar.Location = new System.Drawing.Point(185, 94);
+            this.cbPesquisar.Name = "cbPesquisar";
+            this.cbPesquisar.Size = new System.Drawing.Size(227, 21);
+            this.cbPesquisar.TabIndex = 33;
+            // 
+            // frmCardapio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.ClientSize = new System.Drawing.Size(1266, 681);
+            this.Controls.Add(this.cbPesquisar);
+            this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.buttonProxCardapio);
             this.Controls.Add(this.checkedListBox1);
             this.Controls.Add(this.checkedDoces);
@@ -287,16 +293,15 @@
             this.Controls.Add(this.pizzaSabor);
             this.Controls.Add(this.checkedPizzas);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBoxPesquisar);
             this.Controls.Add(this.panel3);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Font = new System.Drawing.Font("Arial", 8.25F);
             this.ForeColor = System.Drawing.Color.DarkOrange;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "telaCardapio";
+            this.Name = "frmCardapio";
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Load += new System.EventHandler(this.telaCardapio_Load);
+            this.Load += new System.EventHandler(this.frmCardapio_Load);
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -306,10 +311,9 @@
         #endregion
 
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button buttonFecharC;
-        private System.Windows.Forms.Button buttonMaximizarC;
+        private System.Windows.Forms.Button btnFechar;
+        private System.Windows.Forms.Button btnMaximizar;
         private System.Windows.Forms.Label labelPedido;
-        private System.Windows.Forms.TextBox textBoxPesquisar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.CheckedListBox checkedPizzas;
         private System.Windows.Forms.Label pizzaSabor;
@@ -318,7 +322,9 @@
         private System.Windows.Forms.CheckedListBox checkedDoces;
         private System.Windows.Forms.CheckedListBox checkedListBox1;
         private System.Windows.Forms.Button buttonProxCardapio;
-        private System.Windows.Forms.Button buttonMinimizarC;
+        private System.Windows.Forms.Button btnMinimizar;
+        private System.Windows.Forms.Button btnPesquisar;
+        private System.Windows.Forms.ComboBox cbPesquisar;
     }
 }
 

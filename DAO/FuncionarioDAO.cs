@@ -39,7 +39,7 @@ namespace OrderPizza.DAO
 
             return isValid;
         }
-        public void insertUsuario(String login, String senha, String email, String cpf, String tipo)
+        public void InsertUsuario(String login, String senha, String email, String cpf, String tipo)
         {
             SqlCommand cmd = new SqlCommand();
 
