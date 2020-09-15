@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace OrderPizza
@@ -12,6 +13,7 @@ namespace OrderPizza
         public frmCardapio()
         {
             InitializeComponent();
+            this.Icon = new Icon("pizza.ico");
         }
 
         private void btnMaximizar_Click(object sender, EventArgs e)

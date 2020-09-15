@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Drawing;
+using System.IO;
 using System.Windows.Forms;
 
 namespace OrderPizza
@@ -8,6 +10,8 @@ namespace OrderPizza
         public frmLogin()
         {
             InitializeComponent();
+            this.Icon = new Icon("pizza.ico");
+            
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
@@ -64,6 +68,7 @@ namespace OrderPizza
             {
                 // seta o funcionario
                 new frmCardapio().Show();
+                this.Hide();
             }
         }
 
