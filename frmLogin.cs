@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OrderPizza.DAO;
+using System;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
@@ -66,9 +67,16 @@ namespace OrderPizza
         {
             if (ValidaCampos())
             {
-                // seta o funcionario
-                new frmCardapio().Show();
-                this.Hide();
+                if (new FuncionarioDAO().Logar(txbLogin.Text, txbSenha.Text))
+                {
+                    new frmCardapio().Show();
+                    this.Hide();
+                }
+                else
+                {
+                    MessageBox.Show("login ou senha incorretos",
+                        "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 

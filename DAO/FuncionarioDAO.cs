@@ -12,12 +12,12 @@ namespace OrderPizza.DAO
 
         public FuncionarioDAO()
         {
-            this.cmd.Connection = Conexao.con;
+            cmd.Connection = new Conexao().conectar();
         }
         public bool Logar(string login, string senha)
         {
             bool isValid = false;
-            cmd.CommandText = "SELECT * FROM USUARIO WHERE USUARIO.LOGIN = @login AND USUARIO.SENHA = @senha";
+            cmd.CommandText = "SELECT * FROM FUNCIONARIO WHERE FUNCIONARIO.LOGIN = @login AND FUNCIONARIO.SENHA = @senha";
             cmd.Parameters.AddWithValue("@login", login);
             cmd.Parameters.AddWithValue("@senha", senha);
             try
@@ -28,7 +28,10 @@ namespace OrderPizza.DAO
                     isValid = true;
                     while (dr.Read()) // seta o funcionario
                     {
-                        Funcionario.id = Convert.ToInt32(dr["id"]);
+                        Funcionario.id = Convert.ToInt32(dr["idfuncionario"]);
+                        Funcionario.login = login;
+                        Funcionario.senha = senha;
+                        Funcionario.tipo = Convert.ToString(dr["tipo"]);
                     }
                 }
             }
