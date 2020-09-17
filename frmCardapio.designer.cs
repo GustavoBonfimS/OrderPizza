@@ -144,16 +144,9 @@
             this.checkedPizzas.FormattingEnabled = true;
             this.checkedPizzas.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.checkedPizzas.Items.AddRange(new object[] {
-            "4 Queijos",
-            "Calabacon\t",
-            "Calabresa  ",
-            "Frango com catupiry",
-            "Marguerita",
-            "Moda da casa",
-            "Napolitana",
-            "Peperona",
-            "Portuguesa",
-            "Strogonoff"});
+            "produto1",
+            "produto2",
+            "produto3"});
             this.checkedPizzas.Location = new System.Drawing.Point(76, 293);
             this.checkedPizzas.Name = "checkedPizzas";
             this.checkedPizzas.Size = new System.Drawing.Size(229, 270);
@@ -206,12 +199,9 @@
             this.checkedDoces.FormattingEnabled = true;
             this.checkedDoces.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.checkedDoces.Items.AddRange(new object[] {
-            "Brigadeiro",
-            "Beijinho",
-            "Morango c/ chocolate",
-            "Banana c/ chocolate",
-            "Coco c/ chocolate",
-            "Prestígio"});
+            "produto1",
+            "produto2",
+            "produto3"});
             this.checkedDoces.Location = new System.Drawing.Point(448, 293);
             this.checkedDoces.Name = "checkedDoces";
             this.checkedDoces.Size = new System.Drawing.Size(229, 216);
@@ -229,14 +219,9 @@
             this.checkedBebidaas.FormattingEnabled = true;
             this.checkedBebidaas.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.checkedBebidaas.Items.AddRange(new object[] {
-            "Água 500ml",
-            "Coca cola 600ml",
-            "Coco cola 2L",
-            "Guaraná antártica 600 ml",
-            "Guaraná antártica 2L",
-            "Heinekeen long neck",
-            "Skol lata ",
-            "Sucos (laranja, limão, abacaxi)"});
+            "bebida1",
+            "bebida2",
+            "bebida3"});
             this.checkedBebidaas.Location = new System.Drawing.Point(878, 293);
             this.checkedBebidaas.Name = "checkedBebidaas";
             this.checkedBebidaas.Size = new System.Drawing.Size(324, 216);

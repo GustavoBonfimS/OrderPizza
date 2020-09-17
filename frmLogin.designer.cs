@@ -54,7 +54,7 @@
             this.btnLogin.Location = new System.Drawing.Point(121, 356);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(120, 35);
-            this.btnLogin.TabIndex = 4;
+            this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Entrar";
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
@@ -98,7 +98,7 @@
             this.panel1.Location = new System.Drawing.Point(89, 245);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 1);
-            this.panel1.TabIndex = 8;
+            this.panel1.TabIndex = 0;
             // 
             // panel2
             // 
@@ -106,7 +106,7 @@
             this.panel2.Location = new System.Drawing.Point(89, 295);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(200, 1);
-            this.panel2.TabIndex = 9;
+            this.panel2.TabIndex = 0;
             // 
             // panel3
             // 
@@ -117,7 +117,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(3);
             this.panel3.Size = new System.Drawing.Size(369, 33);
-            this.panel3.TabIndex = 10;
+            this.panel3.TabIndex = 0;
             // 
             // btnMinimizar
             // 
@@ -129,7 +129,7 @@
             this.btnMinimizar.Location = new System.Drawing.Point(315, 3);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(27, 27);
-            this.btnMinimizar.TabIndex = 1;
+            this.btnMinimizar.TabIndex = 0;
             this.btnMinimizar.Text = "─";
             this.btnMinimizar.UseVisualStyleBackColor = true;
             this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
@@ -157,7 +157,7 @@
             this.txbLogin.Location = new System.Drawing.Point(121, 226);
             this.txbLogin.Name = "txbLogin";
             this.txbLogin.Size = new System.Drawing.Size(168, 13);
-            this.txbLogin.TabIndex = 11;
+            this.txbLogin.TabIndex = 1;
             this.txbLogin.Text = "usuario";
             this.txbLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txbLogin.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txbLogin_MouseClick);
@@ -172,7 +172,7 @@
             this.txbSenha.Name = "txbSenha";
             this.txbSenha.PasswordChar = '*';
             this.txbSenha.Size = new System.Drawing.Size(168, 13);
-            this.txbSenha.TabIndex = 12;
+            this.txbSenha.TabIndex = 2;
             this.txbSenha.Text = "senha";
             this.txbSenha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txbSenha.UseSystemPasswordChar = true;

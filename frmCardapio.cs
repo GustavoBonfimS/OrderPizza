@@ -40,7 +40,6 @@ namespace OrderPizza
 
         private void setProdutos()
         {
-            /*
             List<Produto> produtos = this.produtoDAO.listProdutos();
             checkedPizzas.Items.Clear();
             checkedDoces.Items.Clear();
@@ -60,7 +59,6 @@ namespace OrderPizza
                         break;
                 }
             }
-            */
         }
     }
 }

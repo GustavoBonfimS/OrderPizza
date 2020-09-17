@@ -12,13 +12,13 @@ namespace OrderPizza
         {
             InitializeComponent();
             this.Icon = new Icon("pizza.ico");
-            
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
             txbLogin.LostFocus += TxbLogin_LostFocus;
             txbSenha.LostFocus += TxbSenha_LostFocus;
+            txbLogin.Focus();
         }
 
         private void txbLogin_MouseClick(object sender, MouseEventArgs e)
@@ -65,6 +65,14 @@ namespace OrderPizza
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            if (txbLogin.Text == "usuario")
+            {
+                txbLogin.Text = null;
+            }
+            if (txbSenha.Text == "senha")
+            {
+                txbSenha.Text = null;
+            }
             if (ValidaCampos())
             {
                 if (new FuncionarioDAO().Logar(txbLogin.Text, txbSenha.Text))
@@ -84,7 +92,8 @@ namespace OrderPizza
         {
             if (String.IsNullOrEmpty(txbLogin.Text))
             {
-                MessageBox.Show("Campo *login orbigatório");
+                MessageBox.Show("Campo *login obrigatório", "Erro de login",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txbLogin.Focus();
                 return false;
             }
