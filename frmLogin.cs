@@ -74,7 +74,7 @@ namespace OrderPizza
                 }
                 else
                 {
-                    MessageBox.Show("login ou senha incorretos",
+                    MessageBox.Show("login ou senha incorretos.",
                         "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
@@ -96,5 +96,13 @@ namespace OrderPizza
             }
             return true;
         }
+
+        private void txb_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin.PerformClick();
+            }
+        }   
     }
 }

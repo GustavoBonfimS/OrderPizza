@@ -39,7 +39,7 @@
             this.pizzaDoce = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.checkedDoces = new System.Windows.Forms.CheckedListBox();
-            this.checkedListBox1 = new System.Windows.Forms.CheckedListBox();
+            this.checkedBebidaas = new System.Windows.Forms.CheckedListBox();
             this.buttonProxCardapio = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.cbPesquisar = new System.Windows.Forms.ComboBox();
@@ -217,18 +217,18 @@
             this.checkedDoces.Size = new System.Drawing.Size(229, 216);
             this.checkedDoces.TabIndex = 29;
             // 
-            // checkedListBox1
+            // checkedBebidaas
             // 
-            this.checkedListBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.checkedBebidaas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkedListBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.checkedListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.checkedListBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkedListBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.checkedListBox1.FormattingEnabled = true;
-            this.checkedListBox1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.checkedListBox1.Items.AddRange(new object[] {
+            this.checkedBebidaas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.checkedBebidaas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checkedBebidaas.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkedBebidaas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.checkedBebidaas.FormattingEnabled = true;
+            this.checkedBebidaas.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.checkedBebidaas.Items.AddRange(new object[] {
             "Água 500ml",
             "Coca cola 600ml",
             "Coco cola 2L",
@@ -237,10 +237,10 @@
             "Heinekeen long neck",
             "Skol lata ",
             "Sucos (laranja, limão, abacaxi)"});
-            this.checkedListBox1.Location = new System.Drawing.Point(878, 293);
-            this.checkedListBox1.Name = "checkedListBox1";
-            this.checkedListBox1.Size = new System.Drawing.Size(324, 216);
-            this.checkedListBox1.TabIndex = 30;
+            this.checkedBebidaas.Location = new System.Drawing.Point(878, 293);
+            this.checkedBebidaas.Name = "checkedBebidaas";
+            this.checkedBebidaas.Size = new System.Drawing.Size(324, 216);
+            this.checkedBebidaas.TabIndex = 30;
             // 
             // buttonProxCardapio
             // 
@@ -286,7 +286,7 @@
             this.Controls.Add(this.cbPesquisar);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.buttonProxCardapio);
-            this.Controls.Add(this.checkedListBox1);
+            this.Controls.Add(this.checkedBebidaas);
             this.Controls.Add(this.checkedDoces);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pizzaDoce);
@@ -320,7 +320,7 @@
         private System.Windows.Forms.Label pizzaDoce;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckedListBox checkedDoces;
-        private System.Windows.Forms.CheckedListBox checkedListBox1;
+        private System.Windows.Forms.CheckedListBox checkedBebidaas;
         private System.Windows.Forms.Button buttonProxCardapio;
         private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.Button btnPesquisar;

@@ -161,6 +161,7 @@
             this.txbLogin.Text = "usuario";
             this.txbLogin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txbLogin.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txbLogin_MouseClick);
+            this.txbLogin.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_KeyDown);
             // 
             // txbSenha
             // 
@@ -176,6 +177,7 @@
             this.txbSenha.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txbSenha.UseSystemPasswordChar = true;
             this.txbSenha.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txbSenha_MouseClick);
+            this.txbSenha.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txb_KeyDown);
             // 
             // frmLogin
             // 

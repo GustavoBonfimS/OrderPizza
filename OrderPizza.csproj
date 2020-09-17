@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="DAO\Conexao.cs" />
     <Compile Include="DAO\FuncionarioDAO.cs" />
+    <Compile Include="DAO\ProdutoDAO.cs" />
     <Compile Include="frmCardapio.cs">
       <SubType>Form</SubType>
     </Compile>
