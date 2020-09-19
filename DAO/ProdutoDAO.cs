@@ -47,5 +47,24 @@ namespace OrderPizza.DAO
             }
             return retorno;
         }
-    }
+            public void InsertProduto(String nome, String descricao, double preco, String tipo, String tamanho)
+            {
+                SqlCommand cmd = new SqlCommand();
+
+                cmd.CommandText = "INSERT INTO PRODUTO (NOME, DESCRICAO, PRECO, TIPO, TAMANHO) VALUES(@NOME, @DESCRICAO, @PRECO, @TIPO, @TAMANHO)";
+                cmd.Parameters.AddWithValue("@NOME", nome);
+                cmd.Parameters.AddWithValue("@DESCRICAO", descricao);
+                cmd.Parameters.AddWithValue("@PRECO", preco);
+                cmd.Parameters.AddWithValue("@TIPO", tipo);
+                cmd.Parameters.AddWithValue("@TAMANHO", tamanho);
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
 }

@@ -43,6 +43,7 @@
             this.buttonProxCardapio = new System.Windows.Forms.Button();
             this.btnPesquisar = new System.Windows.Forms.Button();
             this.cbPesquisar = new System.Windows.Forms.ComboBox();
+            this.btnBackdoor = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -262,12 +263,23 @@
             this.cbPesquisar.Size = new System.Drawing.Size(227, 21);
             this.cbPesquisar.TabIndex = 33;
             // 
+            // btnBackdoor
+            // 
+            this.btnBackdoor.Location = new System.Drawing.Point(21, 504);
+            this.btnBackdoor.Name = "btnBackdoor";
+            this.btnBackdoor.Size = new System.Drawing.Size(75, 23);
+            this.btnBackdoor.TabIndex = 34;
+            this.btnBackdoor.Text = "ADMIN";
+            this.btnBackdoor.UseVisualStyleBackColor = true;
+            this.btnBackdoor.Click += new System.EventHandler(this.btnBackdoor_Click);
+            // 
             // frmCardapio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.ClientSize = new System.Drawing.Size(1266, 681);
+            this.Controls.Add(this.btnBackdoor);
             this.Controls.Add(this.cbPesquisar);
             this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.buttonProxCardapio);
@@ -310,6 +322,7 @@
         private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.ComboBox cbPesquisar;
+        private System.Windows.Forms.Button btnBackdoor;
     }
 }
 

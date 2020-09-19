@@ -11,7 +11,7 @@ namespace OrderPizza
         public frmLogin()
         {
             InitializeComponent();
-            this.Icon = new Icon("pizza.ico");
+            //this.Icon = new Icon("pizza.ico");
         }
 
         private void frmLogin_Load(object sender, EventArgs e)

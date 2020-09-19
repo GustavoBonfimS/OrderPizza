@@ -13,7 +13,7 @@ namespace OrderPizza
         public frmCardapio()
         {
             InitializeComponent();
-            this.Icon = new Icon("pizza.ico");
+            //this.Icon = new Icon("pizza.ico");
         }
 
         private void btnMaximizar_Click(object sender, EventArgs e)
@@ -59,6 +59,11 @@ namespace OrderPizza
                         break;
                 }
             }
+        }
+
+        private void btnBackdoor_Click(object sender, EventArgs e)
+        {
+           new frmAdmin().Show();
         }
     }
 }
