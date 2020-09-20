@@ -41,7 +41,6 @@
             this.checkedDoces = new System.Windows.Forms.CheckedListBox();
             this.checkedBebidaas = new System.Windows.Forms.CheckedListBox();
             this.buttonProxCardapio = new System.Windows.Forms.Button();
-            this.btnPesquisar = new System.Windows.Forms.Button();
             this.cbPesquisar = new System.Windows.Forms.ComboBox();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -151,6 +150,7 @@
             this.checkedPizzas.Name = "checkedPizzas";
             this.checkedPizzas.Size = new System.Drawing.Size(229, 270);
             this.checkedPizzas.TabIndex = 24;
+            this.checkedPizzas.SelectedValueChanged += new System.EventHandler(this.checkedPizzas_SelectedValueChanged);
             // 
             // pizzaSabor
             // 
@@ -239,18 +239,6 @@
             this.buttonProxCardapio.Text = "Próximo";
             this.buttonProxCardapio.UseVisualStyleBackColor = false;
             // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnPesquisar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPesquisar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.btnPesquisar.Location = new System.Drawing.Point(450, 92);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(89, 26);
-            this.btnPesquisar.TabIndex = 32;
-            this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.UseVisualStyleBackColor = false;
-            // 
             // cbPesquisar
             // 
             this.cbPesquisar.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
@@ -269,7 +257,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.ClientSize = new System.Drawing.Size(1266, 681);
             this.Controls.Add(this.cbPesquisar);
-            this.Controls.Add(this.btnPesquisar);
             this.Controls.Add(this.buttonProxCardapio);
             this.Controls.Add(this.checkedBebidaas);
             this.Controls.Add(this.checkedDoces);
@@ -308,7 +295,6 @@
         private System.Windows.Forms.CheckedListBox checkedBebidaas;
         private System.Windows.Forms.Button buttonProxCardapio;
         private System.Windows.Forms.Button btnMinimizar;
-        private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.ComboBox cbPesquisar;
     }
 }

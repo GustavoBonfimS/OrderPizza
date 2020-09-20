@@ -18,7 +18,7 @@ namespace OrderPizza
         {
             txbLogin.LostFocus += TxbLogin_LostFocus;
             txbSenha.LostFocus += TxbSenha_LostFocus;
-            txbLogin.Focus();
+            //txbLogin.Focus();
         }
 
         private void txbLogin_MouseClick(object sender, MouseEventArgs e)

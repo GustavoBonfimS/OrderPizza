@@ -9,6 +9,7 @@ namespace OrderPizza
 {
     public partial class frmCardapio : Form
     {
+        private List<Produto> checkedPizzaas = new List<Produto>();
         private ProdutoDAO produtoDAO = new ProdutoDAO();
         public frmCardapio()
         {
@@ -58,6 +59,14 @@ namespace OrderPizza
                         checkedBebidaas.Items.Add(item.nome);
                         break;
                 }
+            }
+        }
+
+        private void checkedPizzas_SelectedValueChanged(object sender, EventArgs e)
+        {
+            foreach (var item in checkedPizzas.CheckedItems)
+            {
+                // retorna os items que estao checkados          
             }
         }
     }
