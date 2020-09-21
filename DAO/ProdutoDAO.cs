@@ -49,9 +49,11 @@ namespace OrderPizza.DAO
         }
             public void InsertProduto(String nome, String descricao, double preco, String tipo, String tamanho)
             {
-                SqlCommand cmd = new SqlCommand();
+            SqlCommand cmd = new SqlCommand() ;
+            Conexao conexao = new Conexao();
 
-                cmd.CommandText = "INSERT INTO PRODUTO (NOME, DESCRICAO, PRECO, TIPO, TAMANHO) VALUES(@NOME, @DESCRICAO, @PRECO, @TIPO, @TAMANHO)";
+
+            cmd.CommandText = "INSERT INTO PRODUTO (NOME, DESCRICAO, PRECO, TIPO, TAMANHO) VALUES(@NOME, @DESCRICAO, @PRECO, @TIPO, @TAMANHO)";
                 cmd.Parameters.AddWithValue("@NOME", nome);
                 cmd.Parameters.AddWithValue("@DESCRICAO", descricao);
                 cmd.Parameters.AddWithValue("@PRECO", preco);
@@ -59,7 +61,8 @@ namespace OrderPizza.DAO
                 cmd.Parameters.AddWithValue("@TAMANHO", tamanho);
                 try
                 {
-                    cmd.ExecuteNonQuery();
+                cmd.Connection = conexao.conectar();
+                cmd.ExecuteNonQuery();
                 }
                 catch (SqlException ex)
                 {
