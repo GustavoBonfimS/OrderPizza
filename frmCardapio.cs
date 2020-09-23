@@ -106,6 +106,12 @@ namespace OrderPizza
             }
         }
 
+        private void btnBackdoor_Click(object sender, EventArgs e)
+        {
+           new frmAdmin().Show();
+        }
+        
+        
         private void SetItemsCheckOnCarrinho(CheckedListBox list, ItemCheckEventArgs e)
         {
             if (list.GetItemCheckState(e.Index) == CheckState.Unchecked)

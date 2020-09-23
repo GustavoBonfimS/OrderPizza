@@ -42,6 +42,7 @@
             this.checkedBebidas = new System.Windows.Forms.CheckedListBox();
             this.btnProximo = new System.Windows.Forms.Button();
             this.cbPesquisar = new System.Windows.Forms.ComboBox();
+            this.btnBackdoor = new System.Windows.Forms.Button();
             this.lbTotal = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
@@ -258,6 +259,15 @@
             this.cbPesquisar.Size = new System.Drawing.Size(227, 21);
             this.cbPesquisar.TabIndex = 33;
             // 
+            // btnBackdoor
+            // 
+            this.btnBackdoor.Location = new System.Drawing.Point(21, 504);
+            this.btnBackdoor.Name = "btnBackdoor";
+            this.btnBackdoor.Size = new System.Drawing.Size(75, 23);
+            this.btnBackdoor.TabIndex = 34;
+            this.btnBackdoor.Text = "ADMIN";
+            this.btnBackdoor.UseVisualStyleBackColor = true;
+            this.btnBackdoor.Click += new System.EventHandler(this.btnBackdoor_Click);
             // lbTotal
             // 
             this.lbTotal.AutoSize = true;
@@ -284,6 +294,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.ClientSize = new System.Drawing.Size(1266, 681);
+            this.Controls.Add(this.btnBackdoor);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbTotal);
             this.Controls.Add(this.cbPesquisar);
@@ -326,6 +337,7 @@
         private System.Windows.Forms.Button btnProximo;
         private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.ComboBox cbPesquisar;
+        private System.Windows.Forms.Button btnBackdoor;
         private System.Windows.Forms.Label lbTotal;
         private System.Windows.Forms.Label label3;
     }
