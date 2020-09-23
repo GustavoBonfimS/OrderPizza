@@ -117,7 +117,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(3);
             this.panel3.Size = new System.Drawing.Size(369, 33);
-            this.panel3.TabIndex = 0;
+            this.panel3.TabIndex = 4;
             // 
             // btnMinimizar
             // 

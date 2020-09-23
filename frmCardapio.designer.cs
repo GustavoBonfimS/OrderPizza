@@ -39,11 +39,12 @@
             this.pizzaDoce = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.checkedDoces = new System.Windows.Forms.CheckedListBox();
-            this.checkedBebidaas = new System.Windows.Forms.CheckedListBox();
-            this.buttonProxCardapio = new System.Windows.Forms.Button();
-            this.btnPesquisar = new System.Windows.Forms.Button();
+            this.checkedBebidas = new System.Windows.Forms.CheckedListBox();
+            this.btnProximo = new System.Windows.Forms.Button();
             this.cbPesquisar = new System.Windows.Forms.ComboBox();
             this.btnBackdoor = new System.Windows.Forms.Button();
+            this.lbTotal = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -140,6 +141,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.checkedPizzas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.checkedPizzas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checkedPizzas.CheckOnClick = true;
             this.checkedPizzas.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkedPizzas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.checkedPizzas.FormattingEnabled = true;
@@ -152,6 +154,7 @@
             this.checkedPizzas.Name = "checkedPizzas";
             this.checkedPizzas.Size = new System.Drawing.Size(229, 270);
             this.checkedPizzas.TabIndex = 24;
+            this.checkedPizzas.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedPizzas_ItemCheck);
             // 
             // pizzaSabor
             // 
@@ -195,6 +198,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.checkedDoces.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.checkedDoces.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checkedDoces.CheckOnClick = true;
             this.checkedDoces.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkedDoces.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.checkedDoces.FormattingEnabled = true;
@@ -207,50 +211,42 @@
             this.checkedDoces.Name = "checkedDoces";
             this.checkedDoces.Size = new System.Drawing.Size(229, 216);
             this.checkedDoces.TabIndex = 29;
+            this.checkedDoces.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedDoces_ItemCheck);
             // 
-            // checkedBebidaas
+            // checkedBebidas
             // 
-            this.checkedBebidaas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.checkedBebidas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkedBebidaas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.checkedBebidaas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.checkedBebidaas.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkedBebidaas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.checkedBebidaas.FormattingEnabled = true;
-            this.checkedBebidaas.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.checkedBebidaas.Items.AddRange(new object[] {
+            this.checkedBebidas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.checkedBebidas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checkedBebidas.CheckOnClick = true;
+            this.checkedBebidas.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkedBebidas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.checkedBebidas.FormattingEnabled = true;
+            this.checkedBebidas.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.checkedBebidas.Items.AddRange(new object[] {
             "bebida1",
             "bebida2",
             "bebida3"});
-            this.checkedBebidaas.Location = new System.Drawing.Point(878, 293);
-            this.checkedBebidaas.Name = "checkedBebidaas";
-            this.checkedBebidaas.Size = new System.Drawing.Size(324, 216);
-            this.checkedBebidaas.TabIndex = 30;
+            this.checkedBebidas.Location = new System.Drawing.Point(878, 293);
+            this.checkedBebidas.Name = "checkedBebidas";
+            this.checkedBebidas.Size = new System.Drawing.Size(324, 216);
+            this.checkedBebidas.TabIndex = 30;
+            this.checkedBebidas.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedBebidas_ItemCheck);
             // 
-            // buttonProxCardapio
+            // btnProximo
             // 
-            this.buttonProxCardapio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.buttonProxCardapio.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonProxCardapio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.buttonProxCardapio.Location = new System.Drawing.Point(1089, 622);
-            this.buttonProxCardapio.Name = "buttonProxCardapio";
-            this.buttonProxCardapio.Size = new System.Drawing.Size(120, 35);
-            this.buttonProxCardapio.TabIndex = 31;
-            this.buttonProxCardapio.Text = "Próximo";
-            this.buttonProxCardapio.UseVisualStyleBackColor = false;
-            // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnPesquisar.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPesquisar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.btnPesquisar.Location = new System.Drawing.Point(450, 92);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(89, 26);
-            this.btnPesquisar.TabIndex = 32;
-            this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.UseVisualStyleBackColor = false;
+            this.btnProximo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnProximo.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProximo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.btnProximo.Location = new System.Drawing.Point(1089, 622);
+            this.btnProximo.Name = "btnProximo";
+            this.btnProximo.Size = new System.Drawing.Size(120, 35);
+            this.btnProximo.TabIndex = 31;
+            this.btnProximo.Text = "Próximo";
+            this.btnProximo.UseVisualStyleBackColor = false;
+            this.btnProximo.Click += new System.EventHandler(this.btnProximo_Click);
             // 
             // cbPesquisar
             // 
@@ -272,6 +268,25 @@
             this.btnBackdoor.Text = "ADMIN";
             this.btnBackdoor.UseVisualStyleBackColor = true;
             this.btnBackdoor.Click += new System.EventHandler(this.btnBackdoor_Click);
+            // lbTotal
+            // 
+            this.lbTotal.AutoSize = true;
+            this.lbTotal.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotal.Location = new System.Drawing.Point(885, 622);
+            this.lbTotal.Name = "lbTotal";
+            this.lbTotal.Size = new System.Drawing.Size(68, 32);
+            this.lbTotal.TabIndex = 34;
+            this.lbTotal.Text = "0,00";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(715, 621);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(167, 32);
+            this.label3.TabIndex = 35;
+            this.label3.Text = "Valor total: ";
             // 
             // frmCardapio
             // 
@@ -280,10 +295,11 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.ClientSize = new System.Drawing.Size(1266, 681);
             this.Controls.Add(this.btnBackdoor);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.lbTotal);
             this.Controls.Add(this.cbPesquisar);
-            this.Controls.Add(this.btnPesquisar);
-            this.Controls.Add(this.buttonProxCardapio);
-            this.Controls.Add(this.checkedBebidaas);
+            this.Controls.Add(this.btnProximo);
+            this.Controls.Add(this.checkedBebidas);
             this.Controls.Add(this.checkedDoces);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pizzaDoce);
@@ -317,12 +333,13 @@
         private System.Windows.Forms.Label pizzaDoce;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckedListBox checkedDoces;
-        private System.Windows.Forms.CheckedListBox checkedBebidaas;
-        private System.Windows.Forms.Button buttonProxCardapio;
+        private System.Windows.Forms.CheckedListBox checkedBebidas;
+        private System.Windows.Forms.Button btnProximo;
         private System.Windows.Forms.Button btnMinimizar;
-        private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.ComboBox cbPesquisar;
         private System.Windows.Forms.Button btnBackdoor;
+        private System.Windows.Forms.Label lbTotal;
+        private System.Windows.Forms.Label label3;
     }
 }
 
