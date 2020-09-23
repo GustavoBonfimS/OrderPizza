@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -34,15 +35,29 @@ namespace OrderPizza
             {
                 MessageBox.Show("Um dos Campos exigidos está vazio!!");
             }
-            else { 
-            nome = txbNome.Text;
-            descricao = txbDescricao.Text;
-            preco = Convert.ToDouble(txbPreco.Text);
-            tipo = txbTipo.Text;
-            tamanho = txbTamanho.Text;
-            var dao = new ProdutoDAO();
-            dao.InsertProduto(nome, descricao, preco, tipo, tamanho);
-                MessageBox.Show("Produto cadastrado com sucesso");
+            else
+            {
+                nome = txbNome.Text;
+                descricao = txbDescricao.Text;
+                preco = Convert.ToDouble(txbPreco.Text);
+                tipo = txbTipo.Text;
+                tamanho = txbTamanho.Text;
+                var dao = new ProdutoDAO();
+
+                if (Math.Abs(preco % 1) <= (Double.Epsilon * 100))
+                {
+                    MessageBox.Show("Represente virgula ao inves de ponto para representar" +
+                        "as casas decimais!", "Erro",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txbTipo.Focus();
+                    return;
+                }
+
+                if (dao.InsertProduto(nome, descricao, preco, tipo, tamanho))
+                {
+                    MessageBox.Show("Cadastrado com sucesso!", "Sucesso!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                };
             }
         }
     }
