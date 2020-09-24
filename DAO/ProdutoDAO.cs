@@ -34,7 +34,7 @@ namespace OrderPizza.DAO
                             nome = Convert.ToString(dr["NOME"]),
                             preco = Convert.ToDouble(dr["PRECO"]),
                             descricao = Convert.ToString("DESCRICAO"),
-                            tamanho = Convert.ToString("TAMANHO"),
+                            tamanho = Convert.ToString(dr["TAMANHO"]),
                             tipo = Convert.ToString(dr["TIPO"])
                         };
                         retorno.Add(item);

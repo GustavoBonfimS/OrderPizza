@@ -109,19 +109,19 @@ namespace OrderPizza
         {
             checkedPizzas.Items.Clear();
             checkedDoces.Items.Clear();
-            checkedDoces.Items.Clear();
+            checkedBebidas.Items.Clear();
             foreach (var item in produtos)
             {
                 switch (item.tipo.ToLower())
                 {
                     case "tradicional":
-                        checkedPizzas.Items.Add(item.nome);
+                        checkedPizzas.Items.Add(item.nome + " - " + item.tamanho);
                         break;
                     case "doce":
-                        checkedDoces.Items.Add(item.nome);
+                        checkedDoces.Items.Add(item.nome + " - " + item.tamanho);
                         break;
                     case "bebida":
-                        checkedBebidas.Items.Add(item.nome);
+                        checkedBebidas.Items.Add(item.nome + " - " + item.tamanho);
                         break;
                 }
             }
@@ -135,16 +135,24 @@ namespace OrderPizza
 
         private void SetItemsCheckOnCarrinho(CheckedListBox list, ItemCheckEventArgs e)
         {
-            if (list.GetItemCheckState(e.Index) == CheckState.Unchecked)
+            try
             {
-                // foi marcado agora
-                this.carrinho.Add(this.produtos.Where(prod => prod.nome == list.Items[e.Index].ToString()).ToArray()[0]);
-            }
+                var nome = list.Items[e.Index].ToString().Split('-')[0].Trim();
+                if (list.GetItemCheckState(e.Index) == CheckState.Unchecked)
+                {
+                    // foi marcado agora
+                    this.carrinho.Add(this.produtos.Where(prod => prod.nome == nome).ToArray()[0]);
+                }
 
-            if (list.GetItemCheckState(e.Index) == CheckState.Checked)
+                if (list.GetItemCheckState(e.Index) == CheckState.Checked)
+                {
+                    // foi desmarcado agora
+                    this.carrinho.Remove(this.produtos.Where(prod => prod.nome == nome).ToArray()[0]);
+                }
+            }
+            catch (Exception ex)
             {
-                // foi desmarcado agora
-                this.carrinho.Remove(this.produtos.Where(prod => prod.nome == list.Items[e.Index].ToString()).ToArray()[0]);
+                MessageBox.Show(ex.Message, "erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
