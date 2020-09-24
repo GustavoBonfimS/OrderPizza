@@ -252,11 +252,11 @@
             // 
             this.cbPesquisar.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.cbPesquisar.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbPesquisar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.Simple;
+            this.cbPesquisar.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbPesquisar.FormattingEnabled = true;
             this.cbPesquisar.Location = new System.Drawing.Point(185, 94);
             this.cbPesquisar.Name = "cbPesquisar";
-            this.cbPesquisar.Size = new System.Drawing.Size(227, 21);
+            this.cbPesquisar.Size = new System.Drawing.Size(227, 22);
             this.cbPesquisar.TabIndex = 33;
             // 
             // btnBackdoor
@@ -268,6 +268,7 @@
             this.btnBackdoor.Text = "ADMIN";
             this.btnBackdoor.UseVisualStyleBackColor = true;
             this.btnBackdoor.Click += new System.EventHandler(this.btnBackdoor_Click);
+            // 
             // lbTotal
             // 
             this.lbTotal.AutoSize = true;

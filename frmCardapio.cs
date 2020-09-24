@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using System.Linq;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
+using System.Windows.Controls;
 
 namespace OrderPizza
 {
@@ -18,21 +19,41 @@ namespace OrderPizza
 
         public frmCardapio()
         {
-            this.Icon = new Icon("pizza.ico");
+            //this.Icon = new Icon("pizza.ico");
             InitializeComponent();
 
             produtos = new List<Produto>();
             carrinho = new ObservableCollection<Produto>();
             this.produtos = this.produtoDAO.listProdutos();
+            cbPesquisar.DropDownStyle = ComboBoxStyle.DropDown;
+            cbPesquisar.DataSource = produtos.Select(prod => prod.nome).ToArray();
+            cbPesquisar.SelectedItem = null;
+            cbPesquisar.SelectionChangeCommitted += CbPesquisar_SelectionChangeCommitted;
 
             carrinho.CollectionChanged += carrinho_CollectionChanged;
         }
 
+        private void CbPesquisar_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            MessageBox.Show("event");
+        }
+
         private void frmCardapio_Load(object sender, EventArgs e)
         {
-            cbPesquisar.SelectedItem = null;
             setProdutos();
+            cbPesquisar.TextChanged += CbPesquisar_TextChanged;
+        }
 
+        private void CbPesquisar_TextChanged(object sender, EventArgs e)
+        {
+            var txt = cbPesquisar.Text;
+            var prod = produtos.Where(item => item.nome == txt).ToArray();
+            if (prod.Length > 0)
+            {
+                markItemChecked(prod[0]);
+                cbPesquisar.Text = null;
+                cbPesquisar.Focus();
+            }
         }
 
         private void carrinho_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
@@ -108,10 +129,10 @@ namespace OrderPizza
 
         private void btnBackdoor_Click(object sender, EventArgs e)
         {
-           new frmAdmin().Show();
+            new frmAdmin().Show();
         }
-        
-        
+
+
         private void SetItemsCheckOnCarrinho(CheckedListBox list, ItemCheckEventArgs e)
         {
             if (list.GetItemCheckState(e.Index) == CheckState.Unchecked)
@@ -124,6 +145,40 @@ namespace OrderPizza
             {
                 // foi desmarcado agora
                 this.carrinho.Remove(this.produtos.Where(prod => prod.nome == list.Items[e.Index].ToString()).ToArray()[0]);
+            }
+        }
+
+        private void markItemChecked(Produto prod)
+        {
+            switch (prod.tipo.ToLower())
+            {
+                case "tradicional":
+                    var index = checkedPizzas.Items.IndexOf(prod.nome);
+                    var state = true;
+                    if (checkedPizzas.GetItemCheckState(index) == CheckState.Checked)
+                    {
+                        state = false;
+                    }
+                    checkedPizzas.SetItemChecked(index, state);
+                    break;
+                case "doce":
+                    var indexDoce = checkedDoces.Items.IndexOf(prod.nome);
+                    var stateDoce = true;
+                    if (checkedDoces.GetItemCheckState(indexDoce) == CheckState.Checked)
+                    {
+                        stateDoce = false;
+                    }
+                    checkedDoces.SetItemChecked(indexDoce, stateDoce);
+                    break;
+                case "bebida":
+                    var indexBebida = checkedBebidas.Items.IndexOf(prod.nome);
+                    var stateBebida = true;
+                    if (checkedBebidas.GetItemCheckState(indexBebida) == CheckState.Checked)
+                    {
+                        stateBebida = false;
+                    }
+                    checkedBebidas.SetItemChecked(indexBebida, stateBebida);
+                    break;
             }
         }
     }
