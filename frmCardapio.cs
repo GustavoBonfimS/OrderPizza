@@ -129,7 +129,7 @@ namespace OrderPizza
 
         private void btnBackdoor_Click(object sender, EventArgs e)
         {
-            new frmAdmin().Show();
+            new frmCadastro().Show();
         }
 
 

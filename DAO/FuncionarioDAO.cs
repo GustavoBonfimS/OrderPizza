@@ -42,25 +42,27 @@ namespace OrderPizza.DAO
 
             return isValid;
         }
-        public void InsertUsuario(String login, String senha, String email, String cpf, String tipo)
+        public bool InsertUsuario(String login, String senha, String tipo)
         {
             SqlCommand cmd = new SqlCommand();
+            Conexao conexao = new Conexao();
+            var retorno = false;
 
-            cmd.CommandText = "INSERT INTO USUARIO (LOGIN, SENHA, CPF, EMAIL, TIPO, COMISSAO) VALUES(@LOGIN, @SENHA, @CPF, @EMAIL, @TIPO, @COMISSAO)";
+            cmd.CommandText = "INSERT INTO FUNCIONARIO(LOGIN, SENHA,TIPO) VALUES(@LOGIN, @SENHA, @TIPO)";
             cmd.Parameters.AddWithValue("@LOGIN", login);
             cmd.Parameters.AddWithValue("@SENHA", senha);
-            cmd.Parameters.AddWithValue("@CPF", cpf);
-            cmd.Parameters.AddWithValue("@EMAIL", email);
-            cmd.Parameters.AddWithValue("@TIPO", tipo);
-            cmd.Parameters.AddWithValue("@COMISSAO", 0);
+            cmd.Parameters.AddWithValue("@Tipo", tipo);
             try
             {
+                cmd.Connection = conexao.conectar();
                 cmd.ExecuteNonQuery();
+                retorno = true;
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            return retorno;
         }
 
     }
