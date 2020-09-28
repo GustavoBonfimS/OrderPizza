@@ -1,6 +1,6 @@
 ﻿namespace OrderPizza
 {
-    partial class frmAdmin
+    partial class frmCadastro
     {
         /// <summary>
         /// Required designer variable.
