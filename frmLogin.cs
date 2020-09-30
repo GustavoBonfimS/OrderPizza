@@ -1,4 +1,5 @@
 ﻿using OrderPizza.DAO;
+using OrderPizza.Model;
 using System;
 using System.Drawing;
 using System.IO;
@@ -77,7 +78,14 @@ namespace OrderPizza
             {
                 if (new FuncionarioDAO().Logar(txbLogin.Text, txbSenha.Text))
                 {
-                    new frmCardapio().Show();
+                    if (Funcionario.tipo == "admin")
+                    {
+                        new frmAdmin().Show();
+                    }
+                    else
+                    {
+                        new frmCardapio().Show();
+                    }
                     this.Hide();
                 }
                 else
