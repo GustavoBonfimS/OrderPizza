@@ -63,6 +63,7 @@ namespace OrderPizza.DAO
                     {
                         Registro reg = new Registro();
                         reg.idRelatorio = Convert.ToInt32(dr["IDRELATORIO"]);
+                        reg.idPedido = Convert.ToInt32(dr["IDPEDIDO"]);
                         reg.data = DateTime.Parse(Convert.ToString(dr["DATA"]));
                         reg.hora = DateTime.Parse(Convert.ToString(dr["HORA"]));
                         reg.descricao = Convert.ToString(dr["DESCRICAO"]);
@@ -95,6 +96,7 @@ namespace OrderPizza.DAO
                     while (dr.Read())
                     {
                         Registro reg = new Registro();
+                        reg.idPedido = Convert.ToInt32(dr["IDPEDIDO"]);
                         reg.idRelatorio = Convert.ToInt32(dr["IDRELATORIO"]);
                         reg.data = DateTime.Parse(Convert.ToString(dr["DATA"]));
                         reg.hora = DateTime.Parse(Convert.ToString(dr["HORA"]));
