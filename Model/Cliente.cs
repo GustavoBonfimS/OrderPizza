@@ -10,7 +10,7 @@ namespace OrderPizza.Model
     {
         public int id;
         public string nome;
-        public string telefon;
+        public string telefone;
         public string endereco;
     }
 }

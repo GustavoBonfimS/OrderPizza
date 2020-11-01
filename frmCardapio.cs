@@ -2,12 +2,10 @@
 using OrderPizza.Model;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Windows.Forms;
 using System.Linq;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
-using System.Windows.Controls;
 
 namespace OrderPizza
 {
@@ -28,14 +26,8 @@ namespace OrderPizza
             cbPesquisar.DropDownStyle = ComboBoxStyle.DropDown;
             cbPesquisar.DataSource = produtos.Select(prod => prod.nome).ToArray();
             cbPesquisar.SelectedItem = null;
-            cbPesquisar.SelectionChangeCommitted += CbPesquisar_SelectionChangeCommitted;
 
             carrinho.CollectionChanged += carrinho_CollectionChanged;
-        }
-
-        private void CbPesquisar_SelectionChangeCommitted(object sender, EventArgs e)
-        {
-            MessageBox.Show("event");
         }
 
         private void frmCardapio_Load(object sender, EventArgs e)
@@ -48,7 +40,7 @@ namespace OrderPizza
         {
             var txt = cbPesquisar.Text;
             var prod = produtos.Where(item => item.nome == txt).ToArray();
-            if (prod.Length > 0)
+            if (prod.Length == 1)
             {
                 markItemChecked(prod[0]);
                 cbPesquisar.Text = null;
@@ -68,10 +60,8 @@ namespace OrderPizza
 
         private void btnProximo_Click(object sender, EventArgs e)
         {
-            foreach (var item in carrinho)
-            {
-                MessageBox.Show(item.nome + item.preco.ToString());
-            }
+            new frmInfoCliente(carrinho).Show();
+            this.Hide();
         }
 
         private void checkedPizzas_ItemCheck(object sender, ItemCheckEventArgs e)
@@ -98,7 +88,6 @@ namespace OrderPizza
         {
             Application.Exit();
         }
-
 
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
@@ -161,7 +150,7 @@ namespace OrderPizza
             switch (prod.tipo.ToLower())
             {
                 case "tradicional":
-                    var index = checkedPizzas.Items.IndexOf(prod.nome);
+                    var index = checkedPizzas.Items.IndexOf(prod.nome + " - " + prod.tamanho);
                     var state = true;
                     if (checkedPizzas.GetItemCheckState(index) == CheckState.Checked)
                     {
@@ -170,7 +159,7 @@ namespace OrderPizza
                     checkedPizzas.SetItemChecked(index, state);
                     break;
                 case "doce":
-                    var indexDoce = checkedDoces.Items.IndexOf(prod.nome);
+                    var indexDoce = checkedDoces.Items.IndexOf(prod.nome + " - " + prod.tamanho);
                     var stateDoce = true;
                     if (checkedDoces.GetItemCheckState(indexDoce) == CheckState.Checked)
                     {
@@ -179,7 +168,7 @@ namespace OrderPizza
                     checkedDoces.SetItemChecked(indexDoce, stateDoce);
                     break;
                 case "bebida":
-                    var indexBebida = checkedBebidas.Items.IndexOf(prod.nome);
+                    var indexBebida = checkedBebidas.Items.IndexOf(prod.nome + " - " + prod.tamanho);
                     var stateBebida = true;
                     if (checkedBebidas.GetItemCheckState(indexBebida) == CheckState.Checked)
                     {

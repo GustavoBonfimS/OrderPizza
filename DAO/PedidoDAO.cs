@@ -20,6 +20,8 @@ namespace OrderPizza.DAO
         {
             var retorno = new List<Pedido>();
 
+            cmd.CommandText = "SELECT * FROM PEDIDO";
+
             try
             {
                 cmd.Connection = new Conexao().conectar();
