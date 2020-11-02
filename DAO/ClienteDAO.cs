@@ -52,8 +52,9 @@ namespace OrderPizza.DAO
             return retorno;
         }
 
-        public async void insertCliente(Cliente cliente)
+        public async Task<bool> insertCliente(Cliente cliente)
         {
+            var retorno = false;
             cmd.CommandText = "INSERT INTO CLIENTE(NOME, TELEFONE, ENDERECO) VALUES(@NOME, @TELEFONE, @ENDERECO)";
             cmd.Parameters.AddWithValue("@NOME", cliente.nome);
             cmd.Parameters.AddWithValue("@TELEFONE", cliente.telefone);
@@ -62,11 +63,15 @@ namespace OrderPizza.DAO
             {
                 cmd.Connection = new Conexao().conectar();
                 await cmd.ExecuteNonQueryAsync();
+                retorno = true;
+                cmd.Dispose();
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
+
+            return retorno;
         }
     }
 }

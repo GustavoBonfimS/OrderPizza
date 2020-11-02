@@ -12,11 +12,19 @@ namespace OrderPizza
         private ClienteDAO dao = new ClienteDAO();
         private List<Cliente> clientes;
         private ObservableCollection<Produto> carrinho;
+
         public frmInfoCliente(ObservableCollection<Produto> _carrinho)
         {
             InitializeComponent();
             this.carrinho = _carrinho;
             this.lbResultado.Hide();
+
+            double valorTotal = 0;
+            foreach (var item in carrinho)
+            {
+                valorTotal += item.preco;
+            }
+            lblValor.Text = valorTotal.ToString("N2");
         }
 
         private void txbTelefone_TextChanged(object sender, EventArgs e)
@@ -72,11 +80,13 @@ namespace OrderPizza
 
                 if (this.clientes.Count == 0)
                 {
-                    var newClient = new Cliente();
-                    newClient.telefone = txbTelefone.Text;
-                    newClient.endereco = txbEndereco.Text;
-                    newClient.nome = txbNome.Text;
-                    dao.insertCliente(newClient);
+                    var newClient = new Cliente
+                    {
+                        telefone = txbTelefone.Text,
+                        endereco = txbEndereco.Text,
+                        nome = txbNome.Text
+                    };
+                    await dao.insertCliente(newClient);
                 }
                 
                 new frmCardapio().Show();
