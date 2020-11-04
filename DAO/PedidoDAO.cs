@@ -53,14 +53,14 @@ namespace OrderPizza.DAO
         {
             var retorno = false;
             pedido.data = DateTime.Now;
-            cmd.CommandText = "INSERT INTO PEDIDO(VALOR, IDCLIENTE, FORMAPAGAMENTO, DATA) VALUES(@VALOR, @IDCLIENTE, @FORMAPAGAMENTO, '@DATA')";
+            cmd.CommandText = "INSERT INTO PEDIDO(VALOR, IDCLIENTE, FORMAPAGAMENTO, DATA, HORA) VALUES(@VALOR, @IDCLIENTE, @FORMAPAGAMENTO, @DATA, @HORA)";
             cmd.Parameters.AddWithValue("@VALOR", pedido.valor);
             cmd.Parameters.AddWithValue("@IDCLIENTE", pedido.idCliente);
             cmd.Parameters.AddWithValue("@FORMAPAGAMENTO", pedido.formaPagamento);
             cmd.Parameters.AddWithValue("@DATA", (pedido.data).ToString("yyyy-MM-dd"));
+            cmd.Parameters.AddWithValue("@HORA", (pedido.data).ToString("HH:mm"));
             try
             {
-                MessageBox.Show((pedido.data).ToString("yyyy-MM-dd"));
                 cmd.Connection = new Conexao().conectar();
                 await cmd.ExecuteNonQueryAsync();
                 insertPedidoOnVenda(pedido);
@@ -81,13 +81,12 @@ namespace OrderPizza.DAO
             
             pedido.produtos.ForEach(prod =>
             {
-                var sqlGetDataPedido = "(SELECT IDPEDIDO FROM PEDIDO WHERE DATA = '" +
-                 "2020-11-04' AND IDCLIENTE =" + pedido.idCliente +")";
                 // gambiarra necessaria
                 // declarando variaveis com parameter.addWithValues gera um erro de variavel ja alocada
                 cmd.CommandText = "INSERT INTO VENDA(IDPEDIDO, IDPRODUTO) VALUES" +
-                "(" + sqlGetDataPedido + "," + prod.id.ToString() + ")";
-
+                "((SELECT IDPEDIDO FROM PEDIDO WHERE DATA = @DATA AND HORA = @HORA AND " +
+                "IDCLIENTE = "+ pedido.idCliente.ToString() + "), " + prod.id.ToString() + ")";
+                
                 try
                 {
                     cmd.ExecuteNonQuery();
