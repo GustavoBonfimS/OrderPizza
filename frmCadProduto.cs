@@ -10,11 +10,26 @@ using System.Windows.Forms;
 
 namespace OrderPizza
 {
-    public partial class Form1 : Form
+    public partial class frmCadProduto : Form
     {
-        public Form1()
+        public frmCadProduto()
         {
             InitializeComponent();
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMaximizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
         }
     }
 }
