@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.CheckedListBox checkedBebidas;
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.labelPedido = new System.Windows.Forms.Label();
@@ -39,11 +40,11 @@
             this.pizzaDoce = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.checkedDoces = new System.Windows.Forms.CheckedListBox();
-            this.checkedBebidas = new System.Windows.Forms.CheckedListBox();
             this.btnProximo = new System.Windows.Forms.Button();
             this.cbPesquisar = new System.Windows.Forms.ComboBox();
             this.lbTotal = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            checkedBebidas = new System.Windows.Forms.CheckedListBox();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -138,7 +139,7 @@
             this.checkedPizzas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkedPizzas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.checkedPizzas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(69)))));
             this.checkedPizzas.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.checkedPizzas.CheckOnClick = true;
             this.checkedPizzas.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -195,7 +196,7 @@
             this.checkedDoces.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkedDoces.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.checkedDoces.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(69)))));
             this.checkedDoces.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.checkedDoces.CheckOnClick = true;
             this.checkedDoces.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -208,31 +209,31 @@
             "produto3"});
             this.checkedDoces.Location = new System.Drawing.Point(448, 293);
             this.checkedDoces.Name = "checkedDoces";
-            this.checkedDoces.Size = new System.Drawing.Size(229, 216);
+            this.checkedDoces.Size = new System.Drawing.Size(229, 270);
             this.checkedDoces.TabIndex = 29;
             this.checkedDoces.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedDoces_ItemCheck);
             // 
             // checkedBebidas
             // 
-            this.checkedBebidas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            checkedBebidas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.checkedBebidas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.checkedBebidas.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.checkedBebidas.CheckOnClick = true;
-            this.checkedBebidas.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkedBebidas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.checkedBebidas.FormattingEnabled = true;
-            this.checkedBebidas.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.checkedBebidas.Items.AddRange(new object[] {
+            checkedBebidas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(44)))), ((int)(((byte)(46)))), ((int)(((byte)(69)))));
+            checkedBebidas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            checkedBebidas.CheckOnClick = true;
+            checkedBebidas.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            checkedBebidas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            checkedBebidas.FormattingEnabled = true;
+            checkedBebidas.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            checkedBebidas.Items.AddRange(new object[] {
             "bebida1",
             "bebida2",
             "bebida3"});
-            this.checkedBebidas.Location = new System.Drawing.Point(878, 293);
-            this.checkedBebidas.Name = "checkedBebidas";
-            this.checkedBebidas.Size = new System.Drawing.Size(324, 216);
-            this.checkedBebidas.TabIndex = 30;
-            this.checkedBebidas.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedBebidas_ItemCheck);
+            checkedBebidas.Location = new System.Drawing.Point(878, 293);
+            checkedBebidas.Name = "checkedBebidas";
+            checkedBebidas.Size = new System.Drawing.Size(298, 270);
+            checkedBebidas.TabIndex = 30;
+            checkedBebidas.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedBebidas_ItemCheck);
             // 
             // btnProximo
             // 
@@ -262,6 +263,7 @@
             // 
             this.lbTotal.AutoSize = true;
             this.lbTotal.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotal.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(110)))));
             this.lbTotal.Location = new System.Drawing.Point(885, 622);
             this.lbTotal.Name = "lbTotal";
             this.lbTotal.Size = new System.Drawing.Size(68, 32);
@@ -272,6 +274,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(110)))));
             this.label3.Location = new System.Drawing.Point(715, 621);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(167, 32);
@@ -288,7 +291,7 @@
             this.Controls.Add(this.lbTotal);
             this.Controls.Add(this.cbPesquisar);
             this.Controls.Add(this.btnProximo);
-            this.Controls.Add(this.checkedBebidas);
+            this.Controls.Add(checkedBebidas);
             this.Controls.Add(this.checkedDoces);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pizzaDoce);
@@ -322,7 +325,6 @@
         private System.Windows.Forms.Label pizzaDoce;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.CheckedListBox checkedDoces;
-        private System.Windows.Forms.CheckedListBox checkedBebidas;
         private System.Windows.Forms.Button btnProximo;
         private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.ComboBox cbPesquisar;
