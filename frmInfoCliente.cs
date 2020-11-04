@@ -3,6 +3,7 @@ using OrderPizza.Model;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Windows.Forms;
 
 namespace OrderPizza
@@ -12,6 +13,7 @@ namespace OrderPizza
         private ClienteDAO dao = new ClienteDAO();
         private List<Cliente> clientes;
         private ObservableCollection<Produto> carrinho;
+        double valorTotal = 0;
 
         public frmInfoCliente(ObservableCollection<Produto> _carrinho)
         {
@@ -19,7 +21,6 @@ namespace OrderPizza
             this.carrinho = _carrinho;
             this.lbResultado.Hide();
 
-            double valorTotal = 0;
             foreach (var item in carrinho)
             {
                 valorTotal += item.preco;
@@ -59,6 +60,7 @@ namespace OrderPizza
 
         private void lbResultado_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //
             var index = lbResultado.SelectedIndex;
             txbEndereco.Text = this.clientes[index].endereco;
             txbTelefone.Text = this.clientes[index].telefone;
@@ -74,8 +76,7 @@ namespace OrderPizza
         {
             if (validaCampos())
             {
-                // registra pedido
-                // registra venda
+                registraPedido();
                 // subtrai do estoque
 
                 if (this.clientes.Count == 0)
@@ -92,6 +93,21 @@ namespace OrderPizza
                 new frmCardapio().Show();
                 this.Hide();
             }
+        }
+
+        private async void registraPedido()
+        {
+            var pedidoDAO = new PedidoDAO();
+            var pedido = new Pedido
+            {
+                formaPagamento = txbPagamento.Text,
+                valor = valorTotal,
+                idCliente = this.clientes[lbResultado.SelectedIndex].id,
+                produtos = carrinho.ToList()
+            };
+
+            await pedidoDAO.insertPedido(pedido);
+            // subtrair no estoque
         }
 
         private bool validaCampos()

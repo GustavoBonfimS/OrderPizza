@@ -11,6 +11,8 @@ namespace OrderPizza.Model
         public int id;
         public double valor;
         public int idCliente;
-        public string fomraPagamento;
+        public DateTime data;
+        public string formaPagamento;
+        public List<Produto> produtos;
     }
 }

@@ -2,18 +2,20 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Runtime.InteropServices;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace OrderPizza.DAO
 {
     class PedidoDAO
     {
-        SqlCommand cmd = new SqlCommand();
+        SqlCommand cmd;
         SqlDataReader dr;
 
         public PedidoDAO()
         {
-            cmd.Connection = new Conexao().conectar();
+            cmd = new SqlCommand();
         }
 
         public List<Pedido> ListPedidos()
@@ -34,7 +36,7 @@ namespace OrderPizza.DAO
                         pedido.id = Convert.ToInt32(dr["IDPEDIDO"]);
                         pedido.idCliente = Convert.ToInt32(dr["IDCLIENTE"]);
                         pedido.valor = Convert.ToDouble(dr["VALOR"]);
-                        pedido.fomraPagamento = Convert.ToString(dr["FORMAPAGAMENTO"]);
+                        pedido.formaPagamento = Convert.ToString(dr["FORMAPAGAMENTO"]);
                         
                         retorno.Add(pedido);
                     }
@@ -44,6 +46,62 @@ namespace OrderPizza.DAO
             {
                 MessageBox.Show(ex.Message);
             }
+            return retorno;
+        }
+
+        public async Task<bool> insertPedido(Pedido pedido)
+        {
+            var retorno = false;
+            pedido.data = DateTime.Now;
+            cmd.CommandText = "INSERT INTO PEDIDO(VALOR, IDCLIENTE, FORMAPAGAMENTO, DATA) VALUES(@VALOR, @IDCLIENTE, @FORMAPAGAMENTO, '@DATA')";
+            cmd.Parameters.AddWithValue("@VALOR", pedido.valor);
+            cmd.Parameters.AddWithValue("@IDCLIENTE", pedido.idCliente);
+            cmd.Parameters.AddWithValue("@FORMAPAGAMENTO", pedido.formaPagamento);
+            cmd.Parameters.AddWithValue("@DATA", (pedido.data).ToString("yyyy-MM-dd"));
+            try
+            {
+                MessageBox.Show((pedido.data).ToString("yyyy-MM-dd"));
+                cmd.Connection = new Conexao().conectar();
+                await cmd.ExecuteNonQueryAsync();
+                insertPedidoOnVenda(pedido);
+                retorno = true;
+                cmd.Dispose();
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return retorno;
+        }
+
+        private bool insertPedidoOnVenda(Pedido pedido)
+        {
+            var retorno = false;
+            
+            pedido.produtos.ForEach(prod =>
+            {
+                var sqlGetDataPedido = "(SELECT IDPEDIDO FROM PEDIDO WHERE DATA = '" +
+                 "2020-11-04' AND IDCLIENTE =" + pedido.idCliente +")";
+                // gambiarra necessaria
+                // declarando variaveis com parameter.addWithValues gera um erro de variavel ja alocada
+                cmd.CommandText = "INSERT INTO VENDA(IDPEDIDO, IDPRODUTO) VALUES" +
+                "(" + sqlGetDataPedido + "," + prod.id.ToString() + ")";
+
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    retorno = true;
+                }
+                catch (SqlException ex)
+                {
+                    retorno = false;
+                    MessageBox.Show(ex.Message);
+                }
+            });
+
+
+            cmd.Dispose();
             return retorno;
         }
     }
