@@ -52,11 +52,12 @@
             this.lbNomeProd.AutoSize = true;
             this.lbNomeProd.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNomeProd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.lbNomeProd.Location = new System.Drawing.Point(84, 66);
+            this.lbNomeProd.Location = new System.Drawing.Point(84, 75);
             this.lbNomeProd.Name = "lbNomeProd";
             this.lbNomeProd.Size = new System.Drawing.Size(50, 18);
             this.lbNomeProd.TabIndex = 17;
             this.lbNomeProd.Text = "Nome";
+            this.lbNomeProd.Click += new System.EventHandler(this.lbNomeProd_Click);
             // 
             // lbTamProd
             // 

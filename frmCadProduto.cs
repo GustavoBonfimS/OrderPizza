@@ -31,5 +31,10 @@ namespace OrderPizza
         {
             this.WindowState = FormWindowState.Maximized;
         }
+
+        private void lbNomeProd_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
