@@ -28,53 +28,65 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.lbTel = new System.Windows.Forms.Label();
+            this.lbEnd = new System.Windows.Forms.Label();
+            this.lbFormaPag = new System.Windows.Forms.Label();
             this.txbTelefone = new System.Windows.Forms.TextBox();
             this.txbEndereco = new System.Windows.Forms.TextBox();
-            this.txbPagamento = new System.Windows.Forms.TextBox();
             this.lbResultado = new System.Windows.Forms.ListBox();
             this.btnFinalizar = new System.Windows.Forms.Button();
             this.txbNome = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.lbNome = new System.Windows.Forms.Label();
+            this.lbValor = new System.Windows.Forms.Label();
             this.lblValor = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnFechar = new System.Windows.Forms.Button();
+            this.btnMinimizar = new System.Windows.Forms.Button();
+            this.lbDin = new System.Windows.Forms.Label();
+            this.lbCartao = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.labelPedido = new System.Windows.Forms.Label();
+            this.lbValorTotal = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // label1
+            // lbTel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(34, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(77, 24);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "telefone";
+            this.lbTel.AutoSize = true;
+            this.lbTel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.lbTel.Location = new System.Drawing.Point(23, 191);
+            this.lbTel.Name = "lbTel";
+            this.lbTel.Size = new System.Drawing.Size(89, 22);
+            this.lbTel.TabIndex = 0;
+            this.lbTel.Text = "Telefone:";
             // 
-            // label2
+            // lbEnd
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(34, 94);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(92, 24);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "endereco";
+            this.lbEnd.AutoSize = true;
+            this.lbEnd.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbEnd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.lbEnd.Location = new System.Drawing.Point(23, 127);
+            this.lbEnd.Name = "lbEnd";
+            this.lbEnd.Size = new System.Drawing.Size(98, 22);
+            this.lbEnd.TabIndex = 1;
+            this.lbEnd.Text = "Endereco:";
             // 
-            // label3
+            // lbFormaPag
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(310, 24);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(192, 24);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Forma de pagamento";
+            this.lbFormaPag.AutoSize = true;
+            this.lbFormaPag.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFormaPag.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.lbFormaPag.Location = new System.Drawing.Point(478, 76);
+            this.lbFormaPag.Name = "lbFormaPag";
+            this.lbFormaPag.Size = new System.Drawing.Size(197, 22);
+            this.lbFormaPag.TabIndex = 2;
+            this.lbFormaPag.Text = "Forma de pagamento:";
             // 
             // txbTelefone
             // 
-            this.txbTelefone.Location = new System.Drawing.Point(38, 51);
+            this.txbTelefone.Location = new System.Drawing.Point(27, 218);
             this.txbTelefone.Name = "txbTelefone";
             this.txbTelefone.Size = new System.Drawing.Size(168, 20);
             this.txbTelefone.TabIndex = 3;
@@ -82,96 +94,200 @@
             // 
             // txbEndereco
             // 
-            this.txbEndereco.Location = new System.Drawing.Point(38, 121);
+            this.txbEndereco.Location = new System.Drawing.Point(27, 154);
             this.txbEndereco.Name = "txbEndereco";
-            this.txbEndereco.Size = new System.Drawing.Size(261, 20);
+            this.txbEndereco.Size = new System.Drawing.Size(277, 20);
             this.txbEndereco.TabIndex = 4;
-            // 
-            // txbPagamento
-            // 
-            this.txbPagamento.Location = new System.Drawing.Point(314, 51);
-            this.txbPagamento.Name = "txbPagamento";
-            this.txbPagamento.Size = new System.Drawing.Size(234, 20);
-            this.txbPagamento.TabIndex = 5;
             // 
             // lbResultado
             // 
             this.lbResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbResultado.FormattingEnabled = true;
             this.lbResultado.ItemHeight = 24;
-            this.lbResultado.Location = new System.Drawing.Point(12, 264);
+            this.lbResultado.Location = new System.Drawing.Point(27, 370);
             this.lbResultado.Name = "lbResultado";
-            this.lbResultado.Size = new System.Drawing.Size(761, 100);
+            this.lbResultado.Size = new System.Drawing.Size(814, 100);
             this.lbResultado.TabIndex = 6;
             this.lbResultado.SelectedIndexChanged += new System.EventHandler(this.lbResultado_SelectedIndexChanged);
             // 
             // btnFinalizar
             // 
-            this.btnFinalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFinalizar.Location = new System.Drawing.Point(657, 391);
+            this.btnFinalizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnFinalizar.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinalizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.btnFinalizar.Location = new System.Drawing.Point(736, 494);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(105, 36);
             this.btnFinalizar.TabIndex = 7;
-            this.btnFinalizar.Text = "finalizar";
-            this.btnFinalizar.UseVisualStyleBackColor = true;
+            this.btnFinalizar.Text = "Finalizar";
+            this.btnFinalizar.UseVisualStyleBackColor = false;
             this.btnFinalizar.Click += new System.EventHandler(this.btnFinalizar_Click);
             // 
             // txbNome
             // 
-            this.txbNome.Location = new System.Drawing.Point(38, 187);
+            this.txbNome.Location = new System.Drawing.Point(27, 89);
             this.txbNome.Name = "txbNome";
-            this.txbNome.Size = new System.Drawing.Size(168, 20);
+            this.txbNome.Size = new System.Drawing.Size(277, 20);
             this.txbNome.TabIndex = 8;
             // 
-            // label4
+            // lbNome
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(34, 160);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(62, 24);
-            this.label4.TabIndex = 9;
-            this.label4.Text = "Nome";
+            this.lbNome.AutoSize = true;
+            this.lbNome.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.lbNome.Location = new System.Drawing.Point(23, 62);
+            this.lbNome.Name = "lbNome";
+            this.lbNome.Size = new System.Drawing.Size(66, 22);
+            this.lbNome.TabIndex = 9;
+            this.lbNome.Text = "Nome:";
             // 
-            // label5
+            // lbValor
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(568, 237);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(102, 24);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "Valor total: ";
+            this.lbValor.AutoSize = true;
+            this.lbValor.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbValor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.lbValor.Location = new System.Drawing.Point(481, 241);
+            this.lbValor.Name = "lbValor";
+            this.lbValor.Size = new System.Drawing.Size(115, 22);
+            this.lbValor.TabIndex = 10;
+            this.lbValor.Text = "Valor total: ";
             // 
             // lblValor
             // 
             this.lblValor.AutoSize = true;
             this.lblValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValor.Location = new System.Drawing.Point(676, 237);
+            this.lblValor.Location = new System.Drawing.Point(675, 343);
             this.lblValor.Name = "lblValor";
             this.lblValor.Size = new System.Drawing.Size(0, 24);
             this.lblValor.TabIndex = 11;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.labelPedido);
+            this.panel1.Controls.Add(this.btnMinimizar);
+            this.panel1.Controls.Add(this.btnFechar);
+            this.panel1.Location = new System.Drawing.Point(2, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(887, 40);
+            this.panel1.TabIndex = 12;
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnFechar.FlatAppearance.BorderSize = 0;
+            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFechar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.btnFechar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnFechar.Location = new System.Drawing.Point(860, 0);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(27, 40);
+            this.btnFechar.TabIndex = 1;
+            this.btnFechar.Text = "x";
+            this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.FlatAppearance.BorderSize = 0;
+            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.btnMinimizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnMinimizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnMinimizar.Location = new System.Drawing.Point(839, 0);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(27, 40);
+            this.btnMinimizar.TabIndex = 2;
+            this.btnMinimizar.Text = "─";
+            this.btnMinimizar.UseVisualStyleBackColor = true;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // lbDin
+            // 
+            this.lbDin.AutoSize = true;
+            this.lbDin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbDin.Location = new System.Drawing.Point(482, 109);
+            this.lbDin.Name = "lbDin";
+            this.lbDin.Size = new System.Drawing.Size(71, 18);
+            this.lbDin.TabIndex = 13;
+            this.lbDin.Text = "Dinheiro:";
+            // 
+            // lbCartao
+            // 
+            this.lbCartao.AutoSize = true;
+            this.lbCartao.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCartao.Location = new System.Drawing.Point(482, 141);
+            this.lbCartao.Name = "lbCartao";
+            this.lbCartao.Size = new System.Drawing.Size(60, 18);
+            this.lbCartao.TabIndex = 14;
+            this.lbCartao.Text = "Cartão:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(560, 106);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(74, 20);
+            this.textBox1.TabIndex = 15;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(560, 142);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(74, 20);
+            this.textBox2.TabIndex = 16;
+            // 
+            // labelPedido
+            // 
+            this.labelPedido.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.labelPedido.Font = new System.Drawing.Font("Arial", 18F);
+            this.labelPedido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.labelPedido.Location = new System.Drawing.Point(3, 0);
+            this.labelPedido.Name = "labelPedido";
+            this.labelPedido.Size = new System.Drawing.Size(836, 40);
+            this.labelPedido.TabIndex = 4;
+            this.labelPedido.Text = "Informações do cliente";
+            this.labelPedido.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lbValorTotal
+            // 
+            this.lbValorTotal.AutoSize = true;
+            this.lbValorTotal.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbValorTotal.Location = new System.Drawing.Point(602, 245);
+            this.lbValorTotal.Name = "lbValorTotal";
+            this.lbValorTotal.Size = new System.Drawing.Size(88, 18);
+            this.lbValorTotal.TabIndex = 17;
+            this.lbValorTotal.Text = "lbValorTotal";
+            this.lbValorTotal.Click += new System.EventHandler(this.lbValorTotal_Click);
             // 
             // frmInfoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.ClientSize = new System.Drawing.Size(890, 542);
+            this.Controls.Add(this.lbValorTotal);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.lbCartao);
+            this.Controls.Add(this.lbDin);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblValor);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lbValor);
+            this.Controls.Add(this.lbNome);
             this.Controls.Add(this.txbNome);
             this.Controls.Add(this.btnFinalizar);
             this.Controls.Add(this.lbResultado);
-            this.Controls.Add(this.txbPagamento);
             this.Controls.Add(this.txbEndereco);
             this.Controls.Add(this.txbTelefone);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbFormaPag);
+            this.Controls.Add(this.lbEnd);
+            this.Controls.Add(this.lbTel);
+            this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmInfoCliente";
             this.Text = "frmInfoCliente";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmInfoCliente_FormClosing);
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -179,17 +295,25 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lbTel;
+        private System.Windows.Forms.Label lbEnd;
+        private System.Windows.Forms.Label lbFormaPag;
         private System.Windows.Forms.TextBox txbTelefone;
         private System.Windows.Forms.TextBox txbEndereco;
-        private System.Windows.Forms.TextBox txbPagamento;
         private System.Windows.Forms.ListBox lbResultado;
         private System.Windows.Forms.Button btnFinalizar;
         private System.Windows.Forms.TextBox txbNome;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbNome;
+        private System.Windows.Forms.Label lbValor;
         private System.Windows.Forms.Label lblValor;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnFechar;
+        private System.Windows.Forms.Button btnMinimizar;
+        private System.Windows.Forms.Label lbDin;
+        private System.Windows.Forms.Label lbCartao;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label labelPedido;
+        private System.Windows.Forms.Label lbValorTotal;
     }
 }
