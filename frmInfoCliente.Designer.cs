@@ -40,14 +40,14 @@
             this.lbValor = new System.Windows.Forms.Label();
             this.lblValor = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnFechar = new System.Windows.Forms.Button();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.lbDin = new System.Windows.Forms.Label();
             this.lbCartao = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txbDin = new System.Windows.Forms.TextBox();
+            this.txbCartao = new System.Windows.Forms.TextBox();
             this.labelPedido = new System.Windows.Forms.Label();
             this.lbValorTotal = new System.Windows.Forms.Label();
+            this.btnFechar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,7 +106,7 @@
             this.lbResultado.ItemHeight = 24;
             this.lbResultado.Location = new System.Drawing.Point(27, 370);
             this.lbResultado.Name = "lbResultado";
-            this.lbResultado.Size = new System.Drawing.Size(814, 100);
+            this.lbResultado.Size = new System.Drawing.Size(770, 100);
             this.lbResultado.TabIndex = 6;
             this.lbResultado.SelectedIndexChanged += new System.EventHandler(this.lbResultado_SelectedIndexChanged);
             // 
@@ -115,7 +115,7 @@
             this.btnFinalizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnFinalizar.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFinalizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.btnFinalizar.Location = new System.Drawing.Point(736, 494);
+            this.btnFinalizar.Location = new System.Drawing.Point(692, 494);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(105, 36);
             this.btnFinalizar.TabIndex = 7;
@@ -163,28 +163,13 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnFechar);
             this.panel1.Controls.Add(this.labelPedido);
             this.panel1.Controls.Add(this.btnMinimizar);
-            this.panel1.Controls.Add(this.btnFechar);
             this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(887, 40);
+            this.panel1.Size = new System.Drawing.Size(817, 40);
             this.panel1.TabIndex = 12;
-            // 
-            // btnFechar
-            // 
-            this.btnFechar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnFechar.FlatAppearance.BorderSize = 0;
-            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFechar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.btnFechar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnFechar.Location = new System.Drawing.Point(860, 0);
-            this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(27, 40);
-            this.btnFechar.TabIndex = 1;
-            this.btnFechar.Text = "x";
-            this.btnFechar.UseVisualStyleBackColor = true;
-            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // btnMinimizar
             // 
@@ -193,7 +178,7 @@
             this.btnMinimizar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.btnMinimizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnMinimizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnMinimizar.Location = new System.Drawing.Point(839, 0);
+            this.btnMinimizar.Location = new System.Drawing.Point(768, -1);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(27, 40);
             this.btnMinimizar.TabIndex = 2;
@@ -205,7 +190,7 @@
             // 
             this.lbDin.AutoSize = true;
             this.lbDin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDin.Location = new System.Drawing.Point(482, 109);
+            this.lbDin.Location = new System.Drawing.Point(482, 127);
             this.lbDin.Name = "lbDin";
             this.lbDin.Size = new System.Drawing.Size(71, 18);
             this.lbDin.TabIndex = 13;
@@ -215,25 +200,25 @@
             // 
             this.lbCartao.AutoSize = true;
             this.lbCartao.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCartao.Location = new System.Drawing.Point(482, 141);
+            this.lbCartao.Location = new System.Drawing.Point(482, 159);
             this.lbCartao.Name = "lbCartao";
             this.lbCartao.Size = new System.Drawing.Size(60, 18);
             this.lbCartao.TabIndex = 14;
             this.lbCartao.Text = "Cartão:";
             // 
-            // textBox1
+            // txbDin
             // 
-            this.textBox1.Location = new System.Drawing.Point(560, 106);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(74, 20);
-            this.textBox1.TabIndex = 15;
+            this.txbDin.Location = new System.Drawing.Point(560, 124);
+            this.txbDin.Name = "txbDin";
+            this.txbDin.Size = new System.Drawing.Size(74, 20);
+            this.txbDin.TabIndex = 15;
             // 
-            // textBox2
+            // txbCartao
             // 
-            this.textBox2.Location = new System.Drawing.Point(560, 142);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(74, 20);
-            this.textBox2.TabIndex = 16;
+            this.txbCartao.Location = new System.Drawing.Point(560, 160);
+            this.txbCartao.Name = "txbCartao";
+            this.txbCartao.Size = new System.Drawing.Size(74, 20);
+            this.txbCartao.TabIndex = 16;
             // 
             // labelPedido
             // 
@@ -241,9 +226,9 @@
             this.labelPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelPedido.Font = new System.Drawing.Font("Arial", 18F);
             this.labelPedido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.labelPedido.Location = new System.Drawing.Point(3, 0);
+            this.labelPedido.Location = new System.Drawing.Point(3, -3);
             this.labelPedido.Name = "labelPedido";
-            this.labelPedido.Size = new System.Drawing.Size(836, 40);
+            this.labelPedido.Size = new System.Drawing.Size(759, 39);
             this.labelPedido.TabIndex = 4;
             this.labelPedido.Text = "Informações do cliente";
             this.labelPedido.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -259,15 +244,29 @@
             this.lbValorTotal.Text = "lbValorTotal";
             this.lbValorTotal.Click += new System.EventHandler(this.lbValorTotal_Click);
             // 
+            // btnFechar
+            // 
+            this.btnFechar.FlatAppearance.BorderSize = 0;
+            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFechar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.btnFechar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnFechar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnFechar.Location = new System.Drawing.Point(790, 0);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(27, 37);
+            this.btnFechar.TabIndex = 5;
+            this.btnFechar.Text = "x";
+            this.btnFechar.UseVisualStyleBackColor = true;
+            // 
             // frmInfoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.ClientSize = new System.Drawing.Size(890, 542);
+            this.ClientSize = new System.Drawing.Size(820, 542);
             this.Controls.Add(this.lbValorTotal);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txbCartao);
+            this.Controls.Add(this.txbDin);
             this.Controls.Add(this.lbCartao);
             this.Controls.Add(this.lbDin);
             this.Controls.Add(this.panel1);
@@ -307,13 +306,13 @@
         private System.Windows.Forms.Label lbValor;
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.Label lbDin;
         private System.Windows.Forms.Label lbCartao;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txbDin;
+        private System.Windows.Forms.TextBox txbCartao;
         private System.Windows.Forms.Label labelPedido;
         private System.Windows.Forms.Label lbValorTotal;
+        private System.Windows.Forms.Button btnFechar;
     }
 }

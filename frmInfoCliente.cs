@@ -148,7 +148,7 @@ namespace OrderPizza
 
         private void lbValorTotal_Click(object sender, EventArgs e)
         {
-
+            Application.Exit();
         }
     }
 }
