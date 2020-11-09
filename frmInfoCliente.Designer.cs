@@ -104,7 +104,7 @@
             this.lbResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbResultado.FormattingEnabled = true;
             this.lbResultado.ItemHeight = 24;
-            this.lbResultado.Location = new System.Drawing.Point(27, 370);
+            this.lbResultado.Location = new System.Drawing.Point(27, 326);
             this.lbResultado.Name = "lbResultado";
             this.lbResultado.Size = new System.Drawing.Size(770, 100);
             this.lbResultado.TabIndex = 6;
@@ -115,7 +115,7 @@
             this.btnFinalizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnFinalizar.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFinalizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.btnFinalizar.Location = new System.Drawing.Point(692, 494);
+            this.btnFinalizar.Location = new System.Drawing.Point(692, 450);
             this.btnFinalizar.Name = "btnFinalizar";
             this.btnFinalizar.Size = new System.Drawing.Size(105, 36);
             this.btnFinalizar.TabIndex = 7;
@@ -156,7 +156,7 @@
             // 
             this.lblValor.AutoSize = true;
             this.lblValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValor.Location = new System.Drawing.Point(675, 343);
+            this.lblValor.Location = new System.Drawing.Point(675, 299);
             this.lblValor.Name = "lblValor";
             this.lblValor.Size = new System.Drawing.Size(0, 24);
             this.lblValor.TabIndex = 11;
@@ -263,7 +263,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.ClientSize = new System.Drawing.Size(820, 542);
+            this.ClientSize = new System.Drawing.Size(820, 502);
             this.Controls.Add(this.lbValorTotal);
             this.Controls.Add(this.txbCartao);
             this.Controls.Add(this.txbDin);
