@@ -55,7 +55,7 @@
             this.lbTel.AutoSize = true;
             this.lbTel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.lbTel.Location = new System.Drawing.Point(23, 191);
+            this.lbTel.Location = new System.Drawing.Point(23, 63);
             this.lbTel.Name = "lbTel";
             this.lbTel.Size = new System.Drawing.Size(89, 22);
             this.lbTel.TabIndex = 0;
@@ -66,7 +66,7 @@
             this.lbEnd.AutoSize = true;
             this.lbEnd.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbEnd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.lbEnd.Location = new System.Drawing.Point(23, 127);
+            this.lbEnd.Location = new System.Drawing.Point(23, 192);
             this.lbEnd.Name = "lbEnd";
             this.lbEnd.Size = new System.Drawing.Size(98, 22);
             this.lbEnd.TabIndex = 1;
@@ -85,7 +85,7 @@
             // 
             // txbTelefone
             // 
-            this.txbTelefone.Location = new System.Drawing.Point(27, 218);
+            this.txbTelefone.Location = new System.Drawing.Point(27, 90);
             this.txbTelefone.Name = "txbTelefone";
             this.txbTelefone.Size = new System.Drawing.Size(168, 20);
             this.txbTelefone.TabIndex = 3;
@@ -93,7 +93,7 @@
             // 
             // txbEndereco
             // 
-            this.txbEndereco.Location = new System.Drawing.Point(27, 154);
+            this.txbEndereco.Location = new System.Drawing.Point(27, 219);
             this.txbEndereco.Name = "txbEndereco";
             this.txbEndereco.Size = new System.Drawing.Size(277, 20);
             this.txbEndereco.TabIndex = 4;
@@ -124,7 +124,7 @@
             // 
             // txbNome
             // 
-            this.txbNome.Location = new System.Drawing.Point(27, 89);
+            this.txbNome.Location = new System.Drawing.Point(27, 154);
             this.txbNome.Name = "txbNome";
             this.txbNome.Size = new System.Drawing.Size(277, 20);
             this.txbNome.TabIndex = 8;
@@ -134,7 +134,7 @@
             this.lbNome.AutoSize = true;
             this.lbNome.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.lbNome.Location = new System.Drawing.Point(23, 62);
+            this.lbNome.Location = new System.Drawing.Point(23, 127);
             this.lbNome.Name = "lbNome";
             this.lbNome.Size = new System.Drawing.Size(66, 22);
             this.lbNome.TabIndex = 9;

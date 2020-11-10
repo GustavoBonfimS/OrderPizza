@@ -61,8 +61,9 @@ namespace OrderPizza
                 }
             }
         }
+                       
 
-        private void btnCadFunc_Click(object sender, EventArgs e)
+        private void btnCadFunc_Click_Click(object sender, EventArgs e)
         {
             string login;
             string senha;
@@ -72,7 +73,7 @@ namespace OrderPizza
                 string.IsNullOrEmpty(txbSenha.Text) ||
                 string.IsNullOrEmpty(txbTipoUsu.Text))
             {
-                MessageBox.Show("Um dos campos está vazio, verifique e tente novamente!!","Error", MessageBoxButtons.OK,
+                MessageBox.Show("Um dos campos está vazio, verifique e tente novamente!!", "Error", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
             else
@@ -81,7 +82,7 @@ namespace OrderPizza
                 senha = txbSenha.Text;
                 tipo = txbTipoUsu.Text;
                 var dao = new FuncionarioDAO();
-               if(dao.InsertUsuario(login, senha, tipo))
+                if (dao.InsertUsuario(login, senha, tipo))
                 {
                     MessageBox.Show("Usuario cadastrado com sucesso!", "Sucesso!",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
