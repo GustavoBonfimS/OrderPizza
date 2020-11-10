@@ -2,35 +2,39 @@
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Threading.Tasks;
 using System.Windows;
 
 namespace OrderPizza.DAO
 {
     class RelatorioDAO
     {
-        public static void inserirRegistro(int idPedido, string descricao)
+        public async static Task<bool> inserirRegistro(int idPedido, string descricao)
         {
             SqlCommand cmd = new SqlCommand();
             Conexao conexao = new Conexao();
+            var retorno = false;
 
             cmd.CommandText = "INSERT INTO RELATORIO (IDPEDIDO, DESCRICAO, DATA, HORA)" +
                 "VALUES(@IDPEDIDO, @DESCRICAO, @DATA, @HORA)";
-            cmd.Parameters.AddWithValue("@IDPEDIDO", descricao);
+            cmd.Parameters.AddWithValue("@IDPEDIDO", idPedido);
             cmd.Parameters.AddWithValue("@DESCRICAO", descricao);
             cmd.Parameters.AddWithValue("@DATA", (DateTime.Now).ToString("yyyy-MM-dd"));
-            cmd.Parameters.AddWithValue("@HORA", DateTime.Now.ToString("HH:mm"));
+            cmd.Parameters.AddWithValue("@HORA", (DateTime.Now).ToString("HH:mm"));
             try
             {
                 cmd.Connection = conexao.conectar();
-                cmd.ExecuteNonQuery();
+                await cmd.ExecuteNonQueryAsync();
+                retorno = true;
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
+            return retorno;
         }
 
-        public static List<Registro> gerarRelatorio(string buscarPor, int id)
+        public static List<Registro> gerarRelatorio(string buscarPor, string telefone = "", int idPedido = 0)
         {
             SqlCommand cmd = new SqlCommand();
             Conexao conexao = new Conexao();
@@ -43,12 +47,13 @@ namespace OrderPizza.DAO
                     break;
                 case "cliente":
                     cmd.CommandText = "SELECT * FROM RELATORIO WHERE IDPEDIDO = " +
-                        "(SELECT IDPEDIDO FROM PEDIDO WHERE PEDIDO.IDCLIENTE = @ID)";
-                    cmd.Parameters.AddWithValue("@ID", id);
+                        "(SELECT IDPEDIDO FROM PEDIDO WHERE PEDIDO.IDCLIENTE = (SELECT " +
+                        "IDCLIENTE FROM CLIENTE WHERE CLIENTE.TELEFONE = @TELEFONE))";
+                    cmd.Parameters.AddWithValue("@TELEFONE", telefone);
                     break;
                 case "pedido":
                     cmd.CommandText = "SELECT * FROM RELATORIO WHERE IDPEDIDO = @ID";
-                    cmd.Parameters.AddWithValue("@ID", id);
+                    cmd.Parameters.AddWithValue("@ID", idPedido);
                     break;
             }
 

@@ -35,6 +35,8 @@
             this.labelId = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.txbTelefone = new System.Windows.Forms.TextBox();
+            this.labelTelefone = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lbItems
@@ -48,7 +50,7 @@
             // cbOptions
             // 
             this.cbOptions.FormattingEnabled = true;
-            this.cbOptions.Location = new System.Drawing.Point(67, 46);
+            this.cbOptions.Location = new System.Drawing.Point(12, 42);
             this.cbOptions.Name = "cbOptions";
             this.cbOptions.Size = new System.Drawing.Size(121, 21);
             this.cbOptions.TabIndex = 1;
@@ -66,7 +68,7 @@
             // 
             // txbId
             // 
-            this.txbId.Location = new System.Drawing.Point(327, 47);
+            this.txbId.Location = new System.Drawing.Point(385, 43);
             this.txbId.Name = "txbId";
             this.txbId.Size = new System.Drawing.Size(100, 20);
             this.txbId.TabIndex = 3;
@@ -74,7 +76,7 @@
             // labelId
             // 
             this.labelId.AutoSize = true;
-            this.labelId.Location = new System.Drawing.Point(300, 50);
+            this.labelId.Location = new System.Drawing.Point(358, 46);
             this.labelId.Name = "labelId";
             this.labelId.Size = new System.Drawing.Size(21, 13);
             this.labelId.TabIndex = 4;
@@ -82,7 +84,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(446, 44);
+            this.btnBuscar.Location = new System.Drawing.Point(504, 40);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 5;
@@ -93,17 +95,35 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(64, 30);
+            this.label1.Location = new System.Drawing.Point(9, 26);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 13);
             this.label1.TabIndex = 6;
             this.label1.Text = "Buscar por:";
+            // 
+            // txbTelefone
+            // 
+            this.txbTelefone.Location = new System.Drawing.Point(234, 42);
+            this.txbTelefone.Name = "txbTelefone";
+            this.txbTelefone.Size = new System.Drawing.Size(100, 20);
+            this.txbTelefone.TabIndex = 7;
+            // 
+            // labelTelefone
+            // 
+            this.labelTelefone.AutoSize = true;
+            this.labelTelefone.Location = new System.Drawing.Point(179, 46);
+            this.labelTelefone.Name = "labelTelefone";
+            this.labelTelefone.Size = new System.Drawing.Size(49, 13);
+            this.labelTelefone.TabIndex = 8;
+            this.labelTelefone.Text = "Telefone";
             // 
             // frmOption
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(591, 472);
+            this.Controls.Add(this.labelTelefone);
+            this.Controls.Add(this.txbTelefone);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.labelId);
@@ -128,5 +148,7 @@
         private System.Windows.Forms.Label labelId;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txbTelefone;
+        private System.Windows.Forms.Label labelTelefone;
     }
 }

@@ -107,6 +107,7 @@ namespace OrderPizza
             };
 
             await pedidoDAO.insertPedido(pedido);
+            // registra na tabela de relatorio dentro de PedidoDAO
             // subtrair no estoque
         }
 

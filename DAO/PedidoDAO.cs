@@ -63,7 +63,7 @@ namespace OrderPizza.DAO
             {
                 cmd.Connection = new Conexao().conectar();
                 await cmd.ExecuteNonQueryAsync();
-                insertPedidoOnVenda(pedido);
+                await insertPedidoOnVenda(pedido);
                 retorno = true;
                 cmd.Dispose();
             }
@@ -75,11 +75,11 @@ namespace OrderPizza.DAO
             return retorno;
         }
 
-        private bool insertPedidoOnVenda(Pedido pedido)
+        private async Task<bool> insertPedidoOnVenda(Pedido pedido)
         {
             var retorno = false;
             
-            pedido.produtos.ForEach(prod =>
+            pedido.produtos.ForEach(async prod =>
             {
                 // gambiarra necessaria
                 // declarando variaveis com parameter.addWithValues gera um erro de variavel ja alocada
@@ -89,7 +89,7 @@ namespace OrderPizza.DAO
                 
                 try
                 {
-                    cmd.ExecuteNonQuery();
+                    await cmd.ExecuteNonQueryAsync();
                     retorno = true;
                 }
                 catch (SqlException ex)
@@ -98,6 +98,8 @@ namespace OrderPizza.DAO
                     MessageBox.Show(ex.Message);
                 }
             });
+
+            await RelatorioDAO.inserirRegistro(pedido.id, "Pedido fianlizado");
 
 
             cmd.Dispose();

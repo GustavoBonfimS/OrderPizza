@@ -24,6 +24,10 @@ namespace OrderPizza.Relatorio
             labelId.Hide();
             txbId.Hide();
             btnBuscar.Hide();
+
+            labelTelefone.Hide();
+            txbTelefone.Hide();
+
             cbOptions.Items.Add("geral");
             cbOptions.Items.Add("cliente");
             cbOptions.Items.Add("pedido");
@@ -31,53 +35,71 @@ namespace OrderPizza.Relatorio
 
         private void SetList()
         {
-            if (cbOptions.Text != "geral")
+            var opt = cbOptions.Text;
+            var id = Convert.ToInt32(string.IsNullOrEmpty(txbId.Text) ? "0" : txbId.Text);
+            var telefone = string.IsNullOrEmpty(txbTelefone.Text) ? string.Empty : txbTelefone.Text;
+            var registros = RelatorioDAO.gerarRelatorio(opt, telefone, id);
+
+            registros.ForEach(item =>
             {
-                var opt = cbOptions.Text;
-                var id = Convert.ToInt32(txbId.Text);
-                var registros = RelatorioDAO.gerarRelatorio(opt, id);
-
-                foreach (var item in registros)
-                {
-                    var field = "pedido " + item.idPedido.ToString() + " desc:" + item.descricao;
-                    lbItems.Items.Add(field);
-                }
-                return;
-            }
-
-            var regs = RelatorioDAO.listRegistros();
-
-            foreach (var item in regs)
-            {
-                var field = "pedido " + item.idPedido.ToString() + " desc:" + item.descricao;
+                var field = "pedido n° " + item.idPedido.ToString() + " desc:" + item.descricao;
                 lbItems.Items.Add(field);
-            }
+            });
         }
 
         private void cbOptions_SelectedIndexChanged(object sender, EventArgs e)
         {
             lbItems.Items.Clear();
-            if (cbOptions.Text == "geral")
+            switch (cbOptions.Text)
             {
-                labelId.Hide();
-                txbId.Hide();
-                btnBuscar.Hide();
-                SetList();
-            }
-            else
-            {
-                labelId.Show();
-                txbId.Show();
-                btnBuscar.Show();
+                case "geral":
+                    labelId.Hide();
+                    txbId.Hide();
+                    txbId.Enabled = false;
+
+                    labelTelefone.Hide();
+                    txbTelefone.Hide();
+                    txbTelefone.Enabled = false;
+
+                    btnBuscar.Hide();
+                    SetList();
+                    break;
+                case "cliente":
+                    labelTelefone.Show();
+                    txbTelefone.Show();
+                    txbTelefone.Enabled = true;
+
+                    btnBuscar.Show();
+
+                    labelId.Hide();
+                    txbId.Hide();
+                    txbId.Enabled = false;
+                        break;
+                default:
+                    labelId.Show();
+                    txbId.Show();
+                    txbId.Enabled = true;
+
+                    labelTelefone.Hide();
+                    txbTelefone.Hide();
+                    txbTelefone.Enabled = false;
+                    btnBuscar.Show();
+                    break;
             }
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             lbItems.Items.Clear();
-            if (string.IsNullOrEmpty(txbId.Text))
+            if (txbId.Enabled == Enabled && string.IsNullOrEmpty(txbId.Text))
             {
                 MessageBox.Show("informe o id");
+                return;
+            }
+
+            if (txbTelefone.Enabled == Enabled && string.IsNullOrEmpty(txbTelefone.Text))
+            {
+                MessageBox.Show("informe o telefone");
                 return;
             }
             SetList();
@@ -85,6 +107,12 @@ namespace OrderPizza.Relatorio
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            if (lbItems.Items.Count == 0)
+            {
+                MessageBox.Show("Nenhum na lista de registros para ser salvo."
+                    ,"Erro ao salvar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             try
             {
                 FolderBrowserDialog folder = new FolderBrowserDialog();
