@@ -77,7 +77,7 @@
             this.lbFormaPag.AutoSize = true;
             this.lbFormaPag.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFormaPag.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.lbFormaPag.Location = new System.Drawing.Point(478, 76);
+            this.lbFormaPag.Location = new System.Drawing.Point(589, 86);
             this.lbFormaPag.Name = "lbFormaPag";
             this.lbFormaPag.Size = new System.Drawing.Size(197, 22);
             this.lbFormaPag.TabIndex = 2;
@@ -95,7 +95,7 @@
             // 
             this.txbEndereco.Location = new System.Drawing.Point(27, 219);
             this.txbEndereco.Name = "txbEndereco";
-            this.txbEndereco.Size = new System.Drawing.Size(277, 20);
+            this.txbEndereco.Size = new System.Drawing.Size(485, 20);
             this.txbEndereco.TabIndex = 4;
             // 
             // lbResultado
@@ -126,7 +126,7 @@
             // 
             this.txbNome.Location = new System.Drawing.Point(27, 154);
             this.txbNome.Name = "txbNome";
-            this.txbNome.Size = new System.Drawing.Size(277, 20);
+            this.txbNome.Size = new System.Drawing.Size(485, 20);
             this.txbNome.TabIndex = 8;
             // 
             // lbNome
@@ -145,7 +145,7 @@
             this.lbValor.AutoSize = true;
             this.lbValor.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbValor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.lbValor.Location = new System.Drawing.Point(481, 241);
+            this.lbValor.Location = new System.Drawing.Point(589, 251);
             this.lbValor.Name = "lbValor";
             this.lbValor.Size = new System.Drawing.Size(115, 22);
             this.lbValor.TabIndex = 10;
@@ -182,9 +182,9 @@
             this.labelPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.labelPedido.Font = new System.Drawing.Font("Arial", 18F);
             this.labelPedido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.labelPedido.Location = new System.Drawing.Point(3, -3);
+            this.labelPedido.Location = new System.Drawing.Point(3, 0);
             this.labelPedido.Name = "labelPedido";
-            this.labelPedido.Size = new System.Drawing.Size(759, 39);
+            this.labelPedido.Size = new System.Drawing.Size(759, 36);
             this.labelPedido.TabIndex = 4;
             this.labelPedido.Text = "Informações do cliente";
             this.labelPedido.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -196,7 +196,7 @@
             this.btnMinimizar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.btnMinimizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnMinimizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnMinimizar.Location = new System.Drawing.Point(768, -1);
+            this.btnMinimizar.Location = new System.Drawing.Point(757, -2);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(27, 40);
             this.btnMinimizar.TabIndex = 2;
@@ -208,7 +208,7 @@
             // 
             this.lbDin.AutoSize = true;
             this.lbDin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDin.Location = new System.Drawing.Point(482, 127);
+            this.lbDin.Location = new System.Drawing.Point(593, 137);
             this.lbDin.Name = "lbDin";
             this.lbDin.Size = new System.Drawing.Size(71, 18);
             this.lbDin.TabIndex = 13;
@@ -218,7 +218,7 @@
             // 
             this.lbCartao.AutoSize = true;
             this.lbCartao.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCartao.Location = new System.Drawing.Point(482, 159);
+            this.lbCartao.Location = new System.Drawing.Point(593, 169);
             this.lbCartao.Name = "lbCartao";
             this.lbCartao.Size = new System.Drawing.Size(60, 18);
             this.lbCartao.TabIndex = 14;
@@ -226,23 +226,23 @@
             // 
             // txbDin
             // 
-            this.txbDin.Location = new System.Drawing.Point(560, 124);
+            this.txbDin.Location = new System.Drawing.Point(671, 134);
             this.txbDin.Name = "txbDin";
-            this.txbDin.Size = new System.Drawing.Size(74, 20);
+            this.txbDin.Size = new System.Drawing.Size(115, 20);
             this.txbDin.TabIndex = 15;
             // 
             // txbCartao
             // 
-            this.txbCartao.Location = new System.Drawing.Point(560, 160);
+            this.txbCartao.Location = new System.Drawing.Point(671, 170);
             this.txbCartao.Name = "txbCartao";
-            this.txbCartao.Size = new System.Drawing.Size(74, 20);
+            this.txbCartao.Size = new System.Drawing.Size(115, 20);
             this.txbCartao.TabIndex = 16;
             // 
             // lblValor
             // 
             this.lblValor.AutoSize = true;
             this.lblValor.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValor.Location = new System.Drawing.Point(602, 245);
+            this.lblValor.Location = new System.Drawing.Point(698, 254);
             this.lblValor.Name = "lblValor";
             this.lblValor.Size = new System.Drawing.Size(88, 18);
             this.lblValor.TabIndex = 17;
