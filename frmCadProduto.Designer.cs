@@ -232,11 +232,7 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label lb_panel_cadFunc;
-        private System.Windows.Forms.Button btnMinimizar;
-        private System.Windows.Forms.Button btnFechar;
+                        
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btn_Fechar;
         private System.Windows.Forms.Button btnMinimizar_1;
