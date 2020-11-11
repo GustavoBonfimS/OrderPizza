@@ -36,11 +36,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.txbNome = new System.Windows.Forms.TextBox();
+            this.txbDescricao = new System.Windows.Forms.TextBox();
+            this.txbPreco = new System.Windows.Forms.TextBox();
+            this.cbxTamanho = new System.Windows.Forms.ComboBox();
+            this.cbxTipo = new System.Windows.Forms.ComboBox();
             this.btncCadProd = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
@@ -140,42 +140,42 @@
             this.label5.TabIndex = 5;
             this.label5.Text = "Tamanho:";
             // 
-            // textBox1
+            // txbNome
             // 
-            this.textBox1.Location = new System.Drawing.Point(31, 100);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(475, 20);
-            this.textBox1.TabIndex = 6;
+            this.txbNome.Location = new System.Drawing.Point(31, 100);
+            this.txbNome.Name = "txbNome";
+            this.txbNome.Size = new System.Drawing.Size(475, 20);
+            this.txbNome.TabIndex = 6;
             // 
-            // textBox2
+            // txbDescricao
             // 
-            this.textBox2.Location = new System.Drawing.Point(31, 184);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(475, 20);
-            this.textBox2.TabIndex = 7;
+            this.txbDescricao.Location = new System.Drawing.Point(31, 184);
+            this.txbDescricao.Name = "txbDescricao";
+            this.txbDescricao.Size = new System.Drawing.Size(475, 20);
+            this.txbDescricao.TabIndex = 7;
             // 
-            // textBox3
+            // txbPreco
             // 
-            this.textBox3.Location = new System.Drawing.Point(31, 260);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 20);
-            this.textBox3.TabIndex = 8;
+            this.txbPreco.Location = new System.Drawing.Point(31, 260);
+            this.txbPreco.Name = "txbPreco";
+            this.txbPreco.Size = new System.Drawing.Size(121, 20);
+            this.txbPreco.TabIndex = 8;
             // 
-            // comboBox1
+            // cbxTamanho
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(385, 260);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 9;
+            this.cbxTamanho.FormattingEnabled = true;
+            this.cbxTamanho.Location = new System.Drawing.Point(385, 260);
+            this.cbxTamanho.Name = "cbxTamanho";
+            this.cbxTamanho.Size = new System.Drawing.Size(121, 21);
+            this.cbxTamanho.TabIndex = 9;
             // 
-            // comboBox2
+            // cbxTipo
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(208, 260);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 10;
+            this.cbxTipo.FormattingEnabled = true;
+            this.cbxTipo.Location = new System.Drawing.Point(208, 260);
+            this.cbxTipo.Name = "cbxTipo";
+            this.cbxTipo.Size = new System.Drawing.Size(121, 21);
+            this.cbxTipo.TabIndex = 10;
             // 
             // btncCadProd
             // 
@@ -188,6 +188,7 @@
             this.btncCadProd.TabIndex = 11;
             this.btncCadProd.Text = "Cadastrar";
             this.btncCadProd.UseVisualStyleBackColor = false;
+            this.btncCadProd.Click += new System.EventHandler(this.btncCadProd_Click);
             // 
             // label6
             // 
@@ -205,11 +206,11 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.ClientSize = new System.Drawing.Size(550, 400);
             this.Controls.Add(this.btncCadProd);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.cbxTipo);
+            this.Controls.Add(this.cbxTamanho);
+            this.Controls.Add(this.txbPreco);
+            this.Controls.Add(this.txbDescricao);
+            this.Controls.Add(this.txbNome);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -240,11 +241,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox txbNome;
+        private System.Windows.Forms.TextBox txbDescricao;
+        private System.Windows.Forms.TextBox txbPreco;
+        private System.Windows.Forms.ComboBox cbxTamanho;
+        private System.Windows.Forms.ComboBox cbxTipo;
         private System.Windows.Forms.Button btncCadProd;
         private System.Windows.Forms.Label label6;
     }
