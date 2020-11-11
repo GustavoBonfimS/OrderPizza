@@ -53,7 +53,7 @@
             this.panel2.Controls.Add(this.btn_Fechar);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(548, 43);
+            this.panel2.Size = new System.Drawing.Size(538, 43);
             this.panel2.TabIndex = 0;
             // 
             // btnMinimizar_1
@@ -62,7 +62,7 @@
             this.btnMinimizar_1.FlatAppearance.BorderSize = 0;
             this.btnMinimizar_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizar_1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnMinimizar_1.Location = new System.Drawing.Point(476, 3);
+            this.btnMinimizar_1.Location = new System.Drawing.Point(476, 2);
             this.btnMinimizar_1.Name = "btnMinimizar_1";
             this.btnMinimizar_1.Size = new System.Drawing.Size(30, 40);
             this.btnMinimizar_1.TabIndex = 1;
@@ -77,9 +77,9 @@
             this.btn_Fechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Fechar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Fechar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btn_Fechar.Location = new System.Drawing.Point(500, 3);
+            this.btn_Fechar.Location = new System.Drawing.Point(505, 3);
             this.btn_Fechar.Name = "btn_Fechar";
-            this.btn_Fechar.Size = new System.Drawing.Size(36, 39);
+            this.btn_Fechar.Size = new System.Drawing.Size(31, 39);
             this.btn_Fechar.TabIndex = 0;
             this.btn_Fechar.Text = "x";
             this.btn_Fechar.UseVisualStyleBackColor = false;
@@ -163,11 +163,13 @@
             // 
             // cbxTamanho
             // 
+            this.cbxTamanho.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxTamanho.FormattingEnabled = true;
             this.cbxTamanho.Location = new System.Drawing.Point(385, 260);
             this.cbxTamanho.Name = "cbxTamanho";
             this.cbxTamanho.Size = new System.Drawing.Size(121, 21);
             this.cbxTamanho.TabIndex = 9;
+            this.cbxTamanho.Text = "[Selecione]";
             // 
             // cbxTipo
             // 
@@ -176,6 +178,8 @@
             this.cbxTipo.Name = "cbxTipo";
             this.cbxTipo.Size = new System.Drawing.Size(121, 21);
             this.cbxTipo.TabIndex = 10;
+            this.cbxTipo.Text = "[Selecione]";
+            this.cbxTipo.SelectedIndexChanged += new System.EventHandler(this.cbxTipo_SelectedIndexChanged);
             // 
             // btncCadProd
             // 
@@ -204,7 +208,7 @@
             // frmCadProduto
             // 
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.ClientSize = new System.Drawing.Size(550, 400);
+            this.ClientSize = new System.Drawing.Size(538, 400);
             this.Controls.Add(this.btncCadProd);
             this.Controls.Add(this.cbxTipo);
             this.Controls.Add(this.cbxTamanho);

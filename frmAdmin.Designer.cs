@@ -35,9 +35,9 @@
             this.btnContas = new System.Windows.Forms.Button();
             this.btncCadastroProd = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnFechar = new System.Windows.Forms.Button();
-            this.btnMinimizar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnMinimizar = new System.Windows.Forms.Button();
+            this.btnFechar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -121,6 +121,31 @@
             this.panel1.Size = new System.Drawing.Size(573, 36);
             this.panel1.TabIndex = 6;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.label1.Location = new System.Drawing.Point(233, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(155, 27);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Adminstrador";
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.FlatAppearance.BorderSize = 0;
+            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.btnMinimizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnMinimizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnMinimizar.Location = new System.Drawing.Point(505, -5);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(27, 40);
+            this.btnMinimizar.TabIndex = 8;
+            this.btnMinimizar.Text = "─";
+            this.btnMinimizar.UseVisualStyleBackColor = true;
+            // 
             // btnFechar
             // 
             this.btnFechar.FlatAppearance.BorderSize = 0;
@@ -135,31 +160,6 @@
             this.btnFechar.Text = "x";
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.FlatAppearance.BorderSize = 0;
-            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.btnMinimizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnMinimizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnMinimizar.Location = new System.Drawing.Point(518, -5);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(27, 40);
-            this.btnMinimizar.TabIndex = 8;
-            this.btnMinimizar.Text = "─";
-            this.btnMinimizar.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.label1.Location = new System.Drawing.Point(177, 5);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(233, 27);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Cadastro de produto";
             // 
             // frmAdmin
             // 

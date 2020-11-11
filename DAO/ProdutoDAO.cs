@@ -47,7 +47,7 @@ namespace OrderPizza.DAO
             }
             return retorno;
         }
-        public bool InsertProduto(String nome, String descricao, double preco)//, String tipo, String tamanho)
+        public bool InsertProduto(String nome, String descricao, double preco, String tipo, String tamanho)
         {
             SqlCommand cmd = new SqlCommand();
             Conexao conexao = new Conexao();
@@ -57,8 +57,8 @@ namespace OrderPizza.DAO
             cmd.Parameters.AddWithValue("@NOME", nome);
             cmd.Parameters.AddWithValue("@DESCRICAO", descricao);
             cmd.Parameters.AddWithValue("@PRECO", preco);
-         //   cmd.Parameters.AddWithValue("@TIPO", tipo);
-         //   cmd.Parameters.AddWithValue("@TAMANHO", tamanho);
+            cmd.Parameters.AddWithValue("@TIPO", tipo);
+            cmd.Parameters.AddWithValue("@TAMANHO", tamanho);
             try
             {
                 cmd.Connection = conexao.conectar();

@@ -128,6 +128,7 @@ namespace OrderPizza
             }
 
          // txbPagamento nao existe mais, retirei por conta da alteração na tela de infoCliente, na parte da forma de pagamento
+         //colocar a variavel do dinheiro e cartao e aproveitar esse codigo
 
          //  if (String.IsNullOrEmpty(txbPagamento.Text))
          //  {

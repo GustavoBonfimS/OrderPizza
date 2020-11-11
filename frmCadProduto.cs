@@ -30,6 +30,12 @@ namespace OrderPizza
 
         private void frmCadProduto_Load(object sender, EventArgs e)
         {
+            cbxTipo.Items.Add("Tradicional");
+            cbxTipo.Items.Add("Doces");
+            cbxTipo.Items.Add("Bebidas");
+            cbxTamanho.Items.Add("Família");
+            cbxTamanho.Items.Add("Normal");
+            cbxTamanho.Items.Add("250ml");
 
         }
 
@@ -40,13 +46,16 @@ namespace OrderPizza
             String nome;
             String descricao;
             double preco;
-          //  String tipo;
-          //  String tamanho;
+            String tipo;
+            String tamanho;
+
+          
             if (String.IsNullOrEmpty(txbDescricao.Text) ||
                 String.IsNullOrEmpty(txbNome.Text) ||
-                String.IsNullOrEmpty(txbPreco.Text)) //||
-             //   String.IsNullOrEmpty(txbTamanho.Text) ||
-             //    String.IsNullOrEmpty(txbTipo.Text))
+                String.IsNullOrEmpty(txbPreco.Text) ||
+                String.IsNullOrEmpty(cbxTipo.Text) ||
+                String.IsNullOrEmpty(cbxTamanho.Text))
+                
             {
                 MessageBox.Show("Um dos Campos exigidos está vazio!!", "Error", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
@@ -56,8 +65,8 @@ namespace OrderPizza
                 nome = txbNome.Text;
                 descricao = txbDescricao.Text;
                 preco = Convert.ToDouble(txbPreco.Text);
-                //   tipo = txbTipo.Text;
-                //   tamanho = txbTamanho.Text;
+                tipo = cbxTipo.Text;
+                tamanho = cbxTamanho.Text;
                 var dao = new ProdutoDAO();
 
                 if (Math.Abs(preco % 1) <= (Double.Epsilon * 100))
@@ -65,16 +74,21 @@ namespace OrderPizza
                     MessageBox.Show("Represente virgula ao inves de ponto para representar" +
                         "as casas decimais!", "Erro",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    //   txbTipo.Focus();
+                       cbxTipo.Focus();
                     return;
                 }
 
-                if (dao.InsertProduto(nome, descricao, preco)) //tipo, tamanho))
+                if (dao.InsertProduto(nome, descricao, preco, tipo, tamanho))
                 {
                     MessageBox.Show("Cadastrado com sucesso!", "Sucesso!",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
+        }
+
+        private void cbxTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
