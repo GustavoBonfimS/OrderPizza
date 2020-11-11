@@ -130,7 +130,7 @@
             this.btnFechar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnFechar.Location = new System.Drawing.Point(538, -5);
             this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(27, 37);
+            this.btnFechar.Size = new System.Drawing.Size(32, 41);
             this.btnFechar.TabIndex = 7;
             this.btnFechar.Text = "x";
             this.btnFechar.UseVisualStyleBackColor = true;

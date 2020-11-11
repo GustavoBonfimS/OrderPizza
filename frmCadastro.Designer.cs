@@ -110,7 +110,7 @@
             // 
             this.lb_panel_cadFunc.AutoSize = true;
             this.lb_panel_cadFunc.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lb_panel_cadFunc.Location = new System.Drawing.Point(54, 8);
+            this.lb_panel_cadFunc.Location = new System.Drawing.Point(40, 8);
             this.lb_panel_cadFunc.Name = "lb_panel_cadFunc";
             this.lb_panel_cadFunc.Size = new System.Drawing.Size(234, 24);
             this.lb_panel_cadFunc.TabIndex = 8;
@@ -123,9 +123,9 @@
             this.btnMinimizar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.btnMinimizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnMinimizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnMinimizar.Location = new System.Drawing.Point(294, -3);
+            this.btnMinimizar.Location = new System.Drawing.Point(291, -3);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(27, 40);
+            this.btnMinimizar.Size = new System.Drawing.Size(25, 40);
             this.btnMinimizar.TabIndex = 7;
             this.btnMinimizar.Text = "─";
             this.btnMinimizar.UseVisualStyleBackColor = true;
@@ -138,9 +138,9 @@
             this.btnFechar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
             this.btnFechar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnFechar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnFechar.Location = new System.Drawing.Point(318, -1);
+            this.btnFechar.Location = new System.Drawing.Point(311, -1);
             this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(27, 37);
+            this.btnFechar.Size = new System.Drawing.Size(34, 37);
             this.btnFechar.TabIndex = 6;
             this.btnFechar.Text = "x";
             this.btnFechar.UseVisualStyleBackColor = true;

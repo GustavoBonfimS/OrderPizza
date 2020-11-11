@@ -26,5 +26,10 @@ namespace OrderPizza
         {
             this.Hide();
         }
+
+        private void frmCadProduto_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
