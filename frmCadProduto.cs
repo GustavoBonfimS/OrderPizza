@@ -31,8 +31,8 @@ namespace OrderPizza
         private void frmCadProduto_Load(object sender, EventArgs e)
         {
             cbxTipo.Items.Add("Tradicional");
-            cbxTipo.Items.Add("Doces");
-            cbxTipo.Items.Add("Bebidas");
+            cbxTipo.Items.Add("Doce");
+            cbxTipo.Items.Add("Bebida");
             cbxTamanho.Items.Add("Família");
             cbxTamanho.Items.Add("Normal");
             cbxTamanho.Items.Add("250ml");
@@ -84,11 +84,6 @@ namespace OrderPizza
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
-        }
-
-        private void cbxTipo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

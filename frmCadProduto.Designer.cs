@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.btnMinimizar_1 = new System.Windows.Forms.Button();
             this.btn_Fechar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -42,7 +43,6 @@
             this.cbxTamanho = new System.Windows.Forms.ComboBox();
             this.cbxTipo = new System.Windows.Forms.ComboBox();
             this.btncCadProd = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,6 +55,17 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(538, 43);
             this.panel2.TabIndex = 0;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.label6.Location = new System.Drawing.Point(169, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(233, 27);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Cadastro de produto";
             // 
             // btnMinimizar_1
             // 
@@ -170,6 +181,7 @@
             this.cbxTamanho.Size = new System.Drawing.Size(121, 21);
             this.cbxTamanho.TabIndex = 9;
             this.cbxTamanho.Text = "[Selecione]";
+
             // 
             // cbxTipo
             // 
@@ -179,7 +191,6 @@
             this.cbxTipo.Size = new System.Drawing.Size(121, 21);
             this.cbxTipo.TabIndex = 10;
             this.cbxTipo.Text = "[Selecione]";
-            this.cbxTipo.SelectedIndexChanged += new System.EventHandler(this.cbxTipo_SelectedIndexChanged);
             // 
             // btncCadProd
             // 
@@ -193,17 +204,6 @@
             this.btncCadProd.Text = "Cadastrar";
             this.btncCadProd.UseVisualStyleBackColor = false;
             this.btncCadProd.Click += new System.EventHandler(this.btncCadProd_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.label6.Location = new System.Drawing.Point(169, 9);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(233, 27);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Cadastro de produto";
             // 
             // frmCadProduto
             // 
