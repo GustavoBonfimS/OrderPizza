@@ -37,5 +37,15 @@ namespace OrderPizza
         {
 
         }
+
+        private void btncCadastroProd_Click(object sender, EventArgs e)
+        {
+            new frmCadProduto().Show();
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
     }
 }

@@ -126,6 +126,7 @@ namespace OrderPizza
         {
             try
             {
+                MessageBox.Show(e.Index.ToString());
                 var nome = list.Items[e.Index].ToString().Split('-')[0].Trim();
                 if (list.GetItemCheckState(e.Index) == CheckState.Unchecked)
                 {
