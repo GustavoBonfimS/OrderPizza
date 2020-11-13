@@ -104,13 +104,13 @@ namespace OrderPizza
                 switch (item.tipo.ToLower())
                 {
                     case "tradicional":
-                        checkedPizzas.Items.Add(item.nome + " - " + item.tamanho);
+                        checkedPizzas.Items.Add(item.nome + " : " + item.tamanho);
                         break;
                     case "doce":
-                        checkedDoces.Items.Add(item.nome + " - " + item.tamanho);
+                        checkedDoces.Items.Add(item.nome + " : " + item.tamanho);
                         break;
                     case "bebida":
-                        checkedBebidas.Items.Add(item.nome + " - " + item.tamanho);
+                        checkedBebidas.Items.Add(item.nome + " : " + item.tamanho);
                         break;
                 }
             }
@@ -126,7 +126,7 @@ namespace OrderPizza
         {
             try
             {
-                var nome = list.Items[e.Index].ToString().Split('-')[0].Trim();
+                var nome = list.Items[e.Index].ToString().Split(':')[0].Trim();
                 if (list.GetItemCheckState(e.Index) == CheckState.Unchecked)
                 {
                     // foi marcado agora
@@ -150,7 +150,7 @@ namespace OrderPizza
             switch (prod.tipo.ToLower())
             {
                 case "tradicional":
-                    var index = checkedPizzas.Items.IndexOf(prod.nome + " - " + prod.tamanho);
+                    var index = checkedPizzas.Items.IndexOf(prod.nome + " : " + prod.tamanho);
                     var state = true;
                     if (checkedPizzas.GetItemCheckState(index) == CheckState.Checked)
                     {
@@ -159,7 +159,7 @@ namespace OrderPizza
                     checkedPizzas.SetItemChecked(index, state);
                     break;
                 case "doce":
-                    var indexDoce = checkedDoces.Items.IndexOf(prod.nome + " - " + prod.tamanho);
+                    var indexDoce = checkedDoces.Items.IndexOf(prod.nome + " : " + prod.tamanho);
                     var stateDoce = true;
                     if (checkedDoces.GetItemCheckState(indexDoce) == CheckState.Checked)
                     {
@@ -168,7 +168,7 @@ namespace OrderPizza
                     checkedDoces.SetItemChecked(indexDoce, stateDoce);
                     break;
                 case "bebida":
-                    var indexBebida = checkedBebidas.Items.IndexOf(prod.nome + " - " + prod.tamanho);
+                    var indexBebida = checkedBebidas.Items.IndexOf(prod.nome + " : " + prod.tamanho);
                     var stateBebida = true;
                     if (checkedBebidas.GetItemCheckState(indexBebida) == CheckState.Checked)
                     {
