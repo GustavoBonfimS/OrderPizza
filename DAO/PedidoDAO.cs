@@ -37,10 +37,44 @@ namespace OrderPizza.DAO
                         pedido.idCliente = Convert.ToInt32(dr["IDCLIENTE"]);
                         pedido.valor = Convert.ToDouble(dr["VALOR"]);
                         pedido.formaPagamento = Convert.ToString(dr["FORMAPAGAMENTO"]);
+                        pedido.data = Convert.ToDateTime(dr["DATA"]);
+                        pedido.hora = Convert.ToDateTime(dr["HORA"]);
                         
                         retorno.Add(pedido);
                     }
                 }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return retorno;
+        }
+
+        private Pedido getPedidoByDate(Pedido pedido)
+        {
+            var retorno = new Pedido();
+
+            cmd.CommandText = "SELECT * FROM PEDIDO WHERE DATA = @DATA AND HORA = @HORA";
+            // cmd.Parameters.AddWithValue("@DATA", pedido.data);
+            // cmd.Parameters.AddWithValue("@HORA", pedido.hora);
+
+            try
+            {
+                dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        retorno.id = Convert.ToInt32(dr["IDPEDIDO"]);
+                        retorno.idCliente = Convert.ToInt32(dr["IDCLIENTE"]);
+                        retorno.valor = Convert.ToDouble(dr["VALOR"]);
+                        retorno.formaPagamento = Convert.ToString(dr["FORMAPAGAMENTO"]);
+                        retorno.data = DateTime.Parse(Convert.ToString(dr["DATA"]));
+                        retorno.hora = DateTime.Parse(Convert.ToString(dr["HORA"]));
+                    }
+                }
+                cmd.Dispose();
             }
             catch (SqlException ex)
             {
@@ -89,7 +123,7 @@ namespace OrderPizza.DAO
                 
                 try
                 {
-                    await cmd.ExecuteNonQueryAsync();
+                    cmd.ExecuteNonQuery();
                     retorno = true;
                 }
                 catch (SqlException ex)
@@ -98,9 +132,8 @@ namespace OrderPizza.DAO
                     MessageBox.Show(ex.Message);
                 }
             });
-
+            pedido = getPedidoByDate(pedido);
             await RelatorioDAO.inserirRegistro(pedido.id, "Pedido fianlizado");
-
 
             cmd.Dispose();
             return retorno;
