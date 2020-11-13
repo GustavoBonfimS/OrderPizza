@@ -53,8 +53,10 @@
   <ItemGroup>
     <Compile Include="DAO\ClienteDAO.cs" />
     <Compile Include="DAO\Conexao.cs" />
+    <Compile Include="DAO\EstoqueDAO.cs" />
     <Compile Include="DAO\FuncionarioDAO.cs" />
     <Compile Include="DAO\PedidoDAO.cs" />
+    <Compile Include="DAO\PizzaDAO.cs" />
     <Compile Include="DAO\ProdutoDAO.cs" />
     <Compile Include="DAO\RelatorioDAO.cs" />
     <Compile Include="frmAdmin.cs">
@@ -94,8 +96,10 @@
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Cliente.cs" />
+    <Compile Include="Model\Estoque.cs" />
     <Compile Include="Model\Funcionario.cs" />
     <Compile Include="Model\Pedido.cs" />
+    <Compile Include="Model\Pizza.cs" />
     <Compile Include="Model\Produto.cs" />
     <Compile Include="Model\Registro.cs" />
     <Compile Include="Model\Venda.cs" />
