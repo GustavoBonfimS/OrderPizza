@@ -100,7 +100,7 @@ namespace OrderPizza
             var pedidoDAO = new PedidoDAO();
             var pedido = new Pedido
             {
-                formaPagamento = txbPagamento.Text,
+           //   formaPagamento = txbPagamento.Text,
                 valor = valorTotal,
                 idCliente = this.clientes[lbResultado.SelectedIndex].id,
                 produtos = carrinho.ToList()
@@ -127,14 +127,31 @@ namespace OrderPizza
                 return false;
             }
 
-            if (String.IsNullOrEmpty(txbPagamento.Text))
-            {
-                MessageBox.Show("Campo *forma de pagamnto obrigatório");
-                txbPagamento.Focus();
-                return false;
-            }
-            return true;
+         // txbPagamento nao existe mais, retirei por conta da alteração na tela de infoCliente, na parte da forma de pagamento
+         //colocar a variavel do dinheiro e cartao e aproveitar esse codigo
+
+         //  if (String.IsNullOrEmpty(txbPagamento.Text))
+         //  {
+         //      MessageBox.Show("Campo *forma de pagamnto obrigatório");
+         //     txbPagamento.Focus();
+         //      return false;
+         //   }
+           return true;
         }
 
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void lbValorTotal_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnFechar_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
