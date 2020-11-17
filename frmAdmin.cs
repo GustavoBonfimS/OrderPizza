@@ -35,7 +35,9 @@ namespace OrderPizza
 
         private void btnEstoque_Click(object sender, EventArgs e)
         {
-
+            this.Hide();
+            var estoque = new frmCadEstoque();
+            estoque.Show();
         }
 
         private void btncCadastroProd_Click(object sender, EventArgs e)

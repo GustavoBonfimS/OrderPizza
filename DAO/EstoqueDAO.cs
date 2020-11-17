@@ -11,12 +11,17 @@ namespace OrderPizza.DAO
 {
     class EstoqueDAO
     {
+        SqlCommand cmd;
+        SqlDataReader dr;
+
+        public EstoqueDAO()
+        {
+           cmd = new SqlCommand();
+        }
         public List<Estoque> listEstoque()
         {
             var retorno = new List<Estoque>();
-            SqlCommand cmd = new SqlCommand();
             Conexao conexao = new Conexao();
-            SqlDataReader dr;
 
             cmd.CommandText = "SELECT * FROM ESTOQUE";
             try
@@ -43,19 +48,20 @@ namespace OrderPizza.DAO
             }
             return retorno;
         }
-        public bool InsertEstoque(String descricao, double quantidade)
+        public bool InsertEstoque(Estoque estoque)
         {
-            SqlCommand cmd = new SqlCommand();
             Conexao conexao = new Conexao();
             var retorno = false;
 
-            cmd.CommandText = "INSERT INTO PRODUTO (DESCRICAO, QUANTIDADE) VALUES(@DESCRICAO, @QUANTIDADE)";
-            cmd.Parameters.AddWithValue("@DESCRICAO", descricao);
-            cmd.Parameters.AddWithValue("@QUANTIDADE", quantidade);
+            cmd.CommandText = "INSERT INTO ESTOQUE(DESCRICAO, QUANTIDADE, MEDIDA) VALUES(@DESCRICAO, @QUANTIDADE, @MEDIDA)";
+            cmd.Parameters.AddWithValue("@DESCRICAO", estoque.descricao);
+            cmd.Parameters.AddWithValue("@QUANTIDADE", estoque.quantidade);
+            cmd.Parameters.AddWithValue("@MEDIDA", estoque.medida);
             try
             {
                 cmd.Connection = conexao.conectar();
                 cmd.ExecuteNonQuery();
+                InsertOnPizza(estoque);
                 retorno = true;
             }
             catch (SqlException ex)
@@ -63,6 +69,32 @@ namespace OrderPizza.DAO
                 MessageBox.Show(ex.Message);
             }
 
+            return retorno;
+        }
+
+        public bool InsertOnPizza(Estoque estoque)
+        {
+            var retorno = false;
+            estoque.pizzas.ForEach(prod =>
+            {
+                MessageBox.Show(prod.quantidade.ToString());
+                // gambiarra necessaria
+                // declarando variaveis com parameter.addWithValues gera um erro de variavel ja alocada
+                cmd.CommandText = "INSERT INTO PIZZA(IDESTOQUE, IDPRODUTO, QUANTIDADE) VALUES" +
+                "((SELECT IDESTOQUE FROM ESTOQUE WHERE DESCRICAO = @DESCRICAO)," + prod.id.ToString() + "," + prod.quantidade.ToString()+")";
+
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    retorno = true;
+                }
+                catch (SqlException ex)
+                {
+                    retorno = false;
+                    MessageBox.Show(ex.Message);
+                }
+            });
+            cmd.Dispose();
             return retorno;
         }
     }

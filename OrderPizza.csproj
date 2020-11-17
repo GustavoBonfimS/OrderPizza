@@ -37,6 +37,7 @@
   </PropertyGroup>
   <PropertyGroup />
   <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -70,6 +71,12 @@
     </Compile>
     <Compile Include="frmCadastro.Designer.cs">
       <DependentUpon>frmCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCadEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCadEstoque.Designer.cs">
+      <DependentUpon>frmCadEstoque.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCadProduto.cs">
       <SubType>Form</SubType>
@@ -116,6 +123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCadastro.resx">
       <DependentUpon>frmCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCadEstoque.resx">
+      <DependentUpon>frmCadEstoque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCadProduto.resx">
       <DependentUpon>frmCadProduto.cs</DependentUpon>

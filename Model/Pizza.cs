@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OrderPizza.Model
 {
-    class Pizza
+    public class Pizza
     {
         public int id;
         public int idEstoque;

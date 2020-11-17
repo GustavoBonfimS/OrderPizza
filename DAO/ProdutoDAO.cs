@@ -53,7 +53,7 @@ namespace OrderPizza.DAO
             Conexao conexao = new Conexao();
             var retorno = false;
 
-            cmd.CommandText = "INSERT INTO PRODUTO (NOME, DESCRICAO, PRECO, TIPO, TAMANHO) VALUES(@NOME, @DESCRICAO, @PRECO, @TIPO, @TAMANHO)";
+            cmd.CommandText = "INSERT INTO PRODUTO (NOME, DESCRICAO, PRECO, TIPO, TAMANHO) VALUES (@NOME, @DESCRICAO, @PRECO, @TIPO, @TAMANHO)";
             cmd.Parameters.AddWithValue("@NOME", nome);
             cmd.Parameters.AddWithValue("@DESCRICAO", descricao);
             cmd.Parameters.AddWithValue("@PRECO", preco);
