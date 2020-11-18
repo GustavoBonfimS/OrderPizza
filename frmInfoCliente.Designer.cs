@@ -44,7 +44,7 @@
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.lbDin = new System.Windows.Forms.Label();
             this.lbCartao = new System.Windows.Forms.Label();
-            this.txbDin = new System.Windows.Forms.TextBox();
+            this.txbDinheiro = new System.Windows.Forms.TextBox();
             this.txbCartao = new System.Windows.Forms.TextBox();
             this.lblValor = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
@@ -224,12 +224,14 @@
             this.lbCartao.TabIndex = 14;
             this.lbCartao.Text = "Cartão:";
             // 
-            // txbDin
+            // txbDinheiro
             // 
-            this.txbDin.Location = new System.Drawing.Point(671, 134);
-            this.txbDin.Name = "txbDin";
-            this.txbDin.Size = new System.Drawing.Size(115, 20);
-            this.txbDin.TabIndex = 15;
+            this.txbDinheiro.Location = new System.Drawing.Point(671, 134);
+            this.txbDinheiro.Name = "txbDinheiro";
+            this.txbDinheiro.Size = new System.Drawing.Size(115, 20);
+            this.txbDinheiro.TabIndex = 15;
+            this.txbDinheiro.Text = "0";
+            this.txbDinheiro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // txbCartao
             // 
@@ -237,6 +239,8 @@
             this.txbCartao.Name = "txbCartao";
             this.txbCartao.Size = new System.Drawing.Size(115, 20);
             this.txbCartao.TabIndex = 16;
+            this.txbCartao.Text = "0";
+            this.txbCartao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblValor
             // 
@@ -257,7 +261,7 @@
             this.ClientSize = new System.Drawing.Size(820, 502);
             this.Controls.Add(this.lblValor);
             this.Controls.Add(this.txbCartao);
-            this.Controls.Add(this.txbDin);
+            this.Controls.Add(this.txbDinheiro);
             this.Controls.Add(this.lbCartao);
             this.Controls.Add(this.lbDin);
             this.Controls.Add(this.panel1);
@@ -298,7 +302,7 @@
         private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.Label lbDin;
         private System.Windows.Forms.Label lbCartao;
-        private System.Windows.Forms.TextBox txbDin;
+        private System.Windows.Forms.TextBox txbDinheiro;
         private System.Windows.Forms.TextBox txbCartao;
         private System.Windows.Forms.Label labelPedido;
         private System.Windows.Forms.Label lblValor;

@@ -25,7 +25,7 @@ namespace OrderPizza
             {
                 valorTotal += item.preco;
             }
-            lblValor.Text = valorTotal.ToString("N2");
+            lblValor.Text = valorTotal.ToString("C2");
         }
 
         private void txbTelefone_TextChanged(object sender, EventArgs e)
@@ -91,16 +91,30 @@ namespace OrderPizza
                 }
                 
                 new frmCardapio().Show();
-                this.Hide();
+                this.Dispose();
             }
         }
 
         private async void registraPedido()
         {
+            var pagamento = "";
+            if (!string.IsNullOrEmpty(txbDinheiro.Text))
+            {
+                pagamento += "dinheiro: " + txbDinheiro.Text;
+            }
+            if (!string.IsNullOrWhiteSpace(txbCartao.Text))
+            {
+                pagamento += "cartão: " + txbCartao.Text;
+            }
+            if (!string.IsNullOrWhiteSpace(txbCartao.Text) && !string.IsNullOrWhiteSpace(txbDinheiro.Text))
+            {
+                pagamento = "dinheiro: " + txbDinheiro.Text + ", cartão: " + txbCartao.Text;
+            }
+
             var pedidoDAO = new PedidoDAO();
             var pedido = new Pedido
             {
-           //   formaPagamento = txbPagamento.Text,
+                formaPagamento = pagamento,
                 valor = valorTotal,
                 idCliente = this.clientes[lbResultado.SelectedIndex].id,
                 produtos = carrinho.ToList()
@@ -113,29 +127,33 @@ namespace OrderPizza
 
         private bool validaCampos()
         {
-            if (String.IsNullOrEmpty(txbTelefone.Text))
+            if (string.IsNullOrEmpty(txbTelefone.Text))
             {
                 MessageBox.Show("Campo *telefone obrigatório", "Erro!",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txbTelefone.Focus();
                 return false;
             }
-            if (String.IsNullOrEmpty(txbEndereco.Text))
+            if (string.IsNullOrEmpty(txbEndereco.Text))
             {
                 MessageBox.Show("Campo *endereco obrigatório");
                 txbEndereco.Focus();
                 return false;
             }
+            if (string.IsNullOrEmpty(txbDinheiro.Text) && string.IsNullOrEmpty(txbCartao.Text))
+            {
+                MessageBox.Show("Informe uma forma de pagamento");
+                txbDinheiro.Focus();
+                return false;
+            }
 
-         // txbPagamento nao existe mais, retirei por conta da alteração na tela de infoCliente, na parte da forma de pagamento
-         //colocar a variavel do dinheiro e cartao e aproveitar esse codigo
+            if (Convert.ToDouble(txbDinheiro.Text) + Convert.ToDouble(txbCartao.Text) < valorTotal)
+            {
+                MessageBox.Show("O valor informado nas formas de pagamento é inferiror ao valor total");
+                txbDinheiro.Focus();
+                return false;
+            }
 
-         //  if (String.IsNullOrEmpty(txbPagamento.Text))
-         //  {
-         //      MessageBox.Show("Campo *forma de pagamnto obrigatório");
-         //     txbPagamento.Focus();
-         //      return false;
-         //   }
            return true;
         }
 
