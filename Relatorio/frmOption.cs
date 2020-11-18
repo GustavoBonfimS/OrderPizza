@@ -42,7 +42,8 @@ namespace OrderPizza.Relatorio
 
             registros.ForEach(item =>
             {
-                var field = "pedido n° " + item.idPedido.ToString() + " desc:" + item.descricao;
+                var field = "pedido n°: " + item.idPedido.ToString() + " - desc: " + item.descricao +
+                " - data: " + item.data.ToString("dd/MM/yyyy") + " - hora: " + item.hora.ToString("HH:mm");
                 lbItems.Items.Add(field);
             });
         }

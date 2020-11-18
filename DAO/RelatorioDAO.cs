@@ -9,18 +9,19 @@ namespace OrderPizza.DAO
 {
     class RelatorioDAO
     {
-        public async static Task<bool> inserirRegistro(int idPedido, string descricao)
+        public async static Task<bool> inserirRegistro(int idPedido, string descricao, int idCliente)
         {
             SqlCommand cmd = new SqlCommand();
             Conexao conexao = new Conexao();
             var retorno = false;
 
-            cmd.CommandText = "INSERT INTO RELATORIO (IDPEDIDO, DESCRICAO, DATA, HORA)" +
-                "VALUES(@IDPEDIDO, @DESCRICAO, @DATA, @HORA)";
+            cmd.CommandText = "INSERT INTO RELATORIO (IDPEDIDO, DESCRICAO, DATA, HORA, IDCLIENTE)" +
+                "VALUES(@IDPEDIDO, @DESCRICAO, @DATA, @HORA, @IDCLIENTE)";
             cmd.Parameters.AddWithValue("@IDPEDIDO", idPedido);
             cmd.Parameters.AddWithValue("@DESCRICAO", descricao);
             cmd.Parameters.AddWithValue("@DATA", (DateTime.Now).ToString("yyyy-MM-dd"));
             cmd.Parameters.AddWithValue("@HORA", (DateTime.Now).ToString("HH:mm"));
+            cmd.Parameters.AddWithValue("@IDCLIENTE", idCliente);
             try
             {
                 cmd.Connection = conexao.conectar();
@@ -46,9 +47,8 @@ namespace OrderPizza.DAO
                     cmd.CommandText = "SELECT * FROM RELATORIO";
                     break;
                 case "cliente":
-                    cmd.CommandText = "SELECT * FROM RELATORIO WHERE IDPEDIDO = " +
-                        "(SELECT IDPEDIDO FROM PEDIDO WHERE PEDIDO.IDCLIENTE = (SELECT " +
-                        "IDCLIENTE FROM CLIENTE WHERE CLIENTE.TELEFONE = @TELEFONE))";
+                    cmd.CommandText = "SELECT * FROM RELATORIO WHERE IDCLIENTE = " +
+                        "(SELECT IDCLIENTE FROM CLIENTE WHERE CLIENTE.TELEFONE = @TELEFONE)";
                     cmd.Parameters.AddWithValue("@TELEFONE", telefone);
                     break;
                 case "pedido":
@@ -75,6 +75,7 @@ namespace OrderPizza.DAO
                         retorno.Add(reg);
                     }
                 }
+                cmd.Dispose();
             }
             catch (SqlException ex)
             {

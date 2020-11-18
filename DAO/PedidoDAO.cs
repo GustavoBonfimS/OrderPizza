@@ -113,7 +113,7 @@ namespace OrderPizza.DAO
         {
             var retorno = false;
             
-            pedido.produtos.ForEach(async prod =>
+            pedido.produtos.ForEach(prod =>
             {
                 // gambiarra necessaria
                 // declarando variaveis com parameter.addWithValues gera um erro de variavel ja alocada
@@ -133,7 +133,7 @@ namespace OrderPizza.DAO
                 }
             });
             pedido = getPedidoByDate(pedido);
-            await RelatorioDAO.inserirRegistro(pedido.id, "Pedido fianlizado");
+            await RelatorioDAO.inserirRegistro(pedido.id, "Pedido fianlizado", pedido.idCliente);
 
             cmd.Dispose();
             return retorno;
