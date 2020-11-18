@@ -232,6 +232,7 @@
             this.txbDinheiro.TabIndex = 15;
             this.txbDinheiro.Text = "0";
             this.txbDinheiro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txbDinheiro.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txbDinheiro_MouseClick);
             // 
             // txbCartao
             // 
@@ -241,6 +242,7 @@
             this.txbCartao.TabIndex = 16;
             this.txbCartao.Text = "0";
             this.txbCartao.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txbCartao.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txbCartao_MouseClick);
             // 
             // lblValor
             // 

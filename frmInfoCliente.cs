@@ -20,6 +20,8 @@ namespace OrderPizza
             InitializeComponent();
             this.carrinho = _carrinho;
             this.lbResultado.Hide();
+            this.txbDinheiro.LostFocus += TxbDinheiro_LostFocus;
+            this.txbCartao.LostFocus += TxbCartao_LostFocus;
 
             foreach (var item in carrinho)
             {
@@ -170,6 +172,38 @@ namespace OrderPizza
         private void btnFechar_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void txbDinheiro_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (txbDinheiro.Text == "0")
+            {
+                txbDinheiro.Text = string.Empty;
+            }
+        }
+
+        private void TxbDinheiro_LostFocus(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txbDinheiro.Text))
+            {
+                txbDinheiro.Text = "0";
+            }
+        }
+
+        private void txbCartao_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (txbCartao.Text == "0")
+            {
+                txbCartao.Text = string.Empty;
+            }
+        }
+
+        private void TxbCartao_LostFocus(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txbCartao.Text))
+            {
+                txbCartao.Text = "0";
+            }
         }
     }
 }
