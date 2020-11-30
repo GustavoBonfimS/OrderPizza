@@ -44,11 +44,13 @@
             this.cbPesquisar = new System.Windows.Forms.ComboBox();
             this.lbTotal = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnFecharCaixa = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.btnFecharCaixa);
             this.panel3.Controls.Add(this.btnMinimizar);
             this.panel3.Controls.Add(this.labelPedido);
             this.panel3.Controls.Add(this.btnMaximizar);
@@ -280,6 +282,17 @@
             this.label3.TabIndex = 35;
             this.label3.Text = "Valor total: ";
             // 
+            // btnFecharCaixa
+            // 
+            this.btnFecharCaixa.ForeColor = System.Drawing.Color.Black;
+            this.btnFecharCaixa.Location = new System.Drawing.Point(36, 23);
+            this.btnFecharCaixa.Name = "btnFecharCaixa";
+            this.btnFecharCaixa.Size = new System.Drawing.Size(184, 23);
+            this.btnFecharCaixa.TabIndex = 5;
+            this.btnFecharCaixa.Text = "Fechar caixa e sair";
+            this.btnFecharCaixa.UseVisualStyleBackColor = true;
+            this.btnFecharCaixa.Click += new System.EventHandler(this.btnFecharCaixa_Click);
+            // 
             // frmCardapio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -330,6 +343,7 @@
         private System.Windows.Forms.ComboBox cbPesquisar;
         private System.Windows.Forms.Label lbTotal;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnFecharCaixa;
     }
 }
 

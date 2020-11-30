@@ -35,6 +35,7 @@ namespace OrderPizza
             var txt = txbTelefone.Text;
             if (txt.Length == 9)
             {
+                lbResultado.Items.Clear();
                 this.clientes = getClient(txt);
             }
         }
@@ -62,11 +63,10 @@ namespace OrderPizza
 
         private void lbResultado_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //
-            var index = lbResultado.SelectedIndex;
-            txbEndereco.Text = this.clientes[index].endereco;
-            txbTelefone.Text = this.clientes[index].telefone;
-            txbNome.Text = this.clientes[index].nome;
+            var index = lbResultado.SelectedIndex >= 0 ? lbResultado.SelectedIndex : 0;
+            txbEndereco.Text = this.clientes[index]?.endereco;
+            txbTelefone.Text = this.clientes[index]?.telefone;
+            txbNome.Text = this.clientes[index]?.nome;
         }
 
         private void frmInfoCliente_FormClosing(object sender, FormClosingEventArgs e)
@@ -119,6 +119,7 @@ namespace OrderPizza
                 formaPagamento = pagamento,
                 valor = valorTotal,
                 idCliente = this.clientes[lbResultado.SelectedIndex].id,
+                idFuncionario = Funcionario.id,
                 produtos = carrinho.ToList()
             };
 
