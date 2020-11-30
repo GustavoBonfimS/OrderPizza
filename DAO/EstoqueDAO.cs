@@ -97,5 +97,25 @@ namespace OrderPizza.DAO
             cmd.Dispose();
             return retorno;
         }
+        public bool UpdateEstoque(Estoque estoque)
+        {
+            Conexao conexao = new Conexao();
+            var retorno = false;
+
+            cmd.CommandText = "UPDATE ESTOQUE SET QUANTIDADE=" "WHERE IDPRODUTO =";
+            try
+            {
+                cmd.Connection = conexao.conectar();
+                cmd.ExecuteNonQuery();
+                InsertOnPizza(estoque);
+                retorno = true;
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return retorno;
+        }
     }
 }

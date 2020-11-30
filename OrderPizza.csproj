@@ -102,6 +102,12 @@
     <Compile Include="frmLogin.designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmUpdateEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUpdateEstoque.Designer.cs">
+      <DependentUpon>frmUpdateEstoque.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Cliente.cs" />
     <Compile Include="Model\Estoque.cs" />
     <Compile Include="Model\Funcionario.cs" />
@@ -138,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUpdateEstoque.resx">
+      <DependentUpon>frmUpdateEstoque.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

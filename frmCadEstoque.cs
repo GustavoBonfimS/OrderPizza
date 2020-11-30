@@ -70,8 +70,9 @@ namespace OrderPizza
                 {
                     var obj = new Pizza();
                     obj.id = item.id;
-                    obj.quantidade =Convert.ToDouble(Microsoft.VisualBasic.Interaction.InputBox("Informe a Quantidade de ingredientes usada na pizza",
-                        "Inf Pizza", "*", 150, 150));
+                    var atual = item.id.ToString();
+                    obj.quantidade = Convert.ToDouble(Microsoft.VisualBasic.Interaction.InputBox("Informe a Quantidade de ingredientes usada na pizza de número:"+ atual,
+                         "Inf Pizza", "*", 150, 150));
                     es.pizzas.Add(obj);
                 });
 
