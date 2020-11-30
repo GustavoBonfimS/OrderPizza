@@ -9,6 +9,7 @@ namespace OrderPizza.Model
     public class Pedido
     {
         public int id;
+        public int idFuncionario;
         public double valor;
         public int idCliente;
         public DateTime data;

@@ -178,5 +178,10 @@ namespace OrderPizza
                     break;
             }
         }
+
+        private void btnFecharCaixa_Click(object sender, EventArgs e)
+        {
+            new frmFecharCaixa().Show();
+        }
     }
 }

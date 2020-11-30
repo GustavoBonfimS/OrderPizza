@@ -2,13 +2,8 @@
 using OrderPizza.Model;
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OrderPizza
@@ -25,12 +20,14 @@ namespace OrderPizza
             InitializeComponent();
             this.produtos = this.produtoDAO.listProdutos();
             pizza = new List<Produto>();
+            lbPizzas.Hide();
         }
         private void cbPizza_CheckedChanged(object sender, EventArgs e)
         {
-            var prod = produtos.Where(item => item.tipo == "Tradicional" || item.tipo == "Doce").ToList();
+            var prod = produtos.Where(item => item.tipo.ToLower() == "tradicional" || item.tipo.ToLower() == "doce").ToList();
             if (cbPizza.Checked == true)
             {
+                lbPizzas.Show();
                 foreach (var item in prod)
                 {
                     lbPizzas.Items.Add(item.id + " - " + item.nome + " - " + item.descricao);
@@ -39,6 +36,7 @@ namespace OrderPizza
             if (cbPizza.Checked == false)
             {
                 lbPizzas.Items.Clear();
+                lbPizzas.Hide();
             }
         }
         private void btnCadEstoque_Click(object sender, EventArgs e)

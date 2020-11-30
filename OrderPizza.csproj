@@ -90,6 +90,12 @@
     <Compile Include="frmCardapio.designer.cs">
       <DependentUpon>frmCardapio.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmFecharCaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFecharCaixa.Designer.cs">
+      <DependentUpon>frmFecharCaixa.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmInfoCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCardapio.resx">
       <DependentUpon>frmCardapio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFecharCaixa.resx">
+      <DependentUpon>frmFecharCaixa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmInfoCliente.resx">
       <DependentUpon>frmInfoCliente.cs</DependentUpon>

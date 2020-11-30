@@ -51,6 +51,42 @@ namespace OrderPizza.DAO
             return retorno;
         }
 
+        public List<Pedido> ListPedidosDoDia(int idFunc)
+        {
+            var retorno = new List<Pedido>();
+
+            cmd.CommandText = "SELECT * FROM PEDIDO WHERE DATA = @DATA AND IDFUNCIONARIO = @IDFUNC ORDER BY HORA DESC";
+            cmd.Parameters.AddWithValue("@DATA", (DateTime.Now).ToString("yyyy/MM/dd"));
+            cmd.Parameters.AddWithValue("@IDFUNC", idFunc);
+
+            try
+            {
+                cmd.Connection = new Conexao().conectar();
+                dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        var pedido = new Pedido();
+                        pedido.id = Convert.ToInt32(dr["IDPEDIDO"]);
+                        pedido.idCliente = Convert.ToInt32(dr["IDCLIENTE"]);
+                        pedido.valor = Convert.ToDouble(dr["VALOR"]);
+                        pedido.formaPagamento = Convert.ToString(dr["FORMAPAGAMENTO"]);
+                        pedido.data = DateTime.Parse(Convert.ToString(dr["DATA"]));
+                        pedido.hora = DateTime.Parse(Convert.ToString(dr["HORA"]));
+                        pedido.idFuncionario = Convert.ToInt32(dr["IDFUNCIONARIO"]);
+
+                        retorno.Add(pedido);
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            return retorno;
+        }
+
         private Pedido getPedidoByDate(Pedido pedido)
         {
             var retorno = new Pedido();
@@ -87,12 +123,13 @@ namespace OrderPizza.DAO
         {
             var retorno = false;
             pedido.data = DateTime.Now;
-            cmd.CommandText = "INSERT INTO PEDIDO(VALOR, IDCLIENTE, FORMAPAGAMENTO, DATA, HORA) VALUES(@VALOR, @IDCLIENTE, @FORMAPAGAMENTO, @DATA, @HORA)";
+            cmd.CommandText = "INSERT INTO PEDIDO(VALOR, IDCLIENTE, FORMAPAGAMENTO, DATA, HORA, IDFUNCIONARIO) VALUES(@VALOR, @IDCLIENTE, @FORMAPAGAMENTO, @DATA, @HORA, @IDFUNC)";
             cmd.Parameters.AddWithValue("@VALOR", pedido.valor);
             cmd.Parameters.AddWithValue("@IDCLIENTE", pedido.idCliente);
             cmd.Parameters.AddWithValue("@FORMAPAGAMENTO", pedido.formaPagamento);
             cmd.Parameters.AddWithValue("@DATA", (pedido.data).ToString("yyyy-MM-dd"));
             cmd.Parameters.AddWithValue("@HORA", (pedido.data).ToString("HH:mm"));
+            cmd.Parameters.AddWithValue("@IDFUNC", Funcionario.id);
             try
             {
                 cmd.Connection = new Conexao().conectar();
