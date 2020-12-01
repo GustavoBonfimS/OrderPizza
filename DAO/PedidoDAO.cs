@@ -150,7 +150,7 @@ namespace OrderPizza.DAO
         {
             var retorno = false;
             
-            pedido.produtos.ForEach(prod =>
+            pedido.produtos.ForEach(async prod =>
             {
                 // gambiarra necessaria
                 // declarando variaveis com parameter.addWithValues gera um erro de variavel ja alocada
@@ -160,7 +160,7 @@ namespace OrderPizza.DAO
                 
                 try
                 {
-                    cmd.ExecuteNonQuery();
+                    await cmd.ExecuteNonQueryAsync();
                     retorno = true;
                 }
                 catch (SqlException ex)
@@ -170,9 +170,8 @@ namespace OrderPizza.DAO
                 }
             });
             pedido = getPedidoByDate(pedido);
-            await RelatorioDAO.inserirRegistro(pedido.id, "Pedido fianlizado", pedido.idCliente);
-
             cmd.Dispose();
+            await RelatorioDAO.inserirRegistro(pedido.id, "Pedido fianlizado", pedido.idCliente);
             return retorno;
         }
     }

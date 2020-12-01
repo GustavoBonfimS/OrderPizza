@@ -41,6 +41,7 @@ namespace OrderPizza.DAO
                         retorno.Add(itens);
                     }
                 }
+                cmd.Dispose();
             }
             catch (SqlException ex)
             {
@@ -63,6 +64,7 @@ namespace OrderPizza.DAO
                 cmd.ExecuteNonQuery();
                 InsertOnPizza(estoque);
                 retorno = true;
+                cmd.Dispose();
             }
             catch (SqlException ex)
             {
@@ -87,6 +89,7 @@ namespace OrderPizza.DAO
                 {
                     cmd.ExecuteNonQuery();
                     retorno = true;
+                    cmd.Dispose();
                 }
                 catch (SqlException ex)
                 {
@@ -98,60 +101,56 @@ namespace OrderPizza.DAO
             return retorno;
         }
 
-        public List<Pizza> SelectProdQtdIngredientes(int idProduto)
+        public void SelectProdQtdIngredientes(List<Produto> prods)
         {
-            Conexao conexao = new Conexao();
-            var retorno = new List<Pizza>();
-
-            cmd.CommandText = "SELECT * FROM PIZZA WHERE IDPRODUTO = @IDPRODUTO";
-            cmd.Parameters.AddWithValue("@IDPRODUTO", idProduto);
-            try
+            cmd.Connection = new Conexao().conectar();
+            prods.ForEach(async prod =>
             {
-                cmd.Connection = conexao.conectar();
-
-                dr = cmd.ExecuteReader();
-                if (dr.HasRows)
+                cmd.CommandText = "SELECT * FROM PIZZA WHERE IDPRODUTO = @IDPRODUTO";
+                cmd.Parameters.AddWithValue("@IDPRODUTO", prod.id);
+                try
                 {
-                    while (dr.Read())
+                    dr = await cmd.ExecuteReaderAsync();
+                    if (dr.HasRows)
                     {
-                        var item = new Pizza
+                        while (dr.Read())
                         {
-                            id = Convert.ToInt32(dr["IDPIZZA"]),
-                            idEstoque = Convert.ToInt32("IDESTOQUE"),
-                            idProduto = Convert.ToInt32("IDPRODUTO"),
-                            quantidade = Convert.ToInt32("QUANTIDADE")
-                        };
-                        retorno.Add(item);
+                            var item = new Pizza
+                            {
+                                id = Convert.ToInt32(dr["IDPIZZA"]),
+                                idEstoque = Convert.ToInt32(dr["IDESTOQUE"]),
+                                idProduto = Convert.ToInt32(dr["IDPRODUTO"]),
+                                quantidade = Convert.ToInt32(dr["QUANTIDADE"])
+                            };
+                            subtrairEstoque(item);
+                        }
                     }
+                    cmd.Dispose();
                 }
-            }
-            catch (SqlException ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-
-            return retorno;
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            });
         }
 
-        public bool subtrairEstoque(Pizza pizza)
+        public async void subtrairEstoque(Pizza pizza)
         {
-            var retorno = false;
+            cmd = new SqlCommand();
+            cmd.Connection = new Conexao().conectar();
             cmd.CommandText = "UPDATE ESTOQUE SET QUANTIDADE = " +
-                "(SELECT QUANTIDADE FROM ESOQUE WHERE IDESTOQUE = @IDESTOQUE) - @QTD";
+                "(SELECT QUANTIDADE FROM ESTOQUE WHERE IDESTOQUE = @IDESTOQUE) - @QTD";
             cmd.Parameters.AddWithValue("@IDESTOQUE", pizza.idEstoque);
             cmd.Parameters.AddWithValue("@QTD", pizza.quantidade);
             try
             {
-                cmd.ExecuteNonQuery();
-                retorno = true;
+                await cmd.ExecuteNonQueryAsync();
+                cmd.Dispose();
             }
             catch (SqlException ex)
             {
-                retorno = false;
                 MessageBox.Show(ex.Message);
             }
-            cmd.Dispose();
-            return retorno;
         }
     }
 }

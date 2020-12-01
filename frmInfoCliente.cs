@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OrderPizza
@@ -63,7 +64,12 @@ namespace OrderPizza
 
         private void lbResultado_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var index = lbResultado.SelectedIndex >= 0 ? lbResultado.SelectedIndex : 0;
+            var index = 0;
+            if (lbResultado.SelectedIndex < 0)
+            {
+                lbResultado.SelectedIndex = 0;
+            }
+            index = lbResultado.SelectedIndex;
             txbEndereco.Text = this.clientes[index]?.endereco;
             txbTelefone.Text = this.clientes[index]?.telefone;
             txbNome.Text = this.clientes[index]?.nome;
@@ -101,20 +107,13 @@ namespace OrderPizza
         private void subtrairEstoque()
         {
             var estoqueDAO = new EstoqueDAO();
-
-            foreach (var prod in carrinho)
-            {
-                estoqueDAO.SelectProdQtdIngredientes(prod.id)
-                    .ForEach(pizza =>
-                    {
-                        // update estoque
-                        estoqueDAO.subtrairEstoque(pizza);
-                    }
-                );
-            }
+            var prods = new List<Produto>();
+            prods = carrinho.ToList();
+            estoqueDAO.SelectProdQtdIngredientes(prods);
+            
         }
 
-        private async void registraPedido()
+        private void registraPedido()
         {
             var pagamento = "";
             if (!string.IsNullOrEmpty(txbDinheiro.Text))
@@ -140,7 +139,7 @@ namespace OrderPizza
                 produtos = carrinho.ToList()
             };
 
-            await pedidoDAO.insertPedido(pedido);
+            pedidoDAO.insertPedido(pedido);
             // registra na tabela de relatorio dentro de PedidoDAO
             // subtrair no estoque
         }
