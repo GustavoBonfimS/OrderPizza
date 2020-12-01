@@ -13,7 +13,7 @@ namespace OrderPizza
         private ClienteDAO dao = new ClienteDAO();
         private List<Cliente> clientes;
         private ObservableCollection<Produto> carrinho;
-        double valorTotal = 0;
+        private double valorTotal = 0;
 
         public frmInfoCliente(ObservableCollection<Produto> _carrinho)
         {
@@ -79,6 +79,7 @@ namespace OrderPizza
             if (validaCampos())
             {
                 registraPedido();
+                subtrairEstoque();
                 // subtrai do estoque
 
                 if (this.clientes.Count == 0)
@@ -94,6 +95,22 @@ namespace OrderPizza
                 
                 new frmCardapio().Show();
                 this.Dispose();
+            }
+        }
+
+        private void subtrairEstoque()
+        {
+            var estoqueDAO = new EstoqueDAO();
+
+            foreach (var prod in carrinho)
+            {
+                estoqueDAO.SelectProdQtdIngredientes(prod.id)
+                    .ForEach(pizza =>
+                    {
+                        // update estoque
+                        estoqueDAO.subtrairEstoque(pizza);
+                    }
+                );
             }
         }
 

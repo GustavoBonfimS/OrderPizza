@@ -97,5 +97,61 @@ namespace OrderPizza.DAO
             cmd.Dispose();
             return retorno;
         }
+
+        public List<Pizza> SelectProdQtdIngredientes(int idProduto)
+        {
+            Conexao conexao = new Conexao();
+            var retorno = new List<Pizza>();
+
+            cmd.CommandText = "SELECT * FROM PIZZA WHERE IDPRODUTO = @IDPRODUTO";
+            cmd.Parameters.AddWithValue("@IDPRODUTO", idProduto);
+            try
+            {
+                cmd.Connection = conexao.conectar();
+
+                dr = cmd.ExecuteReader();
+                if (dr.HasRows)
+                {
+                    while (dr.Read())
+                    {
+                        var item = new Pizza
+                        {
+                            id = Convert.ToInt32(dr["IDPIZZA"]),
+                            idEstoque = Convert.ToInt32("IDESTOQUE"),
+                            idProduto = Convert.ToInt32("IDPRODUTO"),
+                            quantidade = Convert.ToInt32("QUANTIDADE")
+                        };
+                        retorno.Add(item);
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            return retorno;
+        }
+
+        public bool subtrairEstoque(Pizza pizza)
+        {
+            var retorno = false;
+            cmd.CommandText = "UPDATE ESTOQUE SET QUANTIDADE = " +
+                "(SELECT QUANTIDADE FROM ESOQUE WHERE IDESTOQUE = @IDESTOQUE) - @QTD";
+            cmd.Parameters.AddWithValue("@IDESTOQUE", pizza.idEstoque);
+            cmd.Parameters.AddWithValue("@QTD", pizza.quantidade);
+            try
+            {
+                cmd.ExecuteNonQuery();
+                retorno = true;
+            }
+            catch (SqlException ex)
+            {
+                retorno = false;
+                MessageBox.Show(ex.Message);
+            }
+            cmd.Dispose();
+            return retorno;
+        }
     }
 }
