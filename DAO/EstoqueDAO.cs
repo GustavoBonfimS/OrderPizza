@@ -41,6 +41,7 @@ namespace OrderPizza.DAO
                         retorno.Add(itens);
                     }
                 }
+                cmd.Dispose();
             }
             catch (SqlException ex)
             {
@@ -63,6 +64,7 @@ namespace OrderPizza.DAO
                 cmd.ExecuteNonQuery();
                 InsertOnPizza(estoque);
                 retorno = true;
+                cmd.Dispose();
             }
             catch (SqlException ex)
             {
@@ -87,6 +89,7 @@ namespace OrderPizza.DAO
                 {
                     cmd.ExecuteNonQuery();
                     retorno = true;
+                    cmd.Dispose();
                 }
                 catch (SqlException ex)
                 {
@@ -97,6 +100,7 @@ namespace OrderPizza.DAO
             cmd.Dispose();
             return retorno;
         }
+<<<<<<< HEAD
         public bool UpdateEstoque(Estoque estoque)
         {
             Conexao conexao = new Conexao();
@@ -108,13 +112,64 @@ namespace OrderPizza.DAO
                 cmd.Connection = conexao.conectar();
                 cmd.ExecuteNonQuery();
                 retorno = true;
+=======
+
+        public void SelectProdQtdIngredientes(List<Produto> prods)
+        {
+            cmd.Connection = new Conexao().conectar();
+            prods.ForEach(async prod =>
+            {
+                cmd.CommandText = "SELECT * FROM PIZZA WHERE IDPRODUTO = @IDPRODUTO";
+                cmd.Parameters.AddWithValue("@IDPRODUTO", prod.id);
+                try
+                {
+                    dr = await cmd.ExecuteReaderAsync();
+                    if (dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            var item = new Pizza
+                            {
+                                id = Convert.ToInt32(dr["IDPIZZA"]),
+                                idEstoque = Convert.ToInt32(dr["IDESTOQUE"]),
+                                idProduto = Convert.ToInt32(dr["IDPRODUTO"]),
+                                quantidade = Convert.ToInt32(dr["QUANTIDADE"])
+                            };
+                            subtrairEstoque(item);
+                        }
+                    }
+                    cmd.Dispose();
+                }
+                catch (SqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            });
+        }
+
+        public async void subtrairEstoque(Pizza pizza)
+        {
+            cmd = new SqlCommand();
+            cmd.Connection = new Conexao().conectar();
+            cmd.CommandText = "UPDATE ESTOQUE SET QUANTIDADE = " +
+                "(SELECT QUANTIDADE FROM ESTOQUE WHERE IDESTOQUE = @IDESTOQUE) - @QTD";
+            cmd.Parameters.AddWithValue("@IDESTOQUE", pizza.idEstoque);
+            cmd.Parameters.AddWithValue("@QTD", pizza.quantidade);
+            try
+            {
+                await cmd.ExecuteNonQueryAsync();
+                cmd.Dispose();
+>>>>>>> ca9e1eb4947db7638b5f8b306f735bc6a5b03c59
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
+<<<<<<< HEAD
 
             return retorno;
+=======
+>>>>>>> ca9e1eb4947db7638b5f8b306f735bc6a5b03c59
         }
     }
 }

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OrderPizza
@@ -13,7 +14,7 @@ namespace OrderPizza
         private ClienteDAO dao = new ClienteDAO();
         private List<Cliente> clientes;
         private ObservableCollection<Produto> carrinho;
-        double valorTotal = 0;
+        private double valorTotal = 0;
 
         public frmInfoCliente(ObservableCollection<Produto> _carrinho)
         {
@@ -63,7 +64,12 @@ namespace OrderPizza
 
         private void lbResultado_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var index = lbResultado.SelectedIndex >= 0 ? lbResultado.SelectedIndex : 0;
+            var index = 0;
+            if (lbResultado.SelectedIndex < 0)
+            {
+                lbResultado.SelectedIndex = 0;
+            }
+            index = lbResultado.SelectedIndex;
             txbEndereco.Text = this.clientes[index]?.endereco;
             txbTelefone.Text = this.clientes[index]?.telefone;
             txbNome.Text = this.clientes[index]?.nome;
@@ -79,6 +85,7 @@ namespace OrderPizza
             if (validaCampos())
             {
                 registraPedido();
+                subtrairEstoque();
                 // subtrai do estoque
 
                 if (this.clientes.Count == 0)
@@ -97,7 +104,16 @@ namespace OrderPizza
             }
         }
 
-        private async void registraPedido()
+        private void subtrairEstoque()
+        {
+            var estoqueDAO = new EstoqueDAO();
+            var prods = new List<Produto>();
+            prods = carrinho.ToList();
+            estoqueDAO.SelectProdQtdIngredientes(prods);
+            
+        }
+
+        private void registraPedido()
         {
             var pagamento = "";
             if (!string.IsNullOrEmpty(txbDinheiro.Text))
@@ -123,7 +139,7 @@ namespace OrderPizza
                 produtos = carrinho.ToList()
             };
 
-            await pedidoDAO.insertPedido(pedido);
+            pedidoDAO.insertPedido(pedido);
             // registra na tabela de relatorio dentro de PedidoDAO
             // subtrair no estoque
         }
