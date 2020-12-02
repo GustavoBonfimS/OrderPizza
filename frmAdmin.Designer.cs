@@ -38,6 +38,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
+            this.btnUpEstoque = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -161,12 +162,23 @@
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
+            // btnUpEstoque
+            // 
+            this.btnUpEstoque.Location = new System.Drawing.Point(52, 334);
+            this.btnUpEstoque.Name = "btnUpEstoque";
+            this.btnUpEstoque.Size = new System.Drawing.Size(123, 23);
+            this.btnUpEstoque.TabIndex = 7;
+            this.btnUpEstoque.Text = "Update Estoque";
+            this.btnUpEstoque.UseVisualStyleBackColor = true;
+            this.btnUpEstoque.Click += new System.EventHandler(this.btnUpEstoque_Click);
+            // 
             // frmAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.ClientSize = new System.Drawing.Size(569, 371);
+            this.Controls.Add(this.btnUpEstoque);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btncCadastroProd);
             this.Controls.Add(this.btnContas);
@@ -196,5 +208,6 @@
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnUpEstoque;
     }
 }

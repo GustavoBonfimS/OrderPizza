@@ -102,12 +102,11 @@ namespace OrderPizza.DAO
             Conexao conexao = new Conexao();
             var retorno = false;
 
-            cmd.CommandText = "UPDATE ESTOQUE SET QUANTIDADE=" "WHERE IDPRODUTO =";
+            cmd.CommandText = "UPDATE ESTOQUE SET (QUANTIDADE = @QUANTIDADE) WHERE (IDPRODUTO = @IDPRODUTO)";
             try
             {
                 cmd.Connection = conexao.conectar();
                 cmd.ExecuteNonQuery();
-                InsertOnPizza(estoque);
                 retorno = true;
             }
             catch (SqlException ex)
