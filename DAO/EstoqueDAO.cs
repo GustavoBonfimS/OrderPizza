@@ -100,20 +100,6 @@ namespace OrderPizza.DAO
             cmd.Dispose();
             return retorno;
         }
-<<<<<<< HEAD
-        public bool UpdateEstoque(Estoque estoque)
-        {
-            Conexao conexao = new Conexao();
-            var retorno = false;
-
-            cmd.CommandText = "UPDATE ESTOQUE SET (QUANTIDADE = @QUANTIDADE) WHERE (IDPRODUTO = @IDPRODUTO)";
-            try
-            {
-                cmd.Connection = conexao.conectar();
-                cmd.ExecuteNonQuery();
-                retorno = true;
-=======
-
         public void SelectProdQtdIngredientes(List<Produto> prods)
         {
             cmd.Connection = new Conexao().conectar();
@@ -159,17 +145,33 @@ namespace OrderPizza.DAO
             {
                 await cmd.ExecuteNonQueryAsync();
                 cmd.Dispose();
->>>>>>> ca9e1eb4947db7638b5f8b306f735bc6a5b03c59
+
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
-<<<<<<< HEAD
 
+        }
+        public bool UpdateEstoque(Estoque estoque)
+        {
+            var retorno = false;
+            Conexao conexao = new Conexao();
+            cmd.CommandText = "UPDATE ESTOQUE SET QUANTIDADE = @QUANTIDADE WHERE IDESTOQUE = @IDESTOQUE";
+            cmd.Parameters.AddWithValue("@IDESTOQUE", estoque.id);
+            cmd.Parameters.AddWithValue("@QUANTIDADE", estoque.quantidade);
+            try
+            {
+                cmd.Connection = conexao.conectar();
+                cmd.ExecuteNonQuery();
+                retorno = true;
+            }
+            catch(SqlException ex)
+            {
+                retorno = false;
+                MessageBox.Show(ex.Message);
+            }
             return retorno;
-=======
->>>>>>> ca9e1eb4947db7638b5f8b306f735bc6a5b03c59
         }
     }
 }
