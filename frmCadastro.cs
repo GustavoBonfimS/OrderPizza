@@ -25,7 +25,7 @@ namespace OrderPizza
             string senha;
             string tipo;
 
-            if (string.IsNullOrEmpty(txbLogin.Text){
+            if (string.IsNullOrEmpty(txbLogin.Text)){
                 MessageBox.Show("O campo login está vazio, verifique e tente novamente!!", "Error", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 txbLogin.Focus();

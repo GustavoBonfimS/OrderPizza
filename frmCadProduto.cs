@@ -51,13 +51,6 @@ namespace OrderPizza
         private void btncCadProd_Click(object sender, EventArgs e)
         {
             // O tamnho e tipo eram text box porém agora são combobox, necessário mudar a lógica da progrmação as"//" indcam onde são delcaradas
-
-            String nome;
-            String descricao;
-            double preco;
-            String tipo;
-            String tamanho;
-
           
             if (String.IsNullOrEmpty(txbDescricao.Text))
             {
@@ -99,14 +92,6 @@ namespace OrderPizza
                 pr.tamanho = cbxTamanho.Text;
                 var dao = new ProdutoDAO();
 
-                if (Math.Abs(pr.preco % 1) <= (Double.Epsilon * 100))
-                {
-                    MessageBox.Show("Represente virgula ao inves de ponto para representar" +
-                        "as casas decimais!", "Erro",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                       cbxTipo.Focus();
-                    return;
-                }
                 this.pizza.ForEach(item =>
                 {
                     var obj = new Pizza();
@@ -127,7 +112,7 @@ namespace OrderPizza
 
         private void cbPizza_CheckedChanged(object sender, EventArgs e)
         {
-            var prod = ingredientes.ToList();
+            var prod = ingredientes;
             if (cbPizza.Checked == true)
             {   
                 cbIngrediente.Show();

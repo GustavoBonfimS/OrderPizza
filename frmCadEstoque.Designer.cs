@@ -123,7 +123,6 @@
             this.cbPizza.TabIndex = 7;
             this.cbPizza.Text = "Clique aqui caso for estoque usado em uma pizza";
             this.cbPizza.UseVisualStyleBackColor = true;
-            this.cbPizza.CheckedChanged += new System.EventHandler(this.cbPizza_CheckedChanged);
             // 
             // lbPizzas
             // 
@@ -132,7 +131,6 @@
             this.lbPizzas.Name = "lbPizzas";
             this.lbPizzas.Size = new System.Drawing.Size(531, 94);
             this.lbPizzas.TabIndex = 8;
-            this.lbPizzas.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.lbPizzas_ItemCheck);
             // 
             // panel1
             // 
