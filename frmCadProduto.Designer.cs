@@ -195,7 +195,6 @@ namespace OrderPizza
             this.cbxTipo.Size = new System.Drawing.Size(121, 21);
             this.cbxTipo.TabIndex = 10;
             this.cbxTipo.Text = "[Selecione]";
-            this.cbxTipo.SelectedIndexChanged += new System.EventHandler(this.cbxTipo_SelectedIndexChanged);
             // 
             // btncCadProd
             // 
@@ -234,7 +233,7 @@ namespace OrderPizza
             // frmCadProduto
             // 
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.ClientSize = new System.Drawing.Size(695, 495);
+            this.ClientSize = new System.Drawing.Size(549, 495);
             this.Controls.Add(this.cbPizza);
             this.Controls.Add(this.cbIngrediente);
             this.Controls.Add(this.btncCadProd);
@@ -259,10 +258,6 @@ namespace OrderPizza
 
         }
 
-        private void cbxTipo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
-        }
 
         #endregion
 
