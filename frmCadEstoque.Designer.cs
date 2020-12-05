@@ -81,6 +81,7 @@
             this.txbMedida.Name = "txbMedida";
             this.txbMedida.Size = new System.Drawing.Size(531, 20);
             this.txbMedida.TabIndex = 3;
+            this.txbMedida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbMedida_KeyPress);
             // 
             // txbQuantidade
             // 

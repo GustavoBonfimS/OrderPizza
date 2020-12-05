@@ -54,6 +54,7 @@
             this.txbQuantidade.Name = "txbQuantidade";
             this.txbQuantidade.Size = new System.Drawing.Size(100, 20);
             this.txbQuantidade.TabIndex = 1;
+            this.txbQuantidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbQuantidade_KeyPress);
             // 
             // lbEstoque
             // 

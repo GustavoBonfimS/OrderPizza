@@ -12,11 +12,5 @@ namespace OrderPizza.Model
         public string descricao;
         public double quantidade;
         public string medida;
-        public List<Pizza> pizzas;
-
-        public Estoque()
-        {
-            pizzas = new List<Pizza>();
-        }
      }
 }

@@ -222,5 +222,20 @@ namespace OrderPizza
                 txbCartao.Text = "0";
             }
         }
+
+        private void txbTelefone_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo só aceita números, por favor verifique oque esta sendo digitado", "Aviso"
+                    , MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+                MessageBox.Show("este campo aceita somente uma virgula");
+            }
+        }
     }
 }
