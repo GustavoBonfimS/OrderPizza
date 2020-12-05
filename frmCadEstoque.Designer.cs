@@ -167,6 +167,7 @@
             this.btn_Fechar.TabIndex = 1;
             this.btn_Fechar.Text = "x";
             this.btn_Fechar.UseVisualStyleBackColor = false;
+            this.btn_Fechar.Click += new System.EventHandler(this.btn_Fechar_Click);
             // 
             // btnMinimizar_1
             // 
@@ -180,6 +181,7 @@
             this.btnMinimizar_1.TabIndex = 2;
             this.btnMinimizar_1.Text = "─";
             this.btnMinimizar_1.UseVisualStyleBackColor = false;
+            this.btnMinimizar_1.Click += new System.EventHandler(this.btnMinimizar_1_Click);
             // 
             // frmCadEstoque
             // 
