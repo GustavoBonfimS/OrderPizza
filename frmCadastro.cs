@@ -39,7 +39,7 @@ namespace OrderPizza
             {
                 login = txbLogin.Text;
                 senha = txbSenha.Text;
-                tipo = txbTipoUsu.Text;
+                tipo = cbxTipoUsu.Text;
                 var dao = new FuncionarioDAO();
                 if (dao.InsertUsuario(login, senha, tipo))
                 {
@@ -57,6 +57,11 @@ namespace OrderPizza
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
