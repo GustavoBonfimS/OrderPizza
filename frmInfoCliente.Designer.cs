@@ -90,6 +90,7 @@
             this.txbTelefone.Size = new System.Drawing.Size(168, 20);
             this.txbTelefone.TabIndex = 3;
             this.txbTelefone.TextChanged += new System.EventHandler(this.txbTelefone_TextChanged);
+            this.txbTelefone.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbTelefone_KeyPress);
             // 
             // txbEndereco
             // 

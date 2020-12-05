@@ -29,7 +29,7 @@ namespace OrderPizza
                 lbEstoque.Show();
                 foreach (var item in estoque)
                 {
-                    lbEstoque.Items.Add(item.descricao + " - " + item.quantidade);
+                    lbEstoque.Items.Add(item.descricao + " - " + item.quantidade + " " +item.medida);
                 }
             
         }
@@ -61,6 +61,7 @@ namespace OrderPizza
             { 
             MessageBox.Show("Selecione um produto por favor", "Error!");
             }
+            lbEstoque.Refresh();
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -82,6 +83,21 @@ namespace OrderPizza
                 }
             }
             lbEstoque.ClearSelected();
+        }
+
+        private void txbQuantidade_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo só aceita números e vírgulas, por favor verifique oque esta sendo digitado", "Aviso"
+                    , MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+                MessageBox.Show("este campo aceita somente uma virgula");
+            }
         }
     }
 }

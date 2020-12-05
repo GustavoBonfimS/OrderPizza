@@ -21,7 +21,9 @@ namespace OrderPizza.DAO
         public List<Estoque> listEstoque()
         {
             var retorno = new List<Estoque>();
+            SqlCommand cmd = new SqlCommand();
             Conexao conexao = new Conexao();
+            SqlDataReader dr;
 
             cmd.CommandText = "SELECT * FROM ESTOQUE";
             try
@@ -36,6 +38,7 @@ namespace OrderPizza.DAO
                         {
                             id = Convert.ToInt32(dr["IDESTOQUE"]),
                             descricao = Convert.ToString(dr["DESCRICAO"]),
+                            medida = Convert.ToString(dr["MEDIDA"]),
                             quantidade = Convert.ToDouble(dr["QUANTIDADE"]),
                         };
                         retorno.Add(itens);
@@ -62,7 +65,6 @@ namespace OrderPizza.DAO
             {
                 cmd.Connection = conexao.conectar();
                 cmd.ExecuteNonQuery();
-                InsertOnPizza(estoque);
                 retorno = true;
                 cmd.Dispose();
             }
@@ -71,33 +73,6 @@ namespace OrderPizza.DAO
                 MessageBox.Show(ex.Message);
             }
 
-            return retorno;
-        }
-
-        public bool InsertOnPizza(Estoque estoque)
-        {
-            var retorno = false;
-            estoque.pizzas.ForEach(prod =>
-            {
-                MessageBox.Show(prod.quantidade.ToString());
-                // gambiarra necessaria
-                // declarando variaveis com parameter.addWithValues gera um erro de variavel ja alocada
-                cmd.CommandText = "INSERT INTO PIZZA(IDESTOQUE, IDPRODUTO, QUANTIDADE) VALUES" +
-                "((SELECT IDESTOQUE FROM ESTOQUE WHERE DESCRICAO = @DESCRICAO)," + prod.id.ToString() + "," + prod.quantidade.ToString()+")";
-
-                try
-                {
-                    cmd.ExecuteNonQuery();
-                    retorno = true;
-                    cmd.Dispose();
-                }
-                catch (SqlException ex)
-                {
-                    retorno = false;
-                    MessageBox.Show(ex.Message);
-                }
-            });
-            cmd.Dispose();
             return retorno;
         }
         public void SelectProdQtdIngredientes(List<Produto> prods)

@@ -19,22 +19,22 @@ namespace OrderPizza
         {
             InitializeComponent();
         }
-              
-                              
-
         private void btnCadFunc_Click_Click(object sender, EventArgs e)
         {
             string login;
             string senha;
             string tipo;
 
-            if (string.IsNullOrEmpty(txbLogin.Text) ||
-                string.IsNullOrEmpty(txbSenha.Text) ||
-                string.IsNullOrEmpty(txbTipoUsu.Text))
-            {
-                MessageBox.Show("Um dos campos está vazio, verifique e tente novamente!!", "Error", MessageBoxButtons.OK,
+            if (string.IsNullOrEmpty(txbLogin.Text){
+                MessageBox.Show("O campo login está vazio, verifique e tente novamente!!", "Error", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
+                txbLogin.Focus();
             }
+            if (string.IsNullOrEmpty(txbSenha.Text)) {
+                MessageBox.Show("O campo senha está vazio, verifique e tente novamente!!", "Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                txbSenha.Focus();
+            } 
             else
             {
                 login = txbLogin.Text;

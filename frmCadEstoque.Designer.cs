@@ -35,13 +35,11 @@
             this.txbQuantidade = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbPizza = new System.Windows.Forms.CheckBox();
-            this.lbPizzas = new System.Windows.Forms.CheckedListBox();
             this.SuspendLayout();
             // 
             // btnCadEstoque
             // 
-            this.btnCadEstoque.Location = new System.Drawing.Point(206, 346);
+            this.btnCadEstoque.Location = new System.Drawing.Point(27, 153);
             this.btnCadEstoque.Name = "btnCadEstoque";
             this.btnCadEstoque.Size = new System.Drawing.Size(75, 23);
             this.btnCadEstoque.TabIndex = 0;
@@ -71,6 +69,7 @@
             this.txbMedida.Name = "txbMedida";
             this.txbMedida.Size = new System.Drawing.Size(100, 20);
             this.txbMedida.TabIndex = 3;
+            this.txbMedida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbMedida_KeyPress);
             // 
             // txbQuantidade
             // 
@@ -97,33 +96,11 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Medida";
             // 
-            // cbPizza
-            // 
-            this.cbPizza.AutoSize = true;
-            this.cbPizza.Location = new System.Drawing.Point(27, 156);
-            this.cbPizza.Name = "cbPizza";
-            this.cbPizza.Size = new System.Drawing.Size(259, 17);
-            this.cbPizza.TabIndex = 7;
-            this.cbPizza.Text = "Clique aqui caso for estoque usado em uma pizza";
-            this.cbPizza.UseVisualStyleBackColor = true;
-            this.cbPizza.CheckedChanged += new System.EventHandler(this.cbPizza_CheckedChanged);
-            // 
-            // lbPizzas
-            // 
-            this.lbPizzas.FormattingEnabled = true;
-            this.lbPizzas.Location = new System.Drawing.Point(27, 207);
-            this.lbPizzas.Name = "lbPizzas";
-            this.lbPizzas.Size = new System.Drawing.Size(531, 94);
-            this.lbPizzas.TabIndex = 8;
-            this.lbPizzas.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.lbPizzas_ItemCheck);
-            // 
             // frmCadEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.lbPizzas);
-            this.Controls.Add(this.cbPizza);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txbQuantidade);
@@ -147,7 +124,5 @@
         private System.Windows.Forms.TextBox txbQuantidade;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.CheckBox cbPizza;
-        private System.Windows.Forms.CheckedListBox lbPizzas;
     }
 }

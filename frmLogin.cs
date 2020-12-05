@@ -120,6 +120,6 @@ namespace OrderPizza
             {
                 btnLogin.PerformClick();
             }
-        }   
+        }
     }
 }
