@@ -14,5 +14,12 @@ namespace OrderPizza.Model
         public double preco;
         public string tipo;
         public string tamanho;
+        public List<Pizza> pizzas;
+
+        public Produto()
+        {
+           pizzas = new List<Pizza>();
+        }
     }
+
 }

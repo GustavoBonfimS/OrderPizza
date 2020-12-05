@@ -11,7 +11,8 @@ namespace OrderPizza.DAO
 {
     class ProdutoDAO
     {
-
+        SqlCommand cmd;
+        SqlDataReader dr;
         public List<Produto> listProdutos()
         {
             var retorno = new List<Produto>();
@@ -47,22 +48,23 @@ namespace OrderPizza.DAO
             }
             return retorno;
         }
-        public bool InsertProduto(String nome, String descricao, double preco, String tipo, String tamanho)
+        public bool InsertProduto(Produto produto)
         {
             SqlCommand cmd = new SqlCommand();
             Conexao conexao = new Conexao();
             var retorno = false;
 
             cmd.CommandText = "INSERT INTO PRODUTO (NOME, DESCRICAO, PRECO, TIPO, TAMANHO) VALUES (@NOME, @DESCRICAO, @PRECO, @TIPO, @TAMANHO)";
-            cmd.Parameters.AddWithValue("@NOME", nome);
-            cmd.Parameters.AddWithValue("@DESCRICAO", descricao);
-            cmd.Parameters.AddWithValue("@PRECO", preco);
-            cmd.Parameters.AddWithValue("@TIPO", tipo);
-            cmd.Parameters.AddWithValue("@TAMANHO", tamanho);
+            cmd.Parameters.AddWithValue("@NOME", produto.nome);
+            cmd.Parameters.AddWithValue("@DESCRICAO", produto.descricao);
+            cmd.Parameters.AddWithValue("@PRECO", produto.preco);
+            cmd.Parameters.AddWithValue("@TIPO", produto.tipo);
+            cmd.Parameters.AddWithValue("@TAMANHO", produto.tamanho);
             try
             {
                 cmd.Connection = conexao.conectar();
                 cmd.ExecuteNonQuery();
+                InsertOnPizza(produto);
                 retorno = true;
             }
             catch (SqlException ex)
@@ -70,6 +72,30 @@ namespace OrderPizza.DAO
                 MessageBox.Show(ex.Message);
             }
 
+            return retorno;
+        }
+        public bool InsertOnPizza(Produto produto)
+        {
+            var retorno = false;
+            produto.pizzas.ForEach(prod =>
+            {
+                // gambiarra necessaria
+                // declarando variaveis com parameter.addWithValues gera um erro de variavel ja alocada
+                cmd.CommandText = "INSERT INTO PIZZA(IDPRODUTO, IDESTOQUE, QUANTIDADE) VALUES" +
+            "((SELECT IDPRODUTO FROM PRODUTO WHERE DESCRICAO = @DESCRICAO)," + prod.idEstoque.ToString() + "," + prod.quantidade.ToString() + ")";
+                try
+                {
+                    cmd.ExecuteNonQuery();
+                    retorno = true;
+                    cmd.Dispose();
+                }
+                catch (SqlException ex)
+                {
+                    retorno = false;
+                    MessageBox.Show(ex.Message);
+                }
+            });
+            cmd.Dispose();
             return retorno;
         }
     }

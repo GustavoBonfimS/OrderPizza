@@ -19,27 +19,27 @@ namespace OrderPizza
         {
             InitializeComponent();
         }
-              
-                              
-
         private void btnCadFunc_Click_Click(object sender, EventArgs e)
         {
             string login;
             string senha;
             string tipo;
 
-            if (string.IsNullOrEmpty(txbLogin.Text) ||
-                string.IsNullOrEmpty(txbSenha.Text) ||
-                string.IsNullOrEmpty(txbTipoUsu.Text))
-            {
-                MessageBox.Show("Um dos campos está vazio, verifique e tente novamente!!", "Error", MessageBoxButtons.OK,
+            if (string.IsNullOrEmpty(txbLogin.Text){
+                MessageBox.Show("O campo login está vazio, verifique e tente novamente!!", "Error", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
+                txbLogin.Focus();
             }
+            if (string.IsNullOrEmpty(txbSenha.Text)) {
+                MessageBox.Show("O campo senha está vazio, verifique e tente novamente!!", "Error", MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+                txbSenha.Focus();
+            } 
             else
             {
                 login = txbLogin.Text;
                 senha = txbSenha.Text;
-                tipo = txbTipoUsu.Text;
+                tipo = cbxTipoUsu.Text;
                 var dao = new FuncionarioDAO();
                 if (dao.InsertUsuario(login, senha, tipo))
                 {
@@ -57,6 +57,11 @@ namespace OrderPizza
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

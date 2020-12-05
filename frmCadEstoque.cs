@@ -11,43 +11,29 @@ namespace OrderPizza
     public partial class frmCadEstoque : Form
     {
         private ProdutoDAO produtoDAO = new ProdutoDAO();
-        List<Produto> produtos;
-        List<Produto> pizza;
 
         public frmCadEstoque()
         {
-            produtos = new List<Produto>();
             InitializeComponent();
-            this.produtos = this.produtoDAO.listProdutos();
-            pizza = new List<Produto>();
-            lbPizzas.Hide();
         }
-        private void cbPizza_CheckedChanged(object sender, EventArgs e)
-        {
-            var prod = produtos.Where(item => item.tipo.ToLower() == "tradicional" || item.tipo.ToLower() == "doce").ToList();
-            if (cbPizza.Checked == true)
-            {
-                lbPizzas.Show();
-                foreach (var item in prod)
-                {
-                    lbPizzas.Items.Add(item.id + " - " + item.nome + " - " + item.descricao);
-                }
-            }
-            if (cbPizza.Checked == false)
-            {
-                lbPizzas.Items.Clear();
-                lbPizzas.Hide();
-            }
-        }
+        
         private void btnCadEstoque_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(txbDescricao.Text) ||
-                string.IsNullOrEmpty(txbQuantidade.Text) ||
-                string.IsNullOrEmpty(txbMedida.Text))
-            {
-                MessageBox.Show("Um dos campos está vazio, verifique e tente novamente!!", "Error", MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
+            if (string.IsNullOrEmpty(txbDescricao.Text)){
+                MessageBox.Show("O campo descrição está vazio, verifique e tente novamente!!", "Error", MessageBoxButtons.OK,
+        MessageBoxIcon.Error);
+                txbDescricao.Focus();
             }
+            if (string.IsNullOrEmpty(txbQuantidade.Text)){
+                MessageBox.Show("O campo quantidade está vazio, verifique e tente novamente!!", "Error", MessageBoxButtons.OK,
+        MessageBoxIcon.Error);
+                txbQuantidade.Focus();
+            }
+            if (string.IsNullOrEmpty(txbMedida.Text)){
+                MessageBox.Show("O campo medida, verifique e tente novamente!!", "Error", MessageBoxButtons.OK,
+        MessageBoxIcon.Error);
+            }
+     
             else
             {
                 var es = new Estoque();
@@ -63,21 +49,6 @@ namespace OrderPizza
                     return;
                 }
 
-
-                this.pizza.ForEach(item =>
-                {
-                    var obj = new Pizza();
-                    obj.id = item.id;
-                    var atual = item.id.ToString();
-                    obj.quantidade = Convert.ToDouble(Microsoft.VisualBasic.Interaction.InputBox("Informe a Quantidade de ingredientes usada na pizza de número:"+ atual,
-                         "Inf Pizza", "*", 150, 150));
-                    es.pizzas.Add(obj);
-                });
-
-
-
-
-
                 var dao = new EstoqueDAO();
                 if (dao.InsertEstoque(es))
                 {
@@ -88,27 +59,29 @@ namespace OrderPizza
 
         }
 
-        private void lbPizzas_ItemCheck(object sender, ItemCheckEventArgs e)
+        private void txbMedida_KeyPress(object sender, KeyPressEventArgs e)
         {
-            try
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
             {
-                var id = lbPizzas.Items[e.Index].ToString().Split('-')[0].Trim();
-                if (lbPizzas.GetItemCheckState(e.Index) == CheckState.Unchecked)
-                {
-                    // foi marcado agora
-                    pizza.Add(this.produtos.Where(p => p.id == Convert.ToInt32(id)).ToArray()[0]);
-                }
+                e.Handled = true;
+                MessageBox.Show("Este campo só aceita números e vírgulas, por favor verifique oque esta sendo digitado", "Aviso"
+                    , MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+                MessageBox.Show("este campo aceita somente uma virgula");
+            }
+        }
 
-                if (lbPizzas.GetItemCheckState(e.Index) == CheckState.Checked)
-                {
-                    // foi desmarcado agora
-                    pizza.Remove(this.produtos.Where(p => p.id == Convert.ToInt32(id)).ToArray()[0]);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+        private void btnMinimizar_1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btn_Fechar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }

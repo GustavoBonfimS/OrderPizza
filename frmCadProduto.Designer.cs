@@ -1,4 +1,6 @@
-﻿namespace OrderPizza
+﻿using System;
+
+namespace OrderPizza
 {
     partial class frmCadProduto
     {
@@ -43,6 +45,8 @@
             this.cbxTamanho = new System.Windows.Forms.ComboBox();
             this.cbxTipo = new System.Windows.Forms.ComboBox();
             this.btncCadProd = new System.Windows.Forms.Button();
+            this.cbIngrediente = new System.Windows.Forms.CheckedListBox();
+            this.cbPizza = new System.Windows.Forms.CheckBox();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -171,6 +175,7 @@
             this.txbPreco.Name = "txbPreco";
             this.txbPreco.Size = new System.Drawing.Size(121, 20);
             this.txbPreco.TabIndex = 8;
+            this.txbPreco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbPreco_KeyPress);
             // 
             // cbxTamanho
             // 
@@ -181,7 +186,6 @@
             this.cbxTamanho.Size = new System.Drawing.Size(121, 21);
             this.cbxTamanho.TabIndex = 9;
             this.cbxTamanho.Text = "[Selecione]";
-
             // 
             // cbxTipo
             // 
@@ -191,13 +195,14 @@
             this.cbxTipo.Size = new System.Drawing.Size(121, 21);
             this.cbxTipo.TabIndex = 10;
             this.cbxTipo.Text = "[Selecione]";
+            this.cbxTipo.SelectedIndexChanged += new System.EventHandler(this.cbxTipo_SelectedIndexChanged);
             // 
             // btncCadProd
             // 
             this.btncCadProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btncCadProd.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btncCadProd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.btncCadProd.Location = new System.Drawing.Point(208, 355);
+            this.btncCadProd.Location = new System.Drawing.Point(208, 450);
             this.btncCadProd.Name = "btncCadProd";
             this.btncCadProd.Size = new System.Drawing.Size(121, 33);
             this.btncCadProd.TabIndex = 11;
@@ -205,10 +210,33 @@
             this.btncCadProd.UseVisualStyleBackColor = false;
             this.btncCadProd.Click += new System.EventHandler(this.btncCadProd_Click);
             // 
+            // cbIngrediente
+            // 
+            this.cbIngrediente.FormattingEnabled = true;
+            this.cbIngrediente.Location = new System.Drawing.Point(31, 320);
+            this.cbIngrediente.Name = "cbIngrediente";
+            this.cbIngrediente.Size = new System.Drawing.Size(474, 124);
+            this.cbIngrediente.TabIndex = 12;
+            this.cbIngrediente.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.cbIngrediente_ItemCheck);
+            // 
+            // cbPizza
+            // 
+            this.cbPizza.AutoSize = true;
+            this.cbPizza.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.cbPizza.Location = new System.Drawing.Point(31, 297);
+            this.cbPizza.Name = "cbPizza";
+            this.cbPizza.Size = new System.Drawing.Size(97, 17);
+            this.cbPizza.TabIndex = 13;
+            this.cbPizza.Text = "Produto Pizza?";
+            this.cbPizza.UseVisualStyleBackColor = true;
+            this.cbPizza.CheckedChanged += new System.EventHandler(this.cbPizza_CheckedChanged);
+            // 
             // frmCadProduto
             // 
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.ClientSize = new System.Drawing.Size(538, 400);
+            this.ClientSize = new System.Drawing.Size(695, 495);
+            this.Controls.Add(this.cbPizza);
+            this.Controls.Add(this.cbIngrediente);
             this.Controls.Add(this.btncCadProd);
             this.Controls.Add(this.cbxTipo);
             this.Controls.Add(this.cbxTamanho);
@@ -231,8 +259,13 @@
 
         }
 
+        private void cbxTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
-                        
+
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btn_Fechar;
         private System.Windows.Forms.Button btnMinimizar_1;
@@ -248,5 +281,7 @@
         private System.Windows.Forms.ComboBox cbxTipo;
         private System.Windows.Forms.Button btncCadProd;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.CheckedListBox cbIngrediente;
+        private System.Windows.Forms.CheckBox cbPizza;
     }
 }
