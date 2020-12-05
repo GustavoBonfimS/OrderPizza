@@ -1,4 +1,6 @@
-﻿namespace OrderPizza
+﻿using System;
+
+namespace OrderPizza
 {
     partial class frmCadProduto
     {
@@ -181,7 +183,6 @@
             this.cbxTamanho.Size = new System.Drawing.Size(121, 21);
             this.cbxTamanho.TabIndex = 9;
             this.cbxTamanho.Text = "[Selecione]";
-
             // 
             // cbxTipo
             // 
@@ -191,6 +192,7 @@
             this.cbxTipo.Size = new System.Drawing.Size(121, 21);
             this.cbxTipo.TabIndex = 10;
             this.cbxTipo.Text = "[Selecione]";
+            this.cbxTipo.SelectedIndexChanged += new System.EventHandler(this.cbxTipo_SelectedIndexChanged);
             // 
             // btncCadProd
             // 
@@ -231,8 +233,13 @@
 
         }
 
+        private void cbxTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
-                        
+
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btn_Fechar;
         private System.Windows.Forms.Button btnMinimizar_1;
