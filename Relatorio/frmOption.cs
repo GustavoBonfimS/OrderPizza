@@ -110,7 +110,7 @@ namespace OrderPizza.Relatorio
         {
             if (lbItems.Items.Count == 0)
             {
-                MessageBox.Show("Nenhum na lista de registros para ser salvo."
+                MessageBox.Show("Nenhum item na lista de registros para ser salvo."
                     ,"Erro ao salvar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
