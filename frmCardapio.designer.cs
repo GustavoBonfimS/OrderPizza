@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnFecharCaixa = new System.Windows.Forms.Button();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.labelPedido = new System.Windows.Forms.Label();
             this.btnMaximizar = new System.Windows.Forms.Button();
@@ -44,13 +45,11 @@
             this.cbPesquisar = new System.Windows.Forms.ComboBox();
             this.lbTotal = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnFecharCaixa = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.btnFecharCaixa);
             this.panel3.Controls.Add(this.btnMinimizar);
             this.panel3.Controls.Add(this.labelPedido);
             this.panel3.Controls.Add(this.btnMaximizar);
@@ -61,6 +60,18 @@
             this.panel3.Padding = new System.Windows.Forms.Padding(3);
             this.panel3.Size = new System.Drawing.Size(1266, 60);
             this.panel3.TabIndex = 11;
+            // 
+            // btnFecharCaixa
+            // 
+            this.btnFecharCaixa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnFecharCaixa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.btnFecharCaixa.Location = new System.Drawing.Point(76, 630);
+            this.btnFecharCaixa.Name = "btnFecharCaixa";
+            this.btnFecharCaixa.Size = new System.Drawing.Size(184, 23);
+            this.btnFecharCaixa.TabIndex = 5;
+            this.btnFecharCaixa.Text = "Fechar caixa e sair";
+            this.btnFecharCaixa.UseVisualStyleBackColor = false;
+            this.btnFecharCaixa.Click += new System.EventHandler(this.btnFecharCaixa_Click);
             // 
             // btnMinimizar
             // 
@@ -282,23 +293,13 @@
             this.label3.TabIndex = 35;
             this.label3.Text = "Valor total: ";
             // 
-            // btnFecharCaixa
-            // 
-            this.btnFecharCaixa.ForeColor = System.Drawing.Color.Black;
-            this.btnFecharCaixa.Location = new System.Drawing.Point(36, 23);
-            this.btnFecharCaixa.Name = "btnFecharCaixa";
-            this.btnFecharCaixa.Size = new System.Drawing.Size(184, 23);
-            this.btnFecharCaixa.TabIndex = 5;
-            this.btnFecharCaixa.Text = "Fechar caixa e sair";
-            this.btnFecharCaixa.UseVisualStyleBackColor = true;
-            this.btnFecharCaixa.Click += new System.EventHandler(this.btnFecharCaixa_Click);
-            // 
             // frmCardapio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.ClientSize = new System.Drawing.Size(1266, 681);
+            this.Controls.Add(this.btnFecharCaixa);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lbTotal);
             this.Controls.Add(this.cbPesquisar);
