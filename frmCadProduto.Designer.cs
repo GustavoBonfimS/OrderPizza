@@ -57,7 +57,7 @@ namespace OrderPizza
             this.panel2.Controls.Add(this.btn_Fechar);
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(538, 43);
+            this.panel2.Size = new System.Drawing.Size(548, 43);
             this.panel2.TabIndex = 0;
             // 
             // label6
@@ -77,7 +77,7 @@ namespace OrderPizza
             this.btnMinimizar_1.FlatAppearance.BorderSize = 0;
             this.btnMinimizar_1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizar_1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnMinimizar_1.Location = new System.Drawing.Point(476, 2);
+            this.btnMinimizar_1.Location = new System.Drawing.Point(483, 2);
             this.btnMinimizar_1.Name = "btnMinimizar_1";
             this.btnMinimizar_1.Size = new System.Drawing.Size(30, 40);
             this.btnMinimizar_1.TabIndex = 1;
@@ -92,7 +92,7 @@ namespace OrderPizza
             this.btn_Fechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_Fechar.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Fechar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btn_Fechar.Location = new System.Drawing.Point(505, 3);
+            this.btn_Fechar.Location = new System.Drawing.Point(514, 3);
             this.btn_Fechar.Name = "btn_Fechar";
             this.btn_Fechar.Size = new System.Drawing.Size(31, 39);
             this.btn_Fechar.TabIndex = 0;
@@ -105,7 +105,7 @@ namespace OrderPizza
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.label1.Location = new System.Drawing.Point(27, 74);
+            this.label1.Location = new System.Drawing.Point(27, 63);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(66, 22);
             this.label1.TabIndex = 1;
@@ -116,7 +116,7 @@ namespace OrderPizza
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.label2.Location = new System.Drawing.Point(27, 159);
+            this.label2.Location = new System.Drawing.Point(27, 148);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(101, 22);
             this.label2.TabIndex = 2;
@@ -127,7 +127,7 @@ namespace OrderPizza
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.label3.Location = new System.Drawing.Point(204, 235);
+            this.label3.Location = new System.Drawing.Point(204, 224);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(52, 22);
             this.label3.TabIndex = 3;
@@ -138,7 +138,7 @@ namespace OrderPizza
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.label4.Location = new System.Drawing.Point(27, 234);
+            this.label4.Location = new System.Drawing.Point(27, 223);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(66, 22);
             this.label4.TabIndex = 4;
@@ -149,7 +149,7 @@ namespace OrderPizza
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.label5.Location = new System.Drawing.Point(381, 235);
+            this.label5.Location = new System.Drawing.Point(381, 224);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(92, 22);
             this.label5.TabIndex = 5;
@@ -157,21 +157,24 @@ namespace OrderPizza
             // 
             // txbNome
             // 
-            this.txbNome.Location = new System.Drawing.Point(31, 100);
+            this.txbNome.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbNome.Location = new System.Drawing.Point(31, 89);
             this.txbNome.Name = "txbNome";
             this.txbNome.Size = new System.Drawing.Size(475, 20);
             this.txbNome.TabIndex = 6;
             // 
             // txbDescricao
             // 
-            this.txbDescricao.Location = new System.Drawing.Point(31, 184);
+            this.txbDescricao.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbDescricao.Location = new System.Drawing.Point(31, 173);
             this.txbDescricao.Name = "txbDescricao";
             this.txbDescricao.Size = new System.Drawing.Size(475, 20);
             this.txbDescricao.TabIndex = 7;
             // 
             // txbPreco
             // 
-            this.txbPreco.Location = new System.Drawing.Point(31, 260);
+            this.txbPreco.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbPreco.Location = new System.Drawing.Point(31, 249);
             this.txbPreco.Name = "txbPreco";
             this.txbPreco.Size = new System.Drawing.Size(121, 20);
             this.txbPreco.TabIndex = 8;
@@ -179,20 +182,21 @@ namespace OrderPizza
             // 
             // cbxTamanho
             // 
-            this.cbxTamanho.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbxTamanho.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxTamanho.FormattingEnabled = true;
-            this.cbxTamanho.Location = new System.Drawing.Point(385, 260);
+            this.cbxTamanho.Location = new System.Drawing.Point(385, 249);
             this.cbxTamanho.Name = "cbxTamanho";
-            this.cbxTamanho.Size = new System.Drawing.Size(121, 21);
+            this.cbxTamanho.Size = new System.Drawing.Size(121, 22);
             this.cbxTamanho.TabIndex = 9;
             this.cbxTamanho.Text = "[Selecione]";
             // 
             // cbxTipo
             // 
+            this.cbxTipo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxTipo.FormattingEnabled = true;
-            this.cbxTipo.Location = new System.Drawing.Point(208, 260);
+            this.cbxTipo.Location = new System.Drawing.Point(208, 249);
             this.cbxTipo.Name = "cbxTipo";
-            this.cbxTipo.Size = new System.Drawing.Size(121, 21);
+            this.cbxTipo.Size = new System.Drawing.Size(121, 22);
             this.cbxTipo.TabIndex = 10;
             this.cbxTipo.Text = "[Selecione]";
             // 
@@ -211,8 +215,9 @@ namespace OrderPizza
             // 
             // cbIngrediente
             // 
+            this.cbIngrediente.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbIngrediente.FormattingEnabled = true;
-            this.cbIngrediente.Location = new System.Drawing.Point(31, 320);
+            this.cbIngrediente.Location = new System.Drawing.Point(31, 309);
             this.cbIngrediente.Name = "cbIngrediente";
             this.cbIngrediente.Size = new System.Drawing.Size(474, 124);
             this.cbIngrediente.TabIndex = 12;
@@ -222,9 +227,9 @@ namespace OrderPizza
             // 
             this.cbPizza.AutoSize = true;
             this.cbPizza.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.cbPizza.Location = new System.Drawing.Point(31, 297);
+            this.cbPizza.Location = new System.Drawing.Point(31, 286);
             this.cbPizza.Name = "cbPizza";
-            this.cbPizza.Size = new System.Drawing.Size(97, 17);
+            this.cbPizza.Size = new System.Drawing.Size(98, 18);
             this.cbPizza.TabIndex = 13;
             this.cbPizza.Text = "Produto Pizza?";
             this.cbPizza.UseVisualStyleBackColor = true;
@@ -248,8 +253,10 @@ namespace OrderPizza
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
+            this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCadProduto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmCadProduto_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

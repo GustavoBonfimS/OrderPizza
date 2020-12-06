@@ -47,9 +47,9 @@
             this.btnCadEstoque.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnCadEstoque.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadEstoque.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.btnCadEstoque.Location = new System.Drawing.Point(228, 405);
+            this.btnCadEstoque.Location = new System.Drawing.Point(228, 436);
             this.btnCadEstoque.Name = "btnCadEstoque";
-            this.btnCadEstoque.Size = new System.Drawing.Size(121, 33);
+            this.btnCadEstoque.Size = new System.Drawing.Size(121, 36);
             this.btnCadEstoque.TabIndex = 0;
             this.btnCadEstoque.Text = "Cadastrar";
             this.btnCadEstoque.UseVisualStyleBackColor = false;
@@ -60,7 +60,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.label1.Location = new System.Drawing.Point(25, 72);
+            this.label1.Location = new System.Drawing.Point(25, 78);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(101, 22);
             this.label1.TabIndex = 1;
@@ -68,14 +68,16 @@
             // 
             // txbDescricao
             // 
-            this.txbDescricao.Location = new System.Drawing.Point(29, 97);
+            this.txbDescricao.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbDescricao.Location = new System.Drawing.Point(29, 104);
             this.txbDescricao.Name = "txbDescricao";
             this.txbDescricao.Size = new System.Drawing.Size(531, 20);
             this.txbDescricao.TabIndex = 2;
             // 
             // txbMedida
             // 
-            this.txbMedida.Location = new System.Drawing.Point(29, 204);
+            this.txbMedida.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbMedida.Location = new System.Drawing.Point(29, 220);
             this.txbMedida.Name = "txbMedida";
             this.txbMedida.Size = new System.Drawing.Size(531, 20);
             this.txbMedida.TabIndex = 3;
@@ -83,7 +85,8 @@
             // 
             // txbQuantidade
             // 
-            this.txbQuantidade.Location = new System.Drawing.Point(29, 150);
+            this.txbQuantidade.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbQuantidade.Location = new System.Drawing.Point(29, 162);
             this.txbQuantidade.Name = "txbQuantidade";
             this.txbQuantidade.Size = new System.Drawing.Size(531, 20);
             this.txbQuantidade.TabIndex = 4;
@@ -93,7 +96,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.label2.Location = new System.Drawing.Point(25, 125);
+            this.label2.Location = new System.Drawing.Point(25, 135);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 22);
             this.label2.TabIndex = 5;
@@ -104,7 +107,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.label3.Location = new System.Drawing.Point(25, 179);
+            this.label3.Location = new System.Drawing.Point(25, 193);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 22);
             this.label3.TabIndex = 6;
@@ -117,7 +120,7 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(589, 43);
+            this.panel1.Size = new System.Drawing.Size(589, 46);
             this.panel1.TabIndex = 9;
             // 
             // btnMinimizar_1
@@ -128,7 +131,7 @@
             this.btnMinimizar_1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnMinimizar_1.Location = new System.Drawing.Point(525, 2);
             this.btnMinimizar_1.Name = "btnMinimizar_1";
-            this.btnMinimizar_1.Size = new System.Drawing.Size(30, 40);
+            this.btnMinimizar_1.Size = new System.Drawing.Size(30, 43);
             this.btnMinimizar_1.TabIndex = 2;
             this.btnMinimizar_1.Text = "─";
             this.btnMinimizar_1.UseVisualStyleBackColor = false;
@@ -143,7 +146,7 @@
             this.btn_Fechar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btn_Fechar.Location = new System.Drawing.Point(556, 3);
             this.btn_Fechar.Name = "btn_Fechar";
-            this.btn_Fechar.Size = new System.Drawing.Size(31, 39);
+            this.btn_Fechar.Size = new System.Drawing.Size(31, 42);
             this.btn_Fechar.TabIndex = 1;
             this.btn_Fechar.Text = "x";
             this.btn_Fechar.UseVisualStyleBackColor = false;
@@ -154,7 +157,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.label4.Location = new System.Drawing.Point(175, 8);
+            this.label4.Location = new System.Drawing.Point(175, 9);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(236, 27);
             this.label4.TabIndex = 0;
@@ -162,10 +165,10 @@
             // 
             // frmCadEstoque
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.ClientSize = new System.Drawing.Size(589, 450);
+            this.ClientSize = new System.Drawing.Size(589, 485);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -174,8 +177,10 @@
             this.Controls.Add(this.txbDescricao);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCadEstoque);
+            this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCadEstoque";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCadEstoque";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

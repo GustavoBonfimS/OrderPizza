@@ -46,7 +46,7 @@
             // 
             this.btnCadastroFunc.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnCadastroFunc.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.btnCadastroFunc.Location = new System.Drawing.Point(52, 89);
+            this.btnCadastroFunc.Location = new System.Drawing.Point(39, 88);
             this.btnCadastroFunc.Name = "btnCadastroFunc";
             this.btnCadastroFunc.Size = new System.Drawing.Size(123, 48);
             this.btnCadastroFunc.TabIndex = 0;
@@ -58,7 +58,7 @@
             // 
             this.btnCaixa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnCaixa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.btnCaixa.Location = new System.Drawing.Point(422, 89);
+            this.btnCaixa.Location = new System.Drawing.Point(409, 88);
             this.btnCaixa.Name = "btnCaixa";
             this.btnCaixa.Size = new System.Drawing.Size(123, 48);
             this.btnCaixa.TabIndex = 1;
@@ -69,7 +69,7 @@
             // 
             this.btnEstoque.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnEstoque.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.btnEstoque.Location = new System.Drawing.Point(52, 241);
+            this.btnEstoque.Location = new System.Drawing.Point(39, 198);
             this.btnEstoque.Name = "btnEstoque";
             this.btnEstoque.Size = new System.Drawing.Size(123, 48);
             this.btnEstoque.TabIndex = 2;
@@ -81,7 +81,7 @@
             // 
             this.btnRelatorio.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnRelatorio.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.btnRelatorio.Location = new System.Drawing.Point(422, 241);
+            this.btnRelatorio.Location = new System.Drawing.Point(409, 198);
             this.btnRelatorio.Name = "btnRelatorio";
             this.btnRelatorio.Size = new System.Drawing.Size(123, 48);
             this.btnRelatorio.TabIndex = 3;
@@ -93,7 +93,7 @@
             // 
             this.btnContas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnContas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.btnContas.Location = new System.Drawing.Point(238, 241);
+            this.btnContas.Location = new System.Drawing.Point(225, 198);
             this.btnContas.Name = "btnContas";
             this.btnContas.Size = new System.Drawing.Size(123, 48);
             this.btnContas.TabIndex = 4;
@@ -104,7 +104,7 @@
             // 
             this.btncCadastroProd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btncCadastroProd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.btncCadastroProd.Location = new System.Drawing.Point(238, 89);
+            this.btncCadastroProd.Location = new System.Drawing.Point(225, 88);
             this.btncCadastroProd.Name = "btncCadastroProd";
             this.btncCadastroProd.Size = new System.Drawing.Size(123, 48);
             this.btncCadastroProd.TabIndex = 5;
@@ -164,12 +164,15 @@
             // 
             // btnUpEstoque
             // 
-            this.btnUpEstoque.Location = new System.Drawing.Point(52, 334);
+            this.btnUpEstoque.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnUpEstoque.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpEstoque.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.btnUpEstoque.Location = new System.Drawing.Point(225, 298);
             this.btnUpEstoque.Name = "btnUpEstoque";
-            this.btnUpEstoque.Size = new System.Drawing.Size(123, 23);
+            this.btnUpEstoque.Size = new System.Drawing.Size(123, 48);
             this.btnUpEstoque.TabIndex = 7;
             this.btnUpEstoque.Text = "Update Estoque";
-            this.btnUpEstoque.UseVisualStyleBackColor = true;
+            this.btnUpEstoque.UseVisualStyleBackColor = false;
             this.btnUpEstoque.Click += new System.EventHandler(this.btnUpEstoque_Click);
             // 
             // frmAdmin
@@ -188,6 +191,7 @@
             this.Controls.Add(this.btnCadastroFunc);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAdmin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAdmin";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmAdmin_FormClosing);
             this.panel1.ResumeLayout(false);
