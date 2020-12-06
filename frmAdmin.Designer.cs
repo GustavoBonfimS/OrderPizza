@@ -29,10 +29,8 @@
         private void InitializeComponent()
         {
             this.btnCadastroFunc = new System.Windows.Forms.Button();
-            this.btnCaixa = new System.Windows.Forms.Button();
             this.btnEstoque = new System.Windows.Forms.Button();
             this.btnRelatorio = new System.Windows.Forms.Button();
-            this.btnContas = new System.Windows.Forms.Button();
             this.btncCadastroProd = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
@@ -54,17 +52,6 @@
             this.btnCadastroFunc.UseVisualStyleBackColor = false;
             this.btnCadastroFunc.Click += new System.EventHandler(this.btnCadastro_Click);
             // 
-            // btnCaixa
-            // 
-            this.btnCaixa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnCaixa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.btnCaixa.Location = new System.Drawing.Point(409, 88);
-            this.btnCaixa.Name = "btnCaixa";
-            this.btnCaixa.Size = new System.Drawing.Size(123, 48);
-            this.btnCaixa.TabIndex = 1;
-            this.btnCaixa.Text = "Gerenciade caixas";
-            this.btnCaixa.UseVisualStyleBackColor = false;
-            // 
             // btnEstoque
             // 
             this.btnEstoque.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
@@ -73,7 +60,7 @@
             this.btnEstoque.Name = "btnEstoque";
             this.btnEstoque.Size = new System.Drawing.Size(123, 48);
             this.btnEstoque.TabIndex = 2;
-            this.btnEstoque.Text = "Gerencia de estoque";
+            this.btnEstoque.Text = "Cadastro de ingredientes";
             this.btnEstoque.UseVisualStyleBackColor = false;
             this.btnEstoque.Click += new System.EventHandler(this.btnEstoque_Click);
             // 
@@ -88,17 +75,6 @@
             this.btnRelatorio.Text = "Gerar relatorios";
             this.btnRelatorio.UseVisualStyleBackColor = false;
             this.btnRelatorio.Click += new System.EventHandler(this.btnRelatorio_Click);
-            // 
-            // btnContas
-            // 
-            this.btnContas.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnContas.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.btnContas.Location = new System.Drawing.Point(225, 198);
-            this.btnContas.Name = "btnContas";
-            this.btnContas.Size = new System.Drawing.Size(123, 48);
-            this.btnContas.TabIndex = 4;
-            this.btnContas.Text = "Contas a pagar/receber";
-            this.btnContas.UseVisualStyleBackColor = false;
             // 
             // btncCadastroProd
             // 
@@ -167,11 +143,11 @@
             this.btnUpEstoque.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnUpEstoque.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpEstoque.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.btnUpEstoque.Location = new System.Drawing.Point(225, 298);
+            this.btnUpEstoque.Location = new System.Drawing.Point(409, 88);
             this.btnUpEstoque.Name = "btnUpEstoque";
             this.btnUpEstoque.Size = new System.Drawing.Size(123, 48);
             this.btnUpEstoque.TabIndex = 7;
-            this.btnUpEstoque.Text = "Update Estoque";
+            this.btnUpEstoque.Text = "Alterar estoque";
             this.btnUpEstoque.UseVisualStyleBackColor = false;
             this.btnUpEstoque.Click += new System.EventHandler(this.btnUpEstoque_Click);
             // 
@@ -184,10 +160,8 @@
             this.Controls.Add(this.btnUpEstoque);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btncCadastroProd);
-            this.Controls.Add(this.btnContas);
             this.Controls.Add(this.btnRelatorio);
             this.Controls.Add(this.btnEstoque);
-            this.Controls.Add(this.btnCaixa);
             this.Controls.Add(this.btnCadastroFunc);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmAdmin";
@@ -205,10 +179,8 @@
         #endregion
 
         private System.Windows.Forms.Button btnCadastroFunc;
-        private System.Windows.Forms.Button btnCaixa;
         private System.Windows.Forms.Button btnEstoque;
         private System.Windows.Forms.Button btnRelatorio;
-        private System.Windows.Forms.Button btnContas;
         private System.Windows.Forms.Button btncCadastroProd;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnFechar;
