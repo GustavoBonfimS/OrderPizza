@@ -9,6 +9,9 @@ namespace OrderPizza
 {
     public partial class frmLogin : Form
     {
+        int X = 0;
+        int Y = 0;
+
         public frmLogin()
         {
             InitializeComponent();
@@ -120,6 +123,20 @@ namespace OrderPizza
             {
                 btnLogin.PerformClick();
             }
+        }
+
+        private void frmLogin_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left) return;
+            X = this.Left - MousePosition.X;
+            Y = this.Top - MousePosition.Y;
+        }
+
+        private void frmLogin_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left) return;
+            this.Left = X + MousePosition.X;
+            this.Top = Y + MousePosition.Y;
         }
     }
 }

@@ -182,6 +182,8 @@
             this.Name = "frmCadEstoque";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCadEstoque";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmCadEstoque_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.frmCadEstoque_MouseMove);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

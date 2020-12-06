@@ -183,6 +183,8 @@
             this.Name = "frmCadastro";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmAdmin";
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmCadastro_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.frmCadastro_MouseMove);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

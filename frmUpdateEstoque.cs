@@ -16,6 +16,9 @@ namespace OrderPizza
     {
         private EstoqueDAO estoqueDAO = new EstoqueDAO();
         List<Estoque> estoque;
+        int X = 0;
+        int Y = 0;
+
         public frmUpdateEstoque()
         {
             estoque = new List<Estoque>();
@@ -108,6 +111,20 @@ namespace OrderPizza
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void frmUpdateEstoque_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left) return;
+            X = this.Left - MousePosition.X;
+            Y = this.Top - MousePosition.Y;
+        }
+
+        private void frmUpdateEstoque_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left) return;
+            this.Left = X + MousePosition.X;
+            this.Top = Y + MousePosition.Y;
         }
     }
 }

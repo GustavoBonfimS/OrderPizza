@@ -11,6 +11,8 @@ namespace OrderPizza
     public partial class frmCadEstoque : Form
     {
         private ProdutoDAO produtoDAO = new ProdutoDAO();
+        int X = 0;
+        int Y = 0;
 
         public frmCadEstoque()
         {
@@ -82,6 +84,20 @@ namespace OrderPizza
         private void btn_Fechar_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void frmCadEstoque_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left) return;
+            X = this.Left - MousePosition.X;
+            Y = this.Top - MousePosition.Y;
+        }
+
+        private void frmCadEstoque_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left) return;
+            this.Left = X + MousePosition.X;
+            this.Top = Y + MousePosition.Y;
         }
     }
 }

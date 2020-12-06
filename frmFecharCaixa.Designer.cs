@@ -117,6 +117,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmFecharCaixa";
             this.Load += new System.EventHandler(this.frmFecharCaixa_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmFecharCaixa_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.frmFecharCaixa_MouseMove);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

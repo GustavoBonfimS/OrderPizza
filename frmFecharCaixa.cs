@@ -17,6 +17,8 @@ namespace OrderPizza
         List<Pedido> dailyRequests;
         PedidoDAO dao;
         double valorTotal = 0;
+        int X = 0;
+        int Y = 0;
         public frmFecharCaixa()
         {
             InitializeComponent();
@@ -43,5 +45,20 @@ namespace OrderPizza
         {
             Application.Restart();
         }
+
+        private void frmFecharCaixa_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left) return;
+            this.Left = X + MousePosition.X;
+            this.Top = Y + MousePosition.Y;
+        }
+
+        private void frmFecharCaixa_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left) return;
+            X = this.Left - MousePosition.X;
+            Y = this.Top - MousePosition.Y;
+        }
     }
+  
 }

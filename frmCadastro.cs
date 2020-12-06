@@ -15,6 +15,8 @@ namespace OrderPizza
 {
     public partial class frmCadastro : Form
     {
+        int X = 0;
+        int Y = 0;
         public frmCadastro()
         {
             InitializeComponent();
@@ -62,6 +64,20 @@ namespace OrderPizza
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void frmCadastro_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left) return;
+            X = this.Left - MousePosition.X;
+            Y = this.Top - MousePosition.Y;
+        }
+
+        private void frmCadastro_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left) return;
+            this.Left = X + MousePosition.X;
+            this.Top = Y + MousePosition.Y;
         }
     }
 }

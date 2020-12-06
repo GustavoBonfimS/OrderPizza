@@ -34,9 +34,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnFechar = new System.Windows.Forms.Button();
-            this.btnMinimizar = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnMinimizar = new System.Windows.Forms.Button();
+            this.btnFechar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -106,20 +106,16 @@
             this.panel1.Size = new System.Drawing.Size(502, 40);
             this.panel1.TabIndex = 15;
             // 
-            // btnFechar
+            // label2
             // 
-            this.btnFechar.FlatAppearance.BorderSize = 0;
-            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFechar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
-            this.btnFechar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnFechar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnFechar.Location = new System.Drawing.Point(471, 2);
-            this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(27, 37);
-            this.btnFechar.TabIndex = 6;
-            this.btnFechar.Text = "x";
-            this.btnFechar.UseVisualStyleBackColor = true;
-            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.label2.Location = new System.Drawing.Point(157, 6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(175, 27);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Alterar estoque";
             // 
             // btnMinimizar
             // 
@@ -136,16 +132,20 @@
             this.btnMinimizar.UseVisualStyleBackColor = true;
             this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
-            // label2
+            // btnFechar
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.label2.Location = new System.Drawing.Point(157, 6);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(175, 27);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Alterar estoque";
+            this.btnFechar.FlatAppearance.BorderSize = 0;
+            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFechar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.btnFechar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnFechar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnFechar.Location = new System.Drawing.Point(471, 2);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(27, 37);
+            this.btnFechar.TabIndex = 6;
+            this.btnFechar.Text = "x";
+            this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
             // frmUpdateEstoque
             // 
@@ -164,6 +164,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmUpdateEstoque";
             this.Load += new System.EventHandler(this.frmUpdateEstoque_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmUpdateEstoque_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.frmUpdateEstoque_MouseMove);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

@@ -315,6 +315,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmInfoCliente";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmInfoCliente_FormClosing);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmInfoCliente_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.frmInfoCliente_MouseMove);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
