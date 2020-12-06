@@ -320,6 +320,8 @@
             this.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmCardapio_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmCardapio_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.frmCardapio_MouseMove);
             this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

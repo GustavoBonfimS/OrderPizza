@@ -13,6 +13,8 @@ namespace OrderPizza
 {
     public partial class frmAdmin : Form
     {
+        int X = 0;
+        int Y = 0;
         public frmAdmin()
         {
             InitializeComponent();
@@ -54,6 +56,20 @@ namespace OrderPizza
             this.Hide();
             var updtEstoque = new frmUpdateEstoque();
             updtEstoque.Show();
+        }
+
+        private void frmAdmin_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left) return;
+            X = this.Left - MousePosition.X;
+            Y = this.Top - MousePosition.Y;
+        }
+
+        private void frmAdmin_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left) return;
+            this.Left = X + MousePosition.X;
+            this.Top = Y + MousePosition.Y;
         }
     }
 }

@@ -201,6 +201,8 @@
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmLogin_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmLogin_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.frmLogin_MouseMove);
             ((System.ComponentModel.ISupportInitialize)(this.iconelogin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxUsuario)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSenha)).EndInit();

@@ -258,6 +258,8 @@ namespace OrderPizza
             this.Name = "frmCadProduto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.frmCadProduto_Load);
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmCadProduto_MouseDown);
+            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.frmCadProduto_MouseMove);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);

@@ -14,6 +14,8 @@ namespace OrderPizza
         private ProdutoDAO produtoDAO = new ProdutoDAO();
         List<Produto> produtos;
         ObservableCollection<Produto> carrinho;
+        int X = 0;
+        int Y = 0;
 
         public frmCardapio()
         {
@@ -187,6 +189,20 @@ namespace OrderPizza
         private void btnFecharCaixa_Click(object sender, EventArgs e)
         {
             new frmFecharCaixa().Show();
+        }
+
+        private void frmCardapio_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left) return;
+            X = this.Left - MousePosition.X;
+            Y = this.Top - MousePosition.Y;
+        }
+
+        private void frmCardapio_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left) return;
+            this.Left = X + MousePosition.X;
+            this.Top = Y + MousePosition.Y;
         }
     }
 }

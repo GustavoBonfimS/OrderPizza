@@ -15,6 +15,8 @@ namespace OrderPizza
         private List<Cliente> clientes;
         private ObservableCollection<Produto> carrinho;
         private double valorTotal = 0;
+        int X = 0;
+        int Y = 0;
 
         public frmInfoCliente(ObservableCollection<Produto> _carrinho)
         {
@@ -265,5 +267,20 @@ namespace OrderPizza
                 MessageBox.Show("este campo aceita somente uma virgula");
             }
         }
+
+        private void frmInfoCliente_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left) return;
+            X = this.Left - MousePosition.X;
+            Y = this.Top - MousePosition.Y;
+        }
+
+        private void frmInfoCliente_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left) return;
+            this.Left = X + MousePosition.X;
+            this.Top = Y + MousePosition.Y;
+        }
     }
+    
 }
