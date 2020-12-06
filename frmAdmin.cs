@@ -51,7 +51,6 @@ namespace OrderPizza
 
         private void btnUpEstoque_Click(object sender, EventArgs e)
         {
-            this.Hide();
             var updtEstoque = new frmUpdateEstoque();
             updtEstoque.Show();
         }

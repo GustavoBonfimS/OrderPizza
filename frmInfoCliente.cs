@@ -100,7 +100,7 @@ namespace OrderPizza
                     };
                     await dao.insertCliente(newClient);
                 }
-                
+                MessageBox.Show("Pedido finalizado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 new frmCardapio().Show();
                 this.Dispose();
             }
@@ -109,8 +109,7 @@ namespace OrderPizza
         private void subtrairEstoque()
         {
             var estoqueDAO = new EstoqueDAO();
-            var prods = new List<Produto>();
-            prods = carrinho.ToList();
+            var prods = carrinho.ToList();
             estoqueDAO.SelectProdQtdIngredientes(prods);
             
         }
@@ -210,8 +209,8 @@ namespace OrderPizza
 
             if (Convert.ToDouble(txbDinheiro.Text) + Convert.ToDouble(txbCartao.Text) > valorTotal)
             {
-                var troco = (Convert.ToDouble(txbDinheiro.Text) + Convert.ToDouble(txbCartao.Text)) - valorTotal;
-                lblValorTroco.Text = troco.ToString();
+                var troco = (Convert.ToDouble(txbDinheiro.Text) + Convert.ToDouble(txbCartao.Text)) - (Convert.ToDouble(valorTotal.ToString("N2")));
+                lblValorTroco.Text = troco.ToString("C2");
                 lblTroco.Show();
                 lblValorTroco.Show();
             }
@@ -239,8 +238,8 @@ namespace OrderPizza
 
             if (Convert.ToDouble(txbDinheiro.Text) + Convert.ToDouble(txbCartao.Text) > valorTotal)
             {
-                var troco = (Convert.ToDouble(txbDinheiro.Text) + Convert.ToDouble(txbCartao.Text)) - valorTotal;
-                lblValorTroco.Text = troco.ToString();
+                var troco = (Convert.ToDouble(txbDinheiro.Text) + Convert.ToDouble(txbCartao.Text)) - (Convert.ToDouble(valorTotal.ToString("N2")));
+                lblValorTroco.Text = troco.ToString("C2");
                 lblTroco.Show();
                 lblValorTroco.Show();
             }

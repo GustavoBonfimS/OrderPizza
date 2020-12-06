@@ -119,7 +119,7 @@ namespace OrderPizza.DAO
             return retorno;
         }
 
-        public async void insertPedido(Pedido pedido)
+        public void insertPedido(Pedido pedido)
         {
             pedido.data = DateTime.Now;
             cmd.CommandText = "INSERT INTO PEDIDO(VALOR, IDCLIENTE, FORMAPAGAMENTO, DATA, HORA, IDFUNCIONARIO) VALUES(@VALOR, @IDCLIENTE, @FORMAPAGAMENTO, @DATA, @HORA, @IDFUNC)";
@@ -132,8 +132,8 @@ namespace OrderPizza.DAO
             try
             {
                 cmd.Connection = new Conexao().conectar();
-                await cmd.ExecuteNonQueryAsync();
-                await insertPedidoOnVenda(pedido);
+                cmd.ExecuteNonQuery();
+                insertPedidoOnVenda(pedido);
                 cmd.Dispose();
             }
             catch (SqlException ex)
@@ -142,9 +142,8 @@ namespace OrderPizza.DAO
             }
         }
 
-        private async Task<bool> insertPedidoOnVenda(Pedido pedido)
+        private void insertPedidoOnVenda(Pedido pedido)
         {
-            var retorno = false;
             
             pedido.produtos.ForEach(async prod =>
             {
@@ -156,19 +155,16 @@ namespace OrderPizza.DAO
                 
                 try
                 {
-                    await cmd.ExecuteNonQueryAsync();
-                    retorno = true;
+                    cmd.ExecuteNonQuery();
                 }
                 catch (SqlException ex)
                 {
-                    retorno = false;
                     MessageBox.Show(ex.Message);
                 }
             });
             pedido = getPedidoByDate(pedido);
             cmd.Dispose();
-            await RelatorioDAO.inserirRegistro(pedido.id, "Pedido fianlizado", pedido.idCliente);
-            return retorno;
+            RelatorioDAO.inserirRegistro(pedido.id, "Pedido fianlizado", pedido.idCliente);
         }
     }
 }
