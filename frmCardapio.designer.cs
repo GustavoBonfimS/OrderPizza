@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnFecharCaixa = new System.Windows.Forms.Button();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.labelPedido = new System.Windows.Forms.Label();
             this.btnMaximizar = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
+            this.btnFecharCaixa = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.checkedPizzas = new System.Windows.Forms.CheckedListBox();
             this.pizzaSabor = new System.Windows.Forms.Label();
@@ -60,18 +60,6 @@
             this.panel3.Padding = new System.Windows.Forms.Padding(3);
             this.panel3.Size = new System.Drawing.Size(1266, 60);
             this.panel3.TabIndex = 11;
-            // 
-            // btnFecharCaixa
-            // 
-            this.btnFecharCaixa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.btnFecharCaixa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.btnFecharCaixa.Location = new System.Drawing.Point(76, 630);
-            this.btnFecharCaixa.Name = "btnFecharCaixa";
-            this.btnFecharCaixa.Size = new System.Drawing.Size(184, 23);
-            this.btnFecharCaixa.TabIndex = 5;
-            this.btnFecharCaixa.Text = "Fechar caixa e sair";
-            this.btnFecharCaixa.UseVisualStyleBackColor = false;
-            this.btnFecharCaixa.Click += new System.EventHandler(this.btnFecharCaixa_Click);
             // 
             // btnMinimizar
             // 
@@ -135,6 +123,18 @@
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
+            // btnFecharCaixa
+            // 
+            this.btnFecharCaixa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnFecharCaixa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.btnFecharCaixa.Location = new System.Drawing.Point(76, 630);
+            this.btnFecharCaixa.Name = "btnFecharCaixa";
+            this.btnFecharCaixa.Size = new System.Drawing.Size(184, 23);
+            this.btnFecharCaixa.TabIndex = 5;
+            this.btnFecharCaixa.Text = "Fechar caixa e sair";
+            this.btnFecharCaixa.UseVisualStyleBackColor = false;
+            this.btnFecharCaixa.Click += new System.EventHandler(this.btnFecharCaixa_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -162,9 +162,9 @@
             "produto1",
             "produto2",
             "produto3"});
-            this.checkedPizzas.Location = new System.Drawing.Point(76, 293);
+            this.checkedPizzas.Location = new System.Drawing.Point(73, 293);
             this.checkedPizzas.Name = "checkedPizzas";
-            this.checkedPizzas.Size = new System.Drawing.Size(229, 270);
+            this.checkedPizzas.Size = new System.Drawing.Size(354, 270);
             this.checkedPizzas.TabIndex = 24;
             this.checkedPizzas.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedPizzas_ItemCheck);
             // 
@@ -175,9 +175,9 @@
             this.pizzaSabor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.pizzaSabor.Location = new System.Drawing.Point(70, 213);
             this.pizzaSabor.Name = "pizzaSabor";
-            this.pizzaSabor.Size = new System.Drawing.Size(123, 32);
+            this.pizzaSabor.Size = new System.Drawing.Size(163, 32);
             this.pizzaSabor.TabIndex = 25;
-            this.pizzaSabor.Text = "Sabores";
+            this.pizzaSabor.Text = "Tradicional";
             // 
             // pizzaDoce
             // 
@@ -185,7 +185,7 @@
             this.pizzaDoce.Font = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pizzaDoce.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.pizzaDoce.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.pizzaDoce.Location = new System.Drawing.Point(442, 213);
+            this.pizzaDoce.Location = new System.Drawing.Point(472, 213);
             this.pizzaDoce.Name = "pizzaDoce";
             this.pizzaDoce.Size = new System.Drawing.Size(97, 32);
             this.pizzaDoce.TabIndex = 27;
@@ -219,9 +219,9 @@
             "produto1",
             "produto2",
             "produto3"});
-            this.checkedDoces.Location = new System.Drawing.Point(448, 293);
+            this.checkedDoces.Location = new System.Drawing.Point(478, 293);
             this.checkedDoces.Name = "checkedDoces";
-            this.checkedDoces.Size = new System.Drawing.Size(229, 270);
+            this.checkedDoces.Size = new System.Drawing.Size(354, 270);
             this.checkedDoces.TabIndex = 29;
             this.checkedDoces.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedDoces_ItemCheck);
             // 

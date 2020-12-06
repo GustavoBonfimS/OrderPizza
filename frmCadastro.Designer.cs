@@ -156,7 +156,7 @@
             // 
             this.cbxTipoUsu.FormattingEnabled = true;
             this.cbxTipoUsu.Items.AddRange(new object[] {
-            "funcionari",
+            "funcionario",
             "admin"});
             this.cbxTipoUsu.Location = new System.Drawing.Point(109, 261);
             this.cbxTipoUsu.Name = "cbxTipoUsu";
