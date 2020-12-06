@@ -99,5 +99,15 @@ namespace OrderPizza
                 MessageBox.Show("este campo aceita somente uma virgula");
             }
         }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
     }
 }

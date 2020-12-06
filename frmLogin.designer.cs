@@ -153,6 +153,7 @@
             // 
             this.txbLogin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.txbLogin.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbLogin.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbLogin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.txbLogin.Location = new System.Drawing.Point(121, 226);
             this.txbLogin.Name = "txbLogin";
@@ -167,6 +168,7 @@
             // 
             this.txbSenha.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.txbSenha.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txbSenha.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txbSenha.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.txbSenha.Location = new System.Drawing.Point(118, 276);
             this.txbSenha.Name = "txbSenha";

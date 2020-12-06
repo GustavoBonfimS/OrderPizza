@@ -57,7 +57,7 @@
             this.lbTel.AutoSize = true;
             this.lbTel.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.lbTel.Location = new System.Drawing.Point(23, 63);
+            this.lbTel.Location = new System.Drawing.Point(23, 68);
             this.lbTel.Name = "lbTel";
             this.lbTel.Size = new System.Drawing.Size(89, 22);
             this.lbTel.TabIndex = 0;
@@ -68,7 +68,7 @@
             this.lbEnd.AutoSize = true;
             this.lbEnd.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbEnd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.lbEnd.Location = new System.Drawing.Point(23, 192);
+            this.lbEnd.Location = new System.Drawing.Point(23, 207);
             this.lbEnd.Name = "lbEnd";
             this.lbEnd.Size = new System.Drawing.Size(98, 22);
             this.lbEnd.TabIndex = 1;
@@ -79,7 +79,7 @@
             this.lbFormaPag.AutoSize = true;
             this.lbFormaPag.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFormaPag.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.lbFormaPag.Location = new System.Drawing.Point(589, 86);
+            this.lbFormaPag.Location = new System.Drawing.Point(589, 93);
             this.lbFormaPag.Name = "lbFormaPag";
             this.lbFormaPag.Size = new System.Drawing.Size(197, 22);
             this.lbFormaPag.TabIndex = 2;
@@ -87,7 +87,8 @@
             // 
             // txbTelefone
             // 
-            this.txbTelefone.Location = new System.Drawing.Point(27, 90);
+            this.txbTelefone.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbTelefone.Location = new System.Drawing.Point(27, 97);
             this.txbTelefone.Name = "txbTelefone";
             this.txbTelefone.Size = new System.Drawing.Size(168, 20);
             this.txbTelefone.TabIndex = 3;
@@ -96,7 +97,8 @@
             // 
             // txbEndereco
             // 
-            this.txbEndereco.Location = new System.Drawing.Point(27, 219);
+            this.txbEndereco.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbEndereco.Location = new System.Drawing.Point(27, 236);
             this.txbEndereco.Name = "txbEndereco";
             this.txbEndereco.Size = new System.Drawing.Size(485, 20);
             this.txbEndereco.TabIndex = 4;
@@ -106,7 +108,7 @@
             this.lbResultado.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbResultado.FormattingEnabled = true;
             this.lbResultado.ItemHeight = 24;
-            this.lbResultado.Location = new System.Drawing.Point(27, 303);
+            this.lbResultado.Location = new System.Drawing.Point(27, 326);
             this.lbResultado.Name = "lbResultado";
             this.lbResultado.Size = new System.Drawing.Size(770, 100);
             this.lbResultado.TabIndex = 6;
@@ -117,9 +119,9 @@
             this.btnFinalizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnFinalizar.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFinalizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.btnFinalizar.Location = new System.Drawing.Point(692, 450);
+            this.btnFinalizar.Location = new System.Drawing.Point(692, 447);
             this.btnFinalizar.Name = "btnFinalizar";
-            this.btnFinalizar.Size = new System.Drawing.Size(105, 36);
+            this.btnFinalizar.Size = new System.Drawing.Size(105, 39);
             this.btnFinalizar.TabIndex = 7;
             this.btnFinalizar.Text = "Finalizar";
             this.btnFinalizar.UseVisualStyleBackColor = false;
@@ -127,7 +129,8 @@
             // 
             // txbNome
             // 
-            this.txbNome.Location = new System.Drawing.Point(27, 154);
+            this.txbNome.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbNome.Location = new System.Drawing.Point(27, 166);
             this.txbNome.Name = "txbNome";
             this.txbNome.Size = new System.Drawing.Size(485, 20);
             this.txbNome.TabIndex = 8;
@@ -137,7 +140,7 @@
             this.lbNome.AutoSize = true;
             this.lbNome.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.lbNome.Location = new System.Drawing.Point(23, 127);
+            this.lbNome.Location = new System.Drawing.Point(23, 137);
             this.lbNome.Name = "lbNome";
             this.lbNome.Size = new System.Drawing.Size(66, 22);
             this.lbNome.TabIndex = 9;
@@ -148,7 +151,7 @@
             this.lbValor.AutoSize = true;
             this.lbValor.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbValor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.lbValor.Location = new System.Drawing.Point(589, 251);
+            this.lbValor.Location = new System.Drawing.Point(589, 270);
             this.lbValor.Name = "lbValor";
             this.lbValor.Size = new System.Drawing.Size(115, 22);
             this.lbValor.TabIndex = 10;
@@ -161,7 +164,7 @@
             this.panel1.Controls.Add(this.btnMinimizar);
             this.panel1.Location = new System.Drawing.Point(2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(817, 40);
+            this.panel1.Size = new System.Drawing.Size(817, 43);
             this.panel1.TabIndex = 12;
             // 
             // btnFechar
@@ -173,7 +176,7 @@
             this.btnFechar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnFechar.Location = new System.Drawing.Point(790, 0);
             this.btnFechar.Name = "btnFechar";
-            this.btnFechar.Size = new System.Drawing.Size(27, 37);
+            this.btnFechar.Size = new System.Drawing.Size(27, 40);
             this.btnFechar.TabIndex = 5;
             this.btnFechar.Text = "x";
             this.btnFechar.UseVisualStyleBackColor = true;
@@ -187,7 +190,7 @@
             this.labelPedido.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.labelPedido.Location = new System.Drawing.Point(3, 0);
             this.labelPedido.Name = "labelPedido";
-            this.labelPedido.Size = new System.Drawing.Size(759, 36);
+            this.labelPedido.Size = new System.Drawing.Size(759, 39);
             this.labelPedido.TabIndex = 4;
             this.labelPedido.Text = "Informações do cliente";
             this.labelPedido.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -201,7 +204,7 @@
             this.btnMinimizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnMinimizar.Location = new System.Drawing.Point(757, -2);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(27, 40);
+            this.btnMinimizar.Size = new System.Drawing.Size(27, 43);
             this.btnMinimizar.TabIndex = 2;
             this.btnMinimizar.Text = "─";
             this.btnMinimizar.UseVisualStyleBackColor = true;
@@ -211,7 +214,7 @@
             // 
             this.lbDin.AutoSize = true;
             this.lbDin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbDin.Location = new System.Drawing.Point(593, 137);
+            this.lbDin.Location = new System.Drawing.Point(593, 148);
             this.lbDin.Name = "lbDin";
             this.lbDin.Size = new System.Drawing.Size(71, 18);
             this.lbDin.TabIndex = 13;
@@ -221,7 +224,7 @@
             // 
             this.lbCartao.AutoSize = true;
             this.lbCartao.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCartao.Location = new System.Drawing.Point(593, 169);
+            this.lbCartao.Location = new System.Drawing.Point(593, 182);
             this.lbCartao.Name = "lbCartao";
             this.lbCartao.Size = new System.Drawing.Size(60, 18);
             this.lbCartao.TabIndex = 14;
@@ -229,7 +232,8 @@
             // 
             // txbDinheiro
             // 
-            this.txbDinheiro.Location = new System.Drawing.Point(671, 134);
+            this.txbDinheiro.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbDinheiro.Location = new System.Drawing.Point(671, 144);
             this.txbDinheiro.Name = "txbDinheiro";
             this.txbDinheiro.Size = new System.Drawing.Size(115, 20);
             this.txbDinheiro.TabIndex = 15;
@@ -239,7 +243,8 @@
             // 
             // txbCartao
             // 
-            this.txbCartao.Location = new System.Drawing.Point(671, 170);
+            this.txbCartao.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbCartao.Location = new System.Drawing.Point(671, 183);
             this.txbCartao.Name = "txbCartao";
             this.txbCartao.Size = new System.Drawing.Size(115, 20);
             this.txbCartao.TabIndex = 16;
@@ -251,7 +256,7 @@
             // 
             this.lblValor.AutoSize = true;
             this.lblValor.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValor.Location = new System.Drawing.Point(698, 254);
+            this.lblValor.Location = new System.Drawing.Point(698, 274);
             this.lblValor.Name = "lblValor";
             this.lblValor.Size = new System.Drawing.Size(88, 18);
             this.lblValor.TabIndex = 17;
@@ -263,7 +268,7 @@
             this.lblTroco.AutoSize = true;
             this.lblTroco.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTroco.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.lblTroco.Location = new System.Drawing.Point(592, 219);
+            this.lblTroco.Location = new System.Drawing.Point(592, 236);
             this.lblTroco.Name = "lblTroco";
             this.lblTroco.Size = new System.Drawing.Size(72, 22);
             this.lblTroco.TabIndex = 18;
@@ -273,7 +278,7 @@
             // 
             this.lblValorTroco.AutoSize = true;
             this.lblValorTroco.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorTroco.Location = new System.Drawing.Point(698, 221);
+            this.lblValorTroco.Location = new System.Drawing.Point(698, 238);
             this.lblValorTroco.Name = "lblValorTroco";
             this.lblValorTroco.Size = new System.Drawing.Size(62, 18);
             this.lblValorTroco.TabIndex = 19;
@@ -281,10 +286,10 @@
             // 
             // frmInfoCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.ClientSize = new System.Drawing.Size(820, 502);
+            this.ClientSize = new System.Drawing.Size(820, 506);
             this.Controls.Add(this.lblValorTroco);
             this.Controls.Add(this.lblTroco);
             this.Controls.Add(this.lblValor);
@@ -303,9 +308,11 @@
             this.Controls.Add(this.lbFormaPag);
             this.Controls.Add(this.lbEnd);
             this.Controls.Add(this.lbTel);
+            this.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmInfoCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmInfoCliente";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmInfoCliente_FormClosing);
             this.panel1.ResumeLayout(false);

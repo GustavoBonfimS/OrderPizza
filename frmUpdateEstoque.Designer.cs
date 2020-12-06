@@ -32,25 +32,31 @@
             this.txbQuantidade = new System.Windows.Forms.TextBox();
             this.lbEstoque = new System.Windows.Forms.CheckedListBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btnExcluir = new System.Windows.Forms.Button();
-            this.label3 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnFechar = new System.Windows.Forms.Button();
+            this.btnMinimizar = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAdicionar
             // 
-            this.btnAdicionar.Location = new System.Drawing.Point(31, 286);
+            this.btnAdicionar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnAdicionar.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdicionar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.btnAdicionar.Location = new System.Drawing.Point(334, 391);
             this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(75, 23);
+            this.btnAdicionar.Size = new System.Drawing.Size(121, 33);
             this.btnAdicionar.TabIndex = 0;
             this.btnAdicionar.Text = "Adicionar";
-            this.btnAdicionar.UseVisualStyleBackColor = true;
+            this.btnAdicionar.UseVisualStyleBackColor = false;
             this.btnAdicionar.Click += new System.EventHandler(this.btnAdicionar_Click);
             // 
             // txbQuantidade
             // 
-            this.txbQuantidade.Location = new System.Drawing.Point(6, 68);
+            this.txbQuantidade.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txbQuantidade.Location = new System.Drawing.Point(42, 107);
             this.txbQuantidade.Name = "txbQuantidade";
             this.txbQuantidade.Size = new System.Drawing.Size(100, 20);
             this.txbQuantidade.TabIndex = 1;
@@ -58,66 +64,110 @@
             // 
             // lbEstoque
             // 
+            this.lbEstoque.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbEstoque.FormattingEnabled = true;
-            this.lbEstoque.Location = new System.Drawing.Point(3, 96);
+            this.lbEstoque.Location = new System.Drawing.Point(42, 141);
             this.lbEstoque.Name = "lbEstoque";
-            this.lbEstoque.Size = new System.Drawing.Size(353, 184);
+            this.lbEstoque.Size = new System.Drawing.Size(413, 229);
             this.lbEstoque.TabIndex = 9;
             this.lbEstoque.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.lbEstoque_ItemCheck);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 52);
+            this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.label1.Location = new System.Drawing.Point(38, 68);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 13);
+            this.label1.Size = new System.Drawing.Size(203, 22);
             this.label1.TabIndex = 10;
             this.label1.Text = "Quantidade à adicionar";
             // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.btnExcluir);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.txbQuantidade);
-            this.panel1.Controls.Add(this.btnAdicionar);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.lbEstoque);
-            this.panel1.Location = new System.Drawing.Point(154, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(383, 343);
-            this.panel1.TabIndex = 13;
-            // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(243, 286);
+            this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnExcluir.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.btnExcluir.Location = new System.Drawing.Point(42, 391);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(75, 23);
+            this.btnExcluir.Size = new System.Drawing.Size(121, 33);
             this.btnExcluir.TabIndex = 14;
             this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.UseVisualStyleBackColor = false;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
-            // label3
+            // panel1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(51, 13);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Adicionar";
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.btnMinimizar);
+            this.panel1.Controls.Add(this.btnFechar);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(502, 40);
+            this.panel1.TabIndex = 15;
+            // 
+            // btnFechar
+            // 
+            this.btnFechar.FlatAppearance.BorderSize = 0;
+            this.btnFechar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnFechar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.btnFechar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnFechar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnFechar.Location = new System.Drawing.Point(471, 2);
+            this.btnFechar.Name = "btnFechar";
+            this.btnFechar.Size = new System.Drawing.Size(27, 37);
+            this.btnFechar.TabIndex = 6;
+            this.btnFechar.Text = "x";
+            this.btnFechar.UseVisualStyleBackColor = true;
+            this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.FlatAppearance.BorderSize = 0;
+            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizar.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.World, ((byte)(0)));
+            this.btnMinimizar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnMinimizar.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnMinimizar.Location = new System.Drawing.Point(442, 0);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(27, 40);
+            this.btnMinimizar.TabIndex = 7;
+            this.btnMinimizar.Text = "─";
+            this.btnMinimizar.UseVisualStyleBackColor = true;
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.label2.Location = new System.Drawing.Point(157, 6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(175, 27);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Alterar estoque";
             // 
             // frmUpdateEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.ClientSize = new System.Drawing.Size(502, 450);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.btnExcluir);
+            this.Controls.Add(this.btnAdicionar);
+            this.Controls.Add(this.txbQuantidade);
+            this.Controls.Add(this.lbEstoque);
+            this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmUpdateEstoque";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmUpdateEstoque";
             this.Load += new System.EventHandler(this.frmUpdateEstoque_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -127,8 +177,10 @@
         private System.Windows.Forms.TextBox txbQuantidade;
         private System.Windows.Forms.CheckedListBox lbEstoque;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnFechar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnMinimizar;
     }
 }
