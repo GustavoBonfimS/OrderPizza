@@ -47,6 +47,8 @@
             this.txbDinheiro = new System.Windows.Forms.TextBox();
             this.txbCartao = new System.Windows.Forms.TextBox();
             this.lblValor = new System.Windows.Forms.Label();
+            this.lblTroco = new System.Windows.Forms.Label();
+            this.lblValorTroco = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -256,12 +258,35 @@
             this.lblValor.Text = "lbValorTotal";
             this.lblValor.Click += new System.EventHandler(this.lbValorTotal_Click);
             // 
+            // lblTroco
+            // 
+            this.lblTroco.AutoSize = true;
+            this.lblTroco.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTroco.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.lblTroco.Location = new System.Drawing.Point(592, 219);
+            this.lblTroco.Name = "lblTroco";
+            this.lblTroco.Size = new System.Drawing.Size(72, 22);
+            this.lblTroco.TabIndex = 18;
+            this.lblTroco.Text = "Troco:";
+            // 
+            // lblValorTroco
+            // 
+            this.lblValorTroco.AutoSize = true;
+            this.lblValorTroco.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblValorTroco.Location = new System.Drawing.Point(698, 221);
+            this.lblValorTroco.Name = "lblValorTroco";
+            this.lblValorTroco.Size = new System.Drawing.Size(62, 18);
+            this.lblValorTroco.TabIndex = 19;
+            this.lblValorTroco.Text = "lblTroco";
+            // 
             // frmInfoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.ClientSize = new System.Drawing.Size(820, 502);
+            this.Controls.Add(this.lblValorTroco);
+            this.Controls.Add(this.lblTroco);
             this.Controls.Add(this.lblValor);
             this.Controls.Add(this.txbCartao);
             this.Controls.Add(this.txbDinheiro);
@@ -310,5 +335,7 @@
         private System.Windows.Forms.Label labelPedido;
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.Button btnFechar;
+        private System.Windows.Forms.Label lblTroco;
+        private System.Windows.Forms.Label lblValorTroco;
     }
 }

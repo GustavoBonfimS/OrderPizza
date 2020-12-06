@@ -119,9 +119,8 @@ namespace OrderPizza.DAO
             return retorno;
         }
 
-        public async Task<bool> insertPedido(Pedido pedido)
+        public async void insertPedido(Pedido pedido)
         {
-            var retorno = false;
             pedido.data = DateTime.Now;
             cmd.CommandText = "INSERT INTO PEDIDO(VALOR, IDCLIENTE, FORMAPAGAMENTO, DATA, HORA, IDFUNCIONARIO) VALUES(@VALOR, @IDCLIENTE, @FORMAPAGAMENTO, @DATA, @HORA, @IDFUNC)";
             cmd.Parameters.AddWithValue("@VALOR", pedido.valor);
@@ -135,15 +134,12 @@ namespace OrderPizza.DAO
                 cmd.Connection = new Conexao().conectar();
                 await cmd.ExecuteNonQueryAsync();
                 await insertPedidoOnVenda(pedido);
-                retorno = true;
                 cmd.Dispose();
             }
             catch (SqlException ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
-            return retorno;
         }
 
         private async Task<bool> insertPedidoOnVenda(Pedido pedido)

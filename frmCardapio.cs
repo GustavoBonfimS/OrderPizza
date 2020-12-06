@@ -60,6 +60,11 @@ namespace OrderPizza
 
         private void btnProximo_Click(object sender, EventArgs e)
         {
+            if (carrinho.Count < 1)
+            {
+                MessageBox.Show("Selecione um produto antes de continuar.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             new frmInfoCliente(carrinho).Show();
             this.Hide();
         }

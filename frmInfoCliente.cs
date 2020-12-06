@@ -21,6 +21,8 @@ namespace OrderPizza
             InitializeComponent();
             this.carrinho = _carrinho;
             this.lbResultado.Hide();
+            lblTroco.Hide();
+            lblValorTroco.Hide();
             this.txbDinheiro.LostFocus += TxbDinheiro_LostFocus;
             this.txbCartao.LostFocus += TxbCartao_LostFocus;
 
@@ -205,6 +207,19 @@ namespace OrderPizza
             {
                 txbDinheiro.Text = "0";
             }
+
+            if (Convert.ToDouble(txbDinheiro.Text) + Convert.ToDouble(txbCartao.Text) > valorTotal)
+            {
+                var troco = (Convert.ToDouble(txbDinheiro.Text) + Convert.ToDouble(txbCartao.Text)) - valorTotal;
+                lblValorTroco.Text = troco.ToString();
+                lblTroco.Show();
+                lblValorTroco.Show();
+            }
+            else
+            {
+                lblTroco.Hide();
+                lblValorTroco.Hide();
+            }
         }
 
         private void txbCartao_MouseClick(object sender, MouseEventArgs e)
@@ -220,6 +235,19 @@ namespace OrderPizza
             if (string.IsNullOrEmpty(txbCartao.Text))
             {
                 txbCartao.Text = "0";
+            }
+
+            if (Convert.ToDouble(txbDinheiro.Text) + Convert.ToDouble(txbCartao.Text) > valorTotal)
+            {
+                var troco = (Convert.ToDouble(txbDinheiro.Text) + Convert.ToDouble(txbCartao.Text)) - valorTotal;
+                lblValorTroco.Text = troco.ToString();
+                lblTroco.Show();
+                lblValorTroco.Show();
+            }
+            else
+            {
+                lblTroco.Hide();
+                lblValorTroco.Hide();
             }
         }
 
