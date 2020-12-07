@@ -154,6 +154,7 @@
             // 
             // cbxTipoUsu
             // 
+            this.cbxTipoUsu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTipoUsu.FormattingEnabled = true;
             this.cbxTipoUsu.Items.AddRange(new object[] {
             "funcionario",

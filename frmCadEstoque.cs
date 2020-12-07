@@ -31,7 +31,7 @@ namespace OrderPizza
         MessageBoxIcon.Error);
                 txbQuantidade.Focus();
             }
-            if (string.IsNullOrEmpty(txbMedida.Text)){
+            if (string.IsNullOrEmpty(cbxMedida.Text)){
                 MessageBox.Show("O campo medida, verifique e tente novamente!!", "Error", MessageBoxButtons.OK,
         MessageBoxIcon.Error);
             }
@@ -41,15 +41,7 @@ namespace OrderPizza
                 var es = new Estoque();
                 es.descricao = txbDescricao.Text;
                 es.quantidade = Convert.ToDouble(txbQuantidade.Text);
-                es.medida = txbMedida.Text;
-                if (Math.Abs(es.quantidade % 1) <= (Double.Epsilon * 100))
-                {
-                    MessageBox.Show("Represente virgula ao inves de ponto para representar" +
-                        "as casas decimais!", "Erro",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txbQuantidade.Focus();
-                    return;
-                }
+                es.medida = cbxMedida.Text;
 
                 var dao = new EstoqueDAO();
                 if (dao.InsertEstoque(es))
@@ -63,17 +55,7 @@ namespace OrderPizza
 
         private void txbMedida_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
-            {
-                e.Handled = true;
-                MessageBox.Show("Este campo só aceita números e vírgulas, por favor verifique oque esta sendo digitado", "Aviso"
-                    , MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf('.') > -1))
-            {
-                e.Handled = true;
-                MessageBox.Show("este campo aceita somente uma virgula");
-            }
+           
         }
 
         private void btnMinimizar_1_Click(object sender, EventArgs e)
@@ -98,6 +80,21 @@ namespace OrderPizza
             if (e.Button != MouseButtons.Left) return;
             this.Left = X + MousePosition.X;
             this.Top = Y + MousePosition.Y;
+        }
+
+        private void txbQuantidade_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+            {
+                e.Handled = true;
+                MessageBox.Show("Este campo só aceita números e vírgulas, por favor verifique oque esta sendo digitado", "Aviso"
+                    , MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+                MessageBox.Show("este campo aceita somente uma virgula");
+            }
         }
     }
 }

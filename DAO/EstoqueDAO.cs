@@ -148,5 +148,25 @@ namespace OrderPizza.DAO
             }
             return retorno;
         }
+        public bool DeleteEstoque(Estoque estoque)
+        {
+            var retorno = false;
+            Conexao conexao = new Conexao();
+            cmd.CommandText = "DELETE FROM ESTOQUE WHERE ESTOQUE.IDESTOQUE = @IDESTOQUE ";
+            cmd.Parameters.AddWithValue("@IDESTOQUE", estoque.id);
+            try
+            {
+                cmd.Connection = conexao.conectar();
+                cmd.ExecuteNonQuery();
+                retorno = true;
+            }
+            catch (SqlException ex)
+            {
+                retorno = false;
+                MessageBox.Show(ex.Message);
+            }
+            return retorno;
+        }
+
     }
 }

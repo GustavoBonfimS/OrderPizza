@@ -69,7 +69,13 @@ namespace OrderPizza
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-
+            var id = lbEstoque.CheckedItems[0].ToString().Split('-')[0].Trim();
+            var est = estoque.Where(es => es.descricao == id).ToArray()[0];
+            var dao = new EstoqueDAO();
+            if (dao.DeleteEstoque(est))
+            {
+                MessageBox.Show("Estoque excluido com sucesso", "Sucesso");
+            }
         }
 
         private void lbEstoque_ItemCheck(object sender, ItemCheckEventArgs e)

@@ -37,6 +37,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -45,7 +47,7 @@
             this.btnAdicionar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnAdicionar.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdicionar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.btnAdicionar.Location = new System.Drawing.Point(334, 391);
+            this.btnAdicionar.Location = new System.Drawing.Point(334, 428);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(121, 33);
             this.btnAdicionar.TabIndex = 0;
@@ -56,9 +58,9 @@
             // txbQuantidade
             // 
             this.txbQuantidade.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txbQuantidade.Location = new System.Drawing.Point(42, 107);
+            this.txbQuantidade.Location = new System.Drawing.Point(42, 78);
             this.txbQuantidade.Name = "txbQuantidade";
-            this.txbQuantidade.Size = new System.Drawing.Size(100, 20);
+            this.txbQuantidade.Size = new System.Drawing.Size(230, 20);
             this.txbQuantidade.TabIndex = 1;
             this.txbQuantidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txbQuantidade_KeyPress);
             // 
@@ -66,7 +68,7 @@
             // 
             this.lbEstoque.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbEstoque.FormattingEnabled = true;
-            this.lbEstoque.Location = new System.Drawing.Point(42, 141);
+            this.lbEstoque.Location = new System.Drawing.Point(42, 178);
             this.lbEstoque.Name = "lbEstoque";
             this.lbEstoque.Size = new System.Drawing.Size(413, 229);
             this.lbEstoque.TabIndex = 9;
@@ -77,7 +79,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
-            this.label1.Location = new System.Drawing.Point(38, 68);
+            this.label1.Location = new System.Drawing.Point(38, 53);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(203, 22);
             this.label1.TabIndex = 10;
@@ -88,7 +90,7 @@
             this.btnExcluir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
             this.btnExcluir.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.btnExcluir.Location = new System.Drawing.Point(42, 391);
+            this.btnExcluir.Location = new System.Drawing.Point(42, 428);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(121, 33);
             this.btnExcluir.TabIndex = 14;
@@ -147,12 +149,38 @@
             this.btnFechar.UseVisualStyleBackColor = true;
             this.btnFechar.Click += new System.EventHandler(this.btnFechar_Click);
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 14.25F);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.label3.Location = new System.Drawing.Point(39, 110);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(233, 22);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Qual a medida comprada?";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Unidade(Un)",
+            "Quilograma(KG)",
+            "Grama(G)"});
+            this.comboBox1.Location = new System.Drawing.Point(43, 136);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(229, 21);
+            this.comboBox1.TabIndex = 17;
+            // 
             // frmUpdateEstoque
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.ClientSize = new System.Drawing.Size(502, 450);
+            this.ClientSize = new System.Drawing.Size(502, 460);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAdicionar);
@@ -184,5 +212,7 @@
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnMinimizar;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

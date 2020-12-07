@@ -41,13 +41,6 @@ namespace OrderPizza
 
         private void frmCadProduto_Load(object sender, EventArgs e)
         {
-            cbxTipo.Items.Add("Tradicional");
-            cbxTipo.Items.Add("Doce");
-            cbxTipo.Items.Add("Bebida");
-            cbxTamanho.Items.Add("Família");
-            cbxTamanho.Items.Add("Normal");
-            cbxTamanho.Items.Add("250ml");
-
         }
 
         private void btncCadProd_Click(object sender, EventArgs e)

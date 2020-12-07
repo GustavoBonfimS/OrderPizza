@@ -182,23 +182,36 @@ namespace OrderPizza
             // 
             // cbxTamanho
             // 
+            this.cbxTamanho.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTamanho.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxTamanho.FormattingEnabled = true;
+            this.cbxTamanho.Items.AddRange(new object[] {
+            "Tradicional",
+            "Grande",
+            "350 ML",
+            "250 ML",
+            "600 ML",
+            "1 Litro",
+            "2 Litros",
+            "3 Litros"});
             this.cbxTamanho.Location = new System.Drawing.Point(385, 249);
             this.cbxTamanho.Name = "cbxTamanho";
             this.cbxTamanho.Size = new System.Drawing.Size(121, 22);
             this.cbxTamanho.TabIndex = 9;
-            this.cbxTamanho.Text = "[Selecione]";
             // 
             // cbxTipo
             // 
+            this.cbxTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbxTipo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbxTipo.FormattingEnabled = true;
+            this.cbxTipo.Items.AddRange(new object[] {
+            "Tradicional",
+            "Doce",
+            "Bebida"});
             this.cbxTipo.Location = new System.Drawing.Point(208, 249);
             this.cbxTipo.Name = "cbxTipo";
             this.cbxTipo.Size = new System.Drawing.Size(121, 22);
             this.cbxTipo.TabIndex = 10;
-            this.cbxTipo.Text = "[Selecione]";
             // 
             // btncCadProd
             // 
