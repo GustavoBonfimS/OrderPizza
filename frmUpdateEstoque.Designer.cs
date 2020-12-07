@@ -38,7 +38,7 @@
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnFechar = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbxMedida = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -160,18 +160,18 @@
             this.label3.TabIndex = 16;
             this.label3.Text = "Qual a medida comprada?";
             // 
-            // comboBox1
+            // cbxMedida
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbxMedida.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbxMedida.FormattingEnabled = true;
+            this.cbxMedida.Items.AddRange(new object[] {
             "Unidade(Un)",
             "Quilograma(KG)",
             "Grama(G)"});
-            this.comboBox1.Location = new System.Drawing.Point(43, 136);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(229, 21);
-            this.comboBox1.TabIndex = 17;
+            this.cbxMedida.Location = new System.Drawing.Point(43, 136);
+            this.cbxMedida.Name = "cbxMedida";
+            this.cbxMedida.Size = new System.Drawing.Size(229, 21);
+            this.cbxMedida.TabIndex = 17;
             // 
             // frmUpdateEstoque
             // 
@@ -179,7 +179,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.ClientSize = new System.Drawing.Size(502, 460);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbxMedida);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnExcluir);
@@ -213,6 +213,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnMinimizar;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbxMedida;
     }
 }

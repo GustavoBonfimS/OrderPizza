@@ -45,13 +45,13 @@ namespace OrderPizza
                 var est = estoque.Where(es => es.descricao == nome).ToArray()[0];
                 var dao = new EstoqueDAO();
                 var quanti = Convert.ToDouble(txbQuantidade.Text);
-                if (Math.Abs(quanti % 1) <= (Double.Epsilon * 100))
+
+                if (cbxMedida.Equals("Grama(G)"))
                 {
-                    MessageBox.Show("Represente virgula ao inves de ponto para representar" +
-                        "as casas decimais!", "Erro",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txbQuantidade.Focus();
-                    return;
+                    quanti = quanti / 1000;
+                }
+                if (cbxMedida.Equals("Quilograma(KG)")){
+
                 }
                 est.quantidade = quanti + est.quantidade;
 
