@@ -87,16 +87,38 @@ namespace OrderPizza
                 pr.tamanho = cbxTamanho.Text;
                 var dao = new ProdutoDAO();
 
-                this.pizza.ForEach(item =>
+                if (pr.tipo.ToLower() == "bebida")
                 {
-                    var obj = new Pizza();
-                    obj.idEstoque = item.id;
-                    var atual = item.descricao.ToString();
-                    obj.quantidade = Convert.ToDouble(Microsoft.VisualBasic.Interaction.InputBox("Qual a quantidade de " + atual + " usada nesta pizza?",
-                         "Inf Ingrediente", "*", 150, 150));
-                    pr.pizzas.Add(obj);
-                });
+                    var qtd = Convert.ToDouble(Microsoft.VisualBasic.Interaction.InputBox("Quantas unidades está inserindo?",
+                         "Cadastro de bebida", "1", 150, 150));
+                    
+                    var est = new Estoque();
+                    est.descricao = pr.nome;
+                    est.medida = "Unidade(Un)";
+                    est.quantidade = qtd;
+                    estoqueDAO.InsertEstoque(est);
+                    this.ingredientes = this.estoqueDAO.listEstoque();
+                    var item = this.ingredientes.Where(esto => esto.descricao.ToLower() == est.descricao.ToLower()).ToList()[0];
 
+                    var pizzaObj = new Pizza();
+                    pizzaObj.idEstoque = item.id;
+                    // 1 pra subtrair ao vender
+                    pizzaObj.quantidade = 1;
+                    pr.pizzas.Add(pizzaObj);
+
+                }
+                else
+                {
+                    this.pizza.ForEach(item =>
+                    {
+                        var obj = new Pizza();
+                        obj.idEstoque = item.id;
+                        var atual = item.descricao.ToString();
+                        obj.quantidade = Convert.ToDouble(Microsoft.VisualBasic.Interaction.InputBox("Qual a quantidade de " + atual + " usada nesta pizza?",
+                             "Inf Ingrediente", "*", 150, 150));
+                        pr.pizzas.Add(obj);
+                    });
+                }
                 if (dao.InsertProduto(pr))
                 {
                     MessageBox.Show("Cadastrado com sucesso!", "Sucesso!",
