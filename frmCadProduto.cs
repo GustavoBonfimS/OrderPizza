@@ -52,12 +52,14 @@ namespace OrderPizza
                 MessageBox.Show("O campo descrição está vazio, verifique e tente novamente!!", "Error", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 txbDescricao.Focus();
+                return;
             }
             if (String.IsNullOrEmpty(txbNome.Text))
             {
                 MessageBox.Show("O campo nome está vazio, verifique e tente novamente!!", "Error", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 txbNome.Focus();
+                return;
             }
             if (String.IsNullOrEmpty(txbPreco.Text))
             {
@@ -70,21 +72,25 @@ namespace OrderPizza
                 MessageBox.Show("O campo tipo está vazio, verifique e tente novamente!!", "Error", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 cbxTipo.Focus();
+                return;
             }
             if (String.IsNullOrEmpty(cbxTamanho.Text))
             {
                 MessageBox.Show("O campo tamanho está vazio, verifique e tente novamente!!", "Error", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 cbxTamanho.Focus();
+                return;
             }
             else
             {
-                var pr = new Produto();
-                pr.nome = txbNome.Text;
-                pr.descricao = txbDescricao.Text;
-                pr.preco = Convert.ToDouble(txbPreco.Text);
-                pr.tipo = cbxTipo.Text;
-                pr.tamanho = cbxTamanho.Text;
+                var pr = new Produto
+                {
+                    nome = txbNome.Text,
+                    descricao = txbDescricao.Text,
+                    preco = Convert.ToDouble(txbPreco.Text),
+                    tipo = cbxTipo.Text,
+                    tamanho = cbxTamanho.Text
+                };
                 var dao = new ProdutoDAO();
 
                 if (pr.tipo.ToLower() == "bebida")
