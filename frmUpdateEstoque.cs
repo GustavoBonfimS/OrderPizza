@@ -45,13 +45,31 @@ namespace OrderPizza
                 var quanti = Convert.ToDouble(txbQuantidade.Text);
                 var medida = cbxMedida.Text;
                 double quantiGrama;
-
-                if (medida == "Unidade(Un)" && medida != est.medida)
+                if (String.IsNullOrEmpty(txbQuantidade.Text))
+                {
+                    MessageBox.Show("O campo quantidade está vazio!!", "Error", MessageBoxButtons.OK,
+        MessageBoxIcon.Error);
+                    txbQuantidade.Focus();
+                    return;
+                }
+                if (String.IsNullOrEmpty(cbxMedida.Text))
+                {
+                    MessageBox.Show("O campo quantidade está vazio!!", "Error", MessageBoxButtons.OK,
+        MessageBoxIcon.Error);
+                    cbxMedida.Focus();
+                    return;
+                }
+                if (medida.Equals("Unidade(Un)") && medida != est.medida)
                 {
                     MessageBox.Show("A medida informada é diferente de uma ja cadastrada por favor verificar", "Error");
                     return;
                 }
-                if (medida == "Grama(G)" || medida == "Quilograma(KG)" && medida != est.medida)
+                if (medida.Equals("Quilogramas(KG)") && est.medida != "Quilogramas(KG)")
+                {
+                    MessageBox.Show("A medida informada é diferente de uma ja cadastrada por favor verificar", "Error");
+                    return;
+                }
+                if (medida.Equals("Grama(G)") && est.medida != "Quilogramas(KG)") 
                 {
                     MessageBox.Show("A medida informada é diferente de uma ja cadastrada por favor verificar", "Error");
                     return;
@@ -63,6 +81,9 @@ namespace OrderPizza
                 }
                 else { est.quantidade = quanti + est.quantidade; }
 
+                if (medida.Equals("Grama(G)")) { Math.Round(est.quantidade, 3);}
+                if (medida.Equals("Quilogramas(KG)")) { Math.Round(est.quantidade, 1); }
+                
                 if (dao.UpdateEstoque(est))
                 {
                     MessageBox.Show("Você atualizou um produto com sucesso", "Sucesso!");

@@ -166,7 +166,7 @@
             this.cbxMedida.FormattingEnabled = true;
             this.cbxMedida.Items.AddRange(new object[] {
             "Unidade(Un)",
-            "Quilograma(KG)",
+            "Quilogramas(KG)",
             "Grama(G)"});
             this.cbxMedida.Location = new System.Drawing.Point(43, 136);
             this.cbxMedida.Name = "cbxMedida";

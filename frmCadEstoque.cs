@@ -43,7 +43,7 @@ namespace OrderPizza
                 es.descricao = txbDescricao.Text;
                 es.quantidade = Convert.ToDouble(txbQuantidade.Text);
                 es.medida = cbxMedida.Text;
-
+                Math.Round(es.quantidade, 1);
                 var dao = new EstoqueDAO();
                 if (dao.InsertEstoque(es))
                 {
