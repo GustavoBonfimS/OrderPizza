@@ -46,18 +46,20 @@ namespace OrderPizza
         private void btncCadProd_Click(object sender, EventArgs e)
         {
             // O tamnho e tipo eram text box porém agora são combobox, necessário mudar a lógica da progrmação as"//" indcam onde são delcaradas
-          
+
             if (String.IsNullOrEmpty(txbDescricao.Text))
             {
                 MessageBox.Show("O campo descrição está vazio, verifique e tente novamente!!", "Error", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 txbDescricao.Focus();
+                return;
             }
             if (String.IsNullOrEmpty(txbNome.Text))
             {
                 MessageBox.Show("O campo nome está vazio, verifique e tente novamente!!", "Error", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 txbNome.Focus();
+                return;
             }
             if (String.IsNullOrEmpty(txbPreco.Text))
             {
@@ -70,40 +72,63 @@ namespace OrderPizza
                 MessageBox.Show("O campo tipo está vazio, verifique e tente novamente!!", "Error", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 cbxTipo.Focus();
+                return;
             }
             if (String.IsNullOrEmpty(cbxTamanho.Text))
             {
                 MessageBox.Show("O campo tamanho está vazio, verifique e tente novamente!!", "Error", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 cbxTamanho.Focus();
+                return;
             }
             else
             {
-                var pr = new Produto();
-                pr.nome = txbNome.Text;
-                pr.descricao = txbDescricao.Text;
-                pr.preco = Convert.ToDouble(txbPreco.Text);
-                pr.tipo = cbxTipo.Text;
-                pr.tamanho = cbxTamanho.Text;
+                var pr = new Produto
+                {
+                    nome = txbNome.Text,
+                    descricao = txbDescricao.Text,
+                    preco = Convert.ToDouble(txbPreco.Text),
+                    tipo = cbxTipo.Text,
+                    tamanho = cbxTamanho.Text
+                };
                 var dao = new ProdutoDAO();
 
-                this.pizza.ForEach(item =>
+                if (pr.tipo.ToLower() == "bebida")
                 {
-                    var obj = new Pizza();
-                    obj.idEstoque = item.id;
-                    var atual = item.descricao.ToString();
-                    obj.quantidade = Convert.ToDouble(Microsoft.VisualBasic.Interaction.InputBox("Qual a quantidade de " + atual + " usada nesta pizza?(Represente em gramas!!)",
-                         "Inf Ingrediente", "*", 150, 150));
-                    pr.pizzas.Add(obj);
-                });
+                    var qtd = Convert.ToDouble(Microsoft.VisualBasic.Interaction.InputBox("Quantas unidades está inserindo?",
+                         "Cadastro de bebida", "1", 150, 150));
 
+                    var est = new Estoque();
+                    est.descricao = pr.nome;
+                    est.medida = "Unidade(Un)";
+                    est.quantidade = qtd;
+                    estoqueDAO.InsertEstoque(est);
+                    this.ingredientes = this.estoqueDAO.listEstoque();
+                    var item = this.ingredientes.Where(esto => esto.descricao.ToLower() == est.descricao.ToLower()).ToList()[0];
+
+                    var pizzaObj = new Pizza();
+                    pizzaObj.idEstoque = item.id;
+                    // 1 pra subtrair ao vender
+                    pizzaObj.quantidade = 1;
+                    pr.pizzas.Add(pizzaObj);
+
+                }
+                else
+                {
+                    this.pizza.ForEach(item =>
+                    {
+                        var obj = new Pizza();
+                        obj.idEstoque = item.id;
+                        var atual = item.descricao.ToString();
+                        obj.quantidade = Convert.ToDouble(Microsoft.VisualBasic.Interaction.InputBox("Qual a quantidade de " + atual + " usada nesta pizza?",
+                             "Inf Ingrediente", "*", 150, 150));
+                        pr.pizzas.Add(obj);
+                    });
+                }
                 if (dao.InsertProduto(pr))
                 {
                     MessageBox.Show("Cadastrado com sucesso!", "Sucesso!",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txbDescricao.Text = string.Empty;
-                    txbNome.Text = string.Empty;
-                    txbPreco.Text = string.Empty;
                 }
             }
         }
@@ -112,7 +137,7 @@ namespace OrderPizza
         {
             var prod = ingredientes;
             if (cbPizza.Checked == true)
-            {   
+            {
                 cbIngrediente.Show();
                 foreach (var item in prod)
                 {

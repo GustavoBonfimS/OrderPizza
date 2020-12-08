@@ -228,7 +228,8 @@ namespace OrderPizza
             // 
             // cbIngrediente
             // 
-            this.cbIngrediente.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbIngrediente.CheckOnClick = true;
+            this.cbIngrediente.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbIngrediente.FormattingEnabled = true;
             this.cbIngrediente.Location = new System.Drawing.Point(31, 309);
             this.cbIngrediente.Name = "cbIngrediente";
