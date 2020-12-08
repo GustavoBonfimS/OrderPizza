@@ -286,6 +286,12 @@ namespace OrderPizza
             this.Left = X + MousePosition.X;
             this.Top = Y + MousePosition.Y;
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            new frmCardapio().Show();
+        }
     }
     
 }

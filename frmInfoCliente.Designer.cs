@@ -49,6 +49,7 @@
             this.lblValor = new System.Windows.Forms.Label();
             this.lblTroco = new System.Windows.Forms.Label();
             this.lblValorTroco = new System.Windows.Forms.Label();
+            this.btnVoltar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -284,12 +285,26 @@
             this.lblValorTroco.TabIndex = 19;
             this.lblValorTroco.Text = "lblTroco";
             // 
+            // btnVoltar
+            // 
+            this.btnVoltar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnVoltar.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVoltar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
+            this.btnVoltar.Location = new System.Drawing.Point(27, 447);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(105, 39);
+            this.btnVoltar.TabIndex = 20;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.UseVisualStyleBackColor = false;
+            this.btnVoltar.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmInfoCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
             this.ClientSize = new System.Drawing.Size(820, 506);
+            this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.lblValorTroco);
             this.Controls.Add(this.lblTroco);
             this.Controls.Add(this.lblValor);
@@ -346,5 +361,6 @@
         private System.Windows.Forms.Button btnFechar;
         private System.Windows.Forms.Label lblTroco;
         private System.Windows.Forms.Label lblValorTroco;
+        private System.Windows.Forms.Button btnVoltar;
     }
 }

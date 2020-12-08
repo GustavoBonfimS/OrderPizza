@@ -126,10 +126,11 @@
             // btnFecharCaixa
             // 
             this.btnFecharCaixa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(128)))));
+            this.btnFecharCaixa.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFecharCaixa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(34)))), ((int)(((byte)(36)))), ((int)(((byte)(59)))));
-            this.btnFecharCaixa.Location = new System.Drawing.Point(76, 630);
+            this.btnFecharCaixa.Location = new System.Drawing.Point(73, 621);
             this.btnFecharCaixa.Name = "btnFecharCaixa";
-            this.btnFecharCaixa.Size = new System.Drawing.Size(184, 23);
+            this.btnFecharCaixa.Size = new System.Drawing.Size(201, 36);
             this.btnFecharCaixa.TabIndex = 5;
             this.btnFecharCaixa.Text = "Fechar caixa e sair";
             this.btnFecharCaixa.UseVisualStyleBackColor = false;
