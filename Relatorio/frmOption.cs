@@ -14,6 +14,9 @@ namespace OrderPizza.Relatorio
 {
     public partial class frmOption : Form
     {
+        int X = 0;
+        int Y = 0;
+
         public frmOption()
         {
             InitializeComponent();
@@ -136,6 +139,35 @@ namespace OrderPizza.Relatorio
             {
                 MessageBox.Show(ex.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
+
+        private void frmOption_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left) return;
+            X = this.Left - MousePosition.X;
+            Y = this.Top - MousePosition.Y;
+        }
+
+        private void frmOption_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left) return;
+            this.Left = X + MousePosition.X;
+            this.Top = Y + MousePosition.Y;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
