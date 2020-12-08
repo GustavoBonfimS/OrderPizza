@@ -66,7 +66,6 @@ namespace OrderPizza.DAO
                 cmd.ExecuteNonQuery();
                 InsertOnPizza(produto);
                 retorno = true;
-                cmd.Dispose();
             }
             catch (SqlException ex)
             {
@@ -77,14 +76,15 @@ namespace OrderPizza.DAO
         }
         public bool InsertOnPizza(Produto produto)
         {
-            var retorno = false;
             cmd = new SqlCommand();
-            cmd.Connection = new Conexao().conectar();
-            cmd.Parameters.AddWithValue("@NOME", produto.nome.ToUpper());
+            var retorno = false;
+            
             produto.pizzas.ForEach(prod =>
             {
+                cmd.Connection = new Conexao().conectar();
                 // gambiarra necessaria
                 // declarando variaveis com parameter.addWithValues gera um erro de variavel ja alocada
+                cmd.Parameters.AddWithValue("@NOME", produto.nome.ToUpper());
                 cmd.CommandText = "INSERT INTO PIZZA(IDESTOQUE, IDPRODUTO, QUANTIDADE) VALUES(@IDESTOQUE, (SELECT IDPRODUTO FROM PRODUTO WHERE NOME = @NOME), @QUANTIDADE)";
                 cmd.Parameters.AddWithValue("@IDESTOQUE", prod.idEstoque);
                 cmd.Parameters.AddWithValue("@QUANTIDADE", prod.quantidade);
@@ -92,6 +92,8 @@ namespace OrderPizza.DAO
                 {
                     cmd.ExecuteNonQuery();
                     retorno = true;
+                    cmd.Parameters.Clear();
+                    cmd.Dispose();
                 }
                 catch (SqlException ex)
                 {
