@@ -119,12 +119,12 @@ namespace OrderPizza.DAO
             return retorno;
         }
 
-        public void insertPedido(Pedido pedido)
-        {
+        public void insertPedido(Pedido pedido, string nome)
+        { 
             pedido.data = DateTime.Now;
-            cmd.CommandText = "INSERT INTO PEDIDO(VALOR, IDCLIENTE, FORMAPAGAMENTO, DATA, HORA, IDFUNCIONARIO) VALUES(@VALOR, @IDCLIENTE, @FORMAPAGAMENTO, @DATA, @HORA, @IDFUNC)";
+            cmd.CommandText = "INSERT INTO PEDIDO(VALOR, IDCLIENTE, FORMAPAGAMENTO, DATA, HORA, IDFUNCIONARIO) VALUES(@VALOR, " +
+                "(SELECT IDCLIENTE FROM CLIENTE WHERE NOME = '" + nome + "')" + ", @FORMAPAGAMENTO, @DATA, @HORA, @IDFUNC)";
             cmd.Parameters.AddWithValue("@VALOR", pedido.valor);
-            cmd.Parameters.AddWithValue("@IDCLIENTE", pedido.idCliente);
             cmd.Parameters.AddWithValue("@FORMAPAGAMENTO", pedido.formaPagamento);
             cmd.Parameters.AddWithValue("@DATA", (pedido.data).ToString("yyyy-MM-dd"));
             cmd.Parameters.AddWithValue("@HORA", (pedido.data).ToString("HH:mm"));
@@ -133,7 +133,7 @@ namespace OrderPizza.DAO
             {
                 cmd.Connection = new Conexao().conectar();
                 cmd.ExecuteNonQuery();
-                insertPedidoOnVenda(pedido);
+                insertPedidoOnVenda(pedido, nome);
                 cmd.Dispose();
             }
             catch (SqlException ex)
@@ -142,16 +142,16 @@ namespace OrderPizza.DAO
             }
         }
 
-        private void insertPedidoOnVenda(Pedido pedido)
+        private void insertPedidoOnVenda(Pedido pedido, string nome)
         {
-            
-            pedido.produtos.ForEach(async prod =>
+            var subSelect = "(SELECT IDCLIENTE FROM CLIENTE WHERE NOME = '" + nome + "')";
+            pedido.produtos.ForEach(prod =>
             {
                 // gambiarra necessaria
                 // declarando variaveis com parameter.addWithValues gera um erro de variavel ja alocada
                 cmd.CommandText = "INSERT INTO VENDA(IDPEDIDO, IDPRODUTO) VALUES" +
                 "((SELECT IDPEDIDO FROM PEDIDO WHERE DATA = @DATA AND HORA = @HORA AND " +
-                "IDCLIENTE = "+ pedido.idCliente.ToString() + "), " + prod.id.ToString() + ")";
+                "IDCLIENTE = "+ subSelect + "), " + prod.id.ToString() + ")";
                 
                 try
                 {

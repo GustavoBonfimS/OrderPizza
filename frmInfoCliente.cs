@@ -84,14 +84,10 @@ namespace OrderPizza
             Application.Exit();
         }
 
-        private async void btnFinalizar_Click(object sender, EventArgs e)
+        private void btnFinalizar_Click(object sender, EventArgs e)
         {
             if (validaCampos())
             {
-                registraPedido();
-                subtrairEstoque();
-                // subtrai do estoque
-
                 if (this.clientes.Count == 0)
                 {
                     var newClient = new Cliente
@@ -100,8 +96,12 @@ namespace OrderPizza
                         endereco = txbEndereco.Text,
                         nome = txbNome.Text
                     };
-                    await dao.insertCliente(newClient);
+                    dao.insertCliente(newClient);
                 }
+
+                registraPedido();
+                subtrairEstoque();
+
                 MessageBox.Show("Pedido finalizado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 new frmCardapio().Show();
                 this.Dispose();
@@ -137,12 +137,11 @@ namespace OrderPizza
             {
                 formaPagamento = pagamento,
                 valor = valorTotal,
-                idCliente = this.clientes[lbResultado.SelectedIndex].id,
                 idFuncionario = Funcionario.id,
                 produtos = carrinho.ToList()
             };
 
-            pedidoDAO.insertPedido(pedido);
+            pedidoDAO.insertPedido(pedido, txbNome.Text);
             // registra na tabela de relatorio dentro de PedidoDAO
             // subtrair no estoque
         }
@@ -152,6 +151,13 @@ namespace OrderPizza
             if (string.IsNullOrEmpty(txbTelefone.Text))
             {
                 MessageBox.Show("Campo *telefone obrigatório", "Erro!",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txbTelefone.Focus();
+                return false;
+            }
+            if (txbTelefone.Text.Length > 11)
+            {
+                MessageBox.Show("Campo *telefone não pode ter mais que 11 digitos", "Erro!",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 txbTelefone.Focus();
                 return false;
