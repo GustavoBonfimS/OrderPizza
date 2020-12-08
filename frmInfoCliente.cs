@@ -175,7 +175,7 @@ namespace OrderPizza
                 return false;
             }
 
-            if (Convert.ToDouble(txbDinheiro.Text) + Convert.ToDouble(txbCartao.Text) < valorTotal)
+            if ((Convert.ToDouble(txbDinheiro.Text) + Convert.ToDouble(txbCartao.Text)) < Convert.ToDouble(valorTotal.ToString("N2")))
             {
                 MessageBox.Show("O valor informado nas formas de pagamento é inferiror ao valor total");
                 txbDinheiro.Focus();

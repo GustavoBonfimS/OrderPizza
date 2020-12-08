@@ -78,13 +78,13 @@ namespace OrderPizza.DAO
         public void SelectProdQtdIngredientes(List<Produto> prods)
         {
             cmd.Connection = new Conexao().conectar();
-            prods.ForEach(async prod =>
+            prods.ForEach(prod =>
             {
                 cmd.CommandText = "SELECT * FROM PIZZA WHERE IDPRODUTO = @IDPRODUTO";
                 cmd.Parameters.AddWithValue("@IDPRODUTO", prod.id);
                 try
                 {
-                    dr = await cmd.ExecuteReaderAsync();
+                    dr = cmd.ExecuteReader();
                     if (dr.HasRows)
                     {
                         while (dr.Read())
@@ -100,6 +100,8 @@ namespace OrderPizza.DAO
                         }
                     }
                     cmd.Dispose();
+                    dr.Close();
+                    cmd.Parameters.Clear();
                 }
                 catch (SqlException ex)
                 {
@@ -108,17 +110,17 @@ namespace OrderPizza.DAO
             });
         }
 
-        public async void subtrairEstoque(Pizza pizza)
+        public void subtrairEstoque(Pizza pizza)
         {
             cmd = new SqlCommand();
             cmd.Connection = new Conexao().conectar();
             cmd.CommandText = "UPDATE ESTOQUE SET QUANTIDADE = " +
-                "(SELECT QUANTIDADE FROM ESTOQUE WHERE IDESTOQUE = @IDESTOQUE) - @QTD";
+                "(SELECT QUANTIDADE FROM ESTOQUE WHERE IDESTOQUE = @IDESTOQUE) - @QTD WHERE IDESTOQUE = @IDESTOQUE";
             cmd.Parameters.AddWithValue("@IDESTOQUE", pizza.idEstoque);
             cmd.Parameters.AddWithValue("@QTD", pizza.quantidade);
             try
             {
-                await cmd.ExecuteNonQueryAsync();
+                cmd.ExecuteNonQuery();
                 cmd.Dispose();
 
             }
