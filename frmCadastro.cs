@@ -31,6 +31,7 @@ namespace OrderPizza
                 MessageBox.Show("O campo login está vazio, verifique e tente novamente!!", "Error", MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
                 txbLogin.Focus();
+                return;
             }
             if (string.IsNullOrEmpty(txbSenha.Text)) {
                 MessageBox.Show("O campo senha está vazio, verifique e tente novamente!!", "Error", MessageBoxButtons.OK,
@@ -48,6 +49,8 @@ namespace OrderPizza
                     MessageBox.Show("Usuario cadastrado com sucesso!", "Sucesso!",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                txbLogin.Text = string.Empty;
+                txbSenha.Text = string.Empty;
             }
         }
 

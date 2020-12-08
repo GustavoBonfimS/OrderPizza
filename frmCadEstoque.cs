@@ -25,17 +25,18 @@ namespace OrderPizza
                 MessageBox.Show("O campo descrição está vazio, verifique e tente novamente!!", "Error", MessageBoxButtons.OK,
         MessageBoxIcon.Error);
                 txbDescricao.Focus();
+                return;
             }
             if (string.IsNullOrEmpty(txbQuantidade.Text)){
                 MessageBox.Show("O campo quantidade está vazio, verifique e tente novamente!!", "Error", MessageBoxButtons.OK,
         MessageBoxIcon.Error);
                 txbQuantidade.Focus();
+                return;
             }
             if (string.IsNullOrEmpty(cbxMedida.Text)){
                 MessageBox.Show("O campo medida, verifique e tente novamente!!", "Error", MessageBoxButtons.OK,
         MessageBoxIcon.Error);
             }
-     
             else
             {
                 var es = new Estoque();
@@ -49,8 +50,10 @@ namespace OrderPizza
                     MessageBox.Show("Item de estoque cadastrado com sucesso!", "Sucesso!",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
+                txbDescricao.Text = string.Empty;
+                txbQuantidade.Text = string.Empty;
+                cbxMedida.Text = string.Empty;
             }
-
         }
 
         private void txbMedida_KeyPress(object sender, KeyPressEventArgs e)

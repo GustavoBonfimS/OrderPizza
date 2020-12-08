@@ -28,13 +28,11 @@ namespace OrderPizza
 
         private void frmUpdateEstoque_Load(object sender, EventArgs e)
         {
-         
                 lbEstoque.Show();
                 foreach (var item in estoque)
                 {
                     lbEstoque.Items.Add(item.descricao + " - " + item.quantidade + " " +item.medida);
                 }
-            
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
@@ -45,15 +43,25 @@ namespace OrderPizza
                 var est = estoque.Where(es => es.descricao == nome).ToArray()[0];
                 var dao = new EstoqueDAO();
                 var quanti = Convert.ToDouble(txbQuantidade.Text);
+                var medida = cbxMedida.Text;
+                double quantiGrama;
 
-                if (cbxMedida.Equals("Grama(G)"))
+                if (medida == "Unidade(Un)" && medida != est.medida)
                 {
-                    quanti = quanti / 1000;
+                    MessageBox.Show("A medida informada é diferente de uma ja cadastrada por favor verificar", "Error");
+                    return;
                 }
-                if (cbxMedida.Equals("Quilograma(KG)")){
-
+                if (medida == "Grama(G)" || medida == "Quilograma(KG)" && medida != est.medida)
+                {
+                    MessageBox.Show("A medida informada é diferente de uma ja cadastrada por favor verificar", "Error");
+                    return;
                 }
-                est.quantidade = quanti + est.quantidade;
+                if (medida.Equals("Grama(G)"))
+                {
+                    quantiGrama = (quanti / 1000);
+                    est.quantidade = (quantiGrama + est.quantidade);
+                }
+                else { est.quantidade = quanti + est.quantidade; }
 
                 if (dao.UpdateEstoque(est))
                 {
@@ -64,7 +72,6 @@ namespace OrderPizza
             { 
             MessageBox.Show("Selecione um produto por favor", "Error!");
             }
-            lbEstoque.Refresh();
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)

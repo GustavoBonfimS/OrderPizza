@@ -92,7 +92,7 @@ namespace OrderPizza
                     var obj = new Pizza();
                     obj.idEstoque = item.id;
                     var atual = item.descricao.ToString();
-                    obj.quantidade = Convert.ToDouble(Microsoft.VisualBasic.Interaction.InputBox("Qual a quantidade de " + atual + " usada nesta pizza?",
+                    obj.quantidade = Convert.ToDouble(Microsoft.VisualBasic.Interaction.InputBox("Qual a quantidade de " + atual + " usada nesta pizza?(Represente em gramas!!)",
                          "Inf Ingrediente", "*", 150, 150));
                     pr.pizzas.Add(obj);
                 });
@@ -101,6 +101,9 @@ namespace OrderPizza
                 {
                     MessageBox.Show("Cadastrado com sucesso!", "Sucesso!",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txbDescricao.Text = string.Empty;
+                    txbNome.Text = string.Empty;
+                    txbPreco.Text = string.Empty;
                 }
             }
         }
